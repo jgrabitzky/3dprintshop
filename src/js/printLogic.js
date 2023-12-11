@@ -65,12 +65,12 @@ async function buildPrintSection(conn, req) {
             <p class="gotham font18" style="color: #2d2d2d;">
               Nincsen kinyomtatni való fájlod?<br>
               <a class="blueLink" href="https://www.thingiverse.com" target="_blank">
-                Nézz körul a Thingiversen!
+              Schauen Sie sich auf Thingivers um!
               </a>
             </p> 
 
             <p class="gotham font16" style="color: #2d2d2d;">
-              Litofániához képet, bérnyomtatáshoz STL fájlt tölts fel
+            Laden Sie ein Bild für die Lithophanie und eine STL-Datei für den Auftragsdruck hoch
             </p> 
 
             <p class="gotham font16 hideOnMobile" style="color: #2d2d2d;">
@@ -85,20 +85,20 @@ async function buildPrintSection(conn, req) {
   output += `
     <section class="keepBottom ofv" style="margin-top: 40px;">
       <div id="cpFadeHolder" style="opacity: 0;">
-        <h1 class="gotham font26 align fontNorm">Precíz, gyors 3D bérnyomtatás azonnali megrendeléssel</h1>
+        <h1 class="gotham font26 align fontNorm">Präziser, schneller 3D-Druck mit sofortiger Bestellung</h1>
         <h2 class="align font18 lh fontNorm">
-          Megbízható FDM és SLA nyomtatás különféle színekben, akár rugalmas TPU-val is. A Zaccord
-          megoldást nyújt a 3D nyomtatásban kevésbé jártas átlagemberek számára és a
-          hozzáértőknek egyaránt.
+        Zuverlässiger FDM- und SLA-Druck in verschiedenen Farben, auch mit flexiblem TPU. Der Zaccord
+        bietet eine Lösung für durchschnittliche Menschen, die weniger Erfahrung im 3D-Druck haben und a
+        auch für Experten.
         </h2>
         <p class="align">
           <a href="/printHelp" class="blueLink align">
-            További információ
+          Weitere Informationen
             ${rightArrow}
           </a>
           <span class="orSep">vagy</span>
           <a class="blueLink align jumpToPrint">
-            Ugrás a nyomtatáshoz
+          Zum Drucken gehen
             ${rightArrow}
           </a>
         </p>
@@ -118,17 +118,17 @@ async function buildPrintSection(conn, req) {
           </div>
         </div>
         <h3 class="capitalTitle gothamMedium align fontNorm font16" id="capTitle">
-          Gyors prototípusgyártás FDM nyomtatással
+        Rapid Prototyping mit FDM-Druck
         </h3>
-        <p id="scText" class="align lh" style="color: #3c4043;">A technológia kiváló választás lehet nullsorozatok
-          gyártására a kész termék piacra dobása előtt. Így rengeteg időt és pénzt lehet megspórolni, ha még a
-          termékfejlesztés korai szakaszában feltárulnak az esetleges hibák.
+        <p id="scText" class="align lh" style="color: #3c4043;">Technologie kann eine ausgezeichnete Wahl für Nullserien sein
+        bevor das fertige Produkt auf den Markt kommt. Auf diese Weise können Sie viel Zeit und Geld sparen, wenn Sie noch welche haben
+        Mögliche Fehler werden bereits in den frühen Phasen der Produktentwicklung aufgedeckt.
         </p>
       </div>
 
       <div id="infoFadeHolder" class="mtsix flowBox flexDiv flBoxSp flexWrap" style="opacity: 0;">
         <div>
-          <h2 class="gotham font26 align fontNorm">Bérnyomtatás menete</h2>
+          <h2 class="gotham font26 align fontNorm">Prozess des 3D-Drucks</h2>
           <h2 class="align font18 lh fontNorm">
             Ha rendelkezel a modell STL fájljával, akkor az
             <a class="jumpToPrint blueLink font18">oldalon</a> ezt fel tudod
@@ -137,16 +137,16 @@ async function buildPrintSection(conn, req) {
             elkészített tárgyak modelljét, ilyen például a népszerű és ingyenes
             <a class="font18 blueLink" href="https://www.thingiverse.com">Thingiverse</a>.
             <br><br>
-            Ezután a feltöltött modell a böngészőben is megjelenik
-            interaktív formában, ahol 3D-ben is megtekintheted a terméket. Itt
-            lehetőség van különböző paraméterek beállítására is, viszont ha a
-            tudásod hiányos e téren, érdemes lehet az alapbeállításokkal
-            továbbhaladni. A legtöbb esetben ez megfelelő minőséget fog
-            biztosítani.
+            Das hochgeladene Modell erscheint dann im Browser
+            in einer interaktiven Form, in der Sie das Produkt in 3D betrachten können. Hier
+            Es ist auch möglich, andere Parameter einzustellen, wenn jedoch die
+            Sollten Ihnen in diesem Bereich noch Kenntnisse fehlen, kann es sich lohnen, die Grundeinstellungen zu nutzen
+            weitergehen. In den meisten Fällen ist die Qualität ausreichend
+            versichern.
             <br><br>
-            Amenyiben eltérő fájlformátummal rendelkezel vagy egyedi megrendelést szeretnél leadni, akkor
-            kérj személyre szabott árajánlatot az <a class="blueLink font18 goToQuote">oldal alján</a> vagy
-            írj nekünk emailt az <a href="mailto:info@zaccord.com" class="blueLink font18">info@zaccord.com</a>
+            Wenn Sie ein anderes Dateiformat haben oder eine individuelle Bestellung aufgeben möchten, dann
+            Fordern Sie ein individuelles Angebot an <a class="blueLink font18 goToQuote">am Ende der Seite</a>
+            Schreiben Sie uns eine E-Mail <a href="mailto:info@zaccord.com" class="blueLink font18">info@zaccord.com</a>
             címre.
           </h2>
         </div>
@@ -162,9 +162,9 @@ async function buildPrintSection(conn, req) {
     <div id="fdmFadeHolder" style="opacity: 0;">
       <h2 class="gotham font26 align fontNorm">FDM technológia</h2>
         <h2 class="align font18 lh fontNorm">
-          Az FDM technológia jelenleg a legelterjettebb és legköltséghatákonyabb nyomtatási
-          eljárás, rengeteg elérhető anyaggal és textúrával. Kiváló választás a végső termék piacra dobása előtti
-          prototípusgyártásra.
+        Die FDM-Technologie ist derzeit die gebräuchlichste und kostengünstigste Druckmethode
+        Verfahren, mit zahlreichen verfügbaren Materialien und Texturen. Eine ausgezeichnete Wahl vor der Markteinführung des Endprodukts
+        für die Prototypenfertigung.
         </h2>
         <p class="align">
           <a href="https://en.wikipedia.org/wiki/Fused_filament_fabrication" target="_blank" class="blueLink align">
@@ -173,7 +173,7 @@ async function buildPrintSection(conn, req) {
           </a>
           <span class="orSep">vagy</span>
           <a class="blueLink align jumpToPrint">
-            Ugrás a nyomtatáshoz
+          Zum Drucken gehen
             ${rightArrow}
           </a>
         </p>
@@ -196,9 +196,9 @@ async function buildPrintSection(conn, req) {
           FDM nyomtató
         </h3>
         <p id="scTextFdm" class="align lh" style="color: #3c4043;">
-            Az FDM nyomtatók precízen, a megolvadt filamentből, rétegről rétegre készítik
-            el a kívánt modellt egy digitális fájlból. A nyomtató feje képes mindhárom
-            tengelyen (X, Y, Z) mozogni, így szinte bármilyen alakzatot képes elkészíteni.
+        FDM-Drucker stellen es Schicht für Schicht präzise aus dem geschmolzenen Filament her
+        das gewünschte Modell aus einer digitalen Datei. Der Druckkopf kann alle drei Funktionen
+        Achse (X, Y, Z), sodass Sie nahezu jede Form erstellen können.
         </p>
       </div>
     </div>
@@ -206,18 +206,18 @@ async function buildPrintSection(conn, req) {
     <div id="slaFadeHolder" style="opacity: 0;">
       <h2 class="gotham font26 align fontNorm">SLA technológia</h2>
         <h2 class="align font18 lh fontNorm">
-          Az SLA technológia az FDM-nél sokkal pontosabb, viszont ezzel együtt drágább is. Gyakran használják orvosi és
-          gyógyászati célokra, például fogsor prototípus nyomtatásához vagy anatómai modellezéshez,
-          és apróbb modellek készítéséhez, ahol fontos a felületi minőség.
+        Die SLA-Technologie ist viel genauer als FDM, aber auch teurer. Es wird häufig in der Medizin und
+        für medizinische Zwecke, etwa zum Drucken eines Prothesenprototyps oder zur anatomischen Modellierung,
+        und für die Herstellung kleinerer Modelle, bei denen die Oberflächenqualität wichtig ist.
         </h2>
         <p class="align">
           <a href="https://en.wikipedia.org/wiki/Stereolithography" target="_blank" class="blueLink align">
-            További információ
+          Weitere Informationen
             ${rightArrow}
           </a>
           <span class="orSep">vagy</span>
           <a class="blueLink align jumpToPrint">
-            Ugrás a nyomtatáshoz
+          Zum Drucken gehen
             ${rightArrow}
           </a>
         </p>
@@ -237,14 +237,14 @@ async function buildPrintSection(conn, req) {
           </div>
         </div>
         <h3 class="capitalTitle gothamMedium align font16 fontNorm" id="capTitleSla">
-          SLA nyomtatás
+        SLA-Druck
         </h3>
         <p id="scTextSla" class="align lh" style="color: #3c4043;">
-          A sztereolitográfia egy olyan 3D nyomtatási eljárás, amelyet
-          koncepciómodellek, kozmetikai kellékek, gyors prototípusok és
-          bonyolult geometriájú, összetett alkatrészek akár 1 nap alatt történő
-          előállítására használnak. Az így készült alkatrészek az anyagok széles választékából
-          állíthatók elő, segítségével rendkívül nagy felbontású részletek és minőségi felületek készíthetőek. 
+        Stereolithographie ist ein 3D-Druckverfahren, das
+        Konzeptmodelle, kosmetische Requisiten, schnelle Prototypen und
+        komplexe Teile mit komplexen Geometrien in bis zu 1 Tag
+        zur Produktion verwendet. Die auf diese Weise hergestellten Teile bestehen aus den unterschiedlichsten Materialien
+        hergestellt werden, mit deren Hilfe äußerst hochauflösende Details und hochwertige Oberflächen erzeugt werden können.
         </p>
       </div>
     </div>
@@ -253,20 +253,20 @@ async function buildPrintSection(conn, req) {
     <div id="matFadeHolder">
       <h2 class="gotham font26 align fontNorm">FDM nyomtatási anyagok</h2>
         <h2 class="align font18 lh fontNorm">
-          Különböző típusú FDM nyomtatásokhoz eltérő anyagokra lehet szükség, így annak
-          érdekében hogy a specifikusabb igényeket is kielégítsük jelenleg a PLA, ABS, PETG és
-          TPU anyagok mellett rengeteg más <a href="/colors" class="blueLink font18">anyag</a> is
-          rendelkezésre áll. SLA nyomtatáshoz kizárólag UV resint használunk
-          (különleges esetekben ennek egy adott  kategóriáját, például fogászati modellekhez).
+        Verschiedene Arten des FDM-Drucks erfordern möglicherweise unterschiedliche Materialien
+        Um spezifischere Anforderungen zu erfüllen, werden PLA, ABS, PETG usw. verwendet
+        Neben TPU-Materialien gibt es noch viele andere <a href="/colors" class="blueLink font18">anyag</a> is
+        verfügbar. Für den SLA-Druck verwenden wir ausschließlich UV-Harz
+        (in besonderen Fällen eine spezielle Kategorie davon, zum Beispiel für Dentalmodelle).
         </h2>
         <p class="align">
           <a href="/materialHelp" class="blueLink align">
-            További információ
+          Weitere Informationen
             ${rightArrow}
           </a>
           <span class="orSep">vagy</span>
           <a class="blueLink align jumpToPrint">
-            Ugrás a nyomtatáshoz
+          Zum Drucken gehen
             ${rightArrow}
           </a>
         </p>
@@ -289,21 +289,21 @@ async function buildPrintSection(conn, req) {
           PLA filament
         </h3>
         <p id="scTextMat" class="align lh" style="color: #3c4043;">
-          A PLA egy keményítő alapú biopolimer, ami megújuló nyersanyagokból állítható elő,
-          például kukoricából vagy cukornádból, ezáltal környezetbarát lesz.
-          Magas szakítószilárdsággal és felületi minőséggel rendelkezik, ezáltal mind
-          otthoni, mind irodai környezetben is alkalmazható. Olyan tárgyak létrehozását teszi
-          lehetővé mint például háztartási eszközök, prototípusok készítése, játékok,
-          bemutató tárgyak, építészeti modellek, valamint elveszett alkatrészek pótlása. 
+        PLA ist ein stärkebasiertes Biopolymer, das aus nachwachsenden Rohstoffen hergestellt werden kann,
+        zum Beispiel aus Mais oder Zuckerrohr und ist somit umweltfreundlich.
+        Es verfügt über eine hohe Zugfestigkeit und Oberflächengüte, also beides
+        kann sowohl zu Hause als auch im Büro verwendet werden. Es erstellt Objekte
+        möglich wie die Herstellung von Haushaltsgeräten, Prototypen, Spielzeug,
+        Präsentationsobjekte, Architekturmodelle und Ersatz verlorener Teile.
         </p>
       </div>
       
       <div class="mtsix">
-        <h2 class="gotham font26 align fontNorm">Hasznos blogbejegyzések</h2>
+        <h2 class="gotham font26 align fontNorm">Hilfreiche Blogbeiträge</h2>
         <h2 class="align font18 lh fontNorm">
-          Gyakran frissülő blogbejegyzéseink hasznos információt nyújthatnak a kezdők és a 3D nyomtatásban jártas 
-          emberek számára egyaránt. Ha szeretnél tovább olvasni a témában, akkor látogass el a
-          <a class="font18 blueLink" href="/blogs">blog</a> oldalunkra további érdekes cikkekért.
+        Unsere regelmäßig aktualisierten Blogbeiträge bieten nützliche Informationen für Einsteiger und Experten im 3D-Druck
+        auch für Menschen. Wenn Sie mehr zum Thema lesen möchten, besuchen Sie
+          <a class="font18 blueLink" href="/blogs">blog</a> Weitere interessante Artikel finden Sie auf unserer Website.
         </h2>
         <div class="flexDiv flexWrap lh flSpAr">
     `;
@@ -318,19 +318,19 @@ async function buildPrintSection(conn, req) {
     <div id="litFadeHolder">
       <h2 class="gotham font26 align fontNorm">Örökítsd meg legszebb képeidet 3D-ben!</h2>
         <h2 class="align font18 lh fontNorm">
-          A legjobban sikerült képeidet litofánia formájában is kinyomtatjuk,
-          így megörökítve a
-          legszebb pillanataidat. Összesen egy képre van szükséged amit feltöltesz a Zaccordra
-          és ezután azonnal megvásárolhatod a terméket.
+        Wir drucken Ihre schönsten Bilder auch in Form einer Lithophanie,
+        so verewigt durch die
+        Deine schönsten Momente. Sie benötigen insgesamt ein Bild zum Hochladen auf Zaccord
+        und dann können Sie das Produkt sofort kaufen.
         </h2>
         <p class="align">
           <a href="/lithophaneHelp" class="blueLink align">
-            További információ
+          Weitere Informationen
             ${rightArrow}
           </a>
           <span class="orSep">vagy</span>
           <a class="blueLink align jumpToPrint">
-            Ugrás a nyomtatáshoz
+          Zum Drucken gehen
             ${rightArrow}
           </a>
         </p>
@@ -348,30 +348,30 @@ async function buildPrintSection(conn, req) {
           </div>
         </div>
         <h3 class="capitalTitle gothamMedium align fontNorm font16" id="capTitleLit">
-          Kinyomtatott litofán és az eredeti kép
+        Gedrucktes Lithophan und das Originalbild
         </h3>
         <p id="scTextLit" class="align lh" style="color: #3c4043;">
-          A kész litofán alapesetben egy nehezen kivehető,
-          dombornyomott képed ad. Háttérvilágítással viszont kristálytisztán előtűnik maga a kép.
-          A feltöltött digitális képből a 3D nyomtató készít egy valódi, tapintható litofánt,
-          ami a technológiának köszönhetően valósághűen ábrázolja az eredeti képet.
+        Im Grundfall handelt es sich bei fertigem Lithophan um eine schwer entfernbare,
+        gibt Ihnen ein geprägtes Bild. Bei Hintergrundbeleuchtung ist das Bild selbst jedoch kristallklar.
+        Aus dem hochgeladenen digitalen Bild erstellt der 3D-Drucker ein echtes, greifbares Lithophan,
+        das dank der Technologie das Originalbild realistisch wiedergibt.
         </p>
       </div>
       
       <div class="mtsix">
         <h2 class="gotham font26 align fontNorm" id="getQuote">
-          Ajánlatkérés
+        Anfrage für
         </h2>
         <h2 class="align font18 lh fontNorm">
-          Amennyiben egyedi megrendelést szeretnél leadni vagy mást fájlformátumban vannak a nyomtatni kívánt
-          modelljeid, akkor bátran vedd fel velünk a kapcsolatot egy ajánlatkérés formájában.
+        Wenn Sie eine Einzelbestellung aufgeben möchten oder nicht, liegen die Dateien, die Sie drucken möchten, im Dateiformat vor
+        Ihre Modelle, dann kontaktieren Sie uns gerne in Form einer Angebotsanfrage.
         </h2>
         <div class="flexDiv" style="flex-wrap: wrap;" id="normalDiv">
           <input type="text" class="dFormField" id="name" placeholder="Név" value="">
           <input type="email" class="dFormField" id="email" placeholder="Email">
           <input type="text" class="dFormField protmob" id="mobile"
             placeholder="Telefonszám" value="">
-          <textarea placeholder="CAD modell URL, termékkel szembeni elvárások: anyag, szín, technológia stb."
+          <textarea placeholder="CAD-Modell-URL, Produkterwartungen: Material, Farbe, Technologie usw."
             id="message" class="dFormField" style="width: 100%; height: 100px;"></textarea>
         </div>
         <button class="fillBtn btnCommon" id="submitBtn" style="display: block; margin: 0 auto;">
@@ -386,11 +386,11 @@ async function buildPrintSection(conn, req) {
       <hr class="hrStyle">
 
       <p class="align lh font18 notoSans">
-        Sorozatgyártás vagy prototípusgyártás esetén látogass el a
-        <a class="blueLink font18" href="/prototype">Prototípusgyártás</a> oldalra vagy
-        vedd fel velünk a kapcsolatot a
+      Für Serienproduktion oder Prototypenfertigung besuchen Sie uns
+        <a class="blueLink font18" href="/prototype">Prototípusgyártás</a> Du bist auf der Seite
+        kontaktiere uns unter
         <a class="blueLink font18" href="mailto:info@zaccord.com">info@zaccord.com</a>
-        email címen keresztül.
+        per E-Mail-Adresse.
       <p>
     </section>
     ${LAZY_LOAD}
