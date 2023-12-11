@@ -51,19 +51,19 @@ async function buildPrintSection(conn, req) {
             <input type="submit" id="submitForm" style="display: none;">
             <br>
             <p class="gotham lh">
-              Kérhetsz
-              <a href="/print#getQuote" class="blueLink font16">egyedi árajánlatot</a>
-              is, ha nincsen megfelelő fájlod nyomtatáshoz
+            Du kannst Fragen
+              <a href="/print#getQuote" class="blueLink font16">einzigartiges Preisangebot</a>
+              auch wenn Sie keine geeignete Datei zum Drucken haben
             </p>
           </form>
         </div>
         <div class="cPrintDivs rightDiv flexDiv previews gotham" id="bigPrew">
           <div id="prew" class="lh">
             <p class="gotham font24" style="color: #2d2d2d; margin-top: 0;">
-              3D nyomtatás fájlból
+            3D-Druck aus Datei
             </p> 
             <p class="gotham font18" style="color: #2d2d2d;">
-              Nincsen kinyomtatni való fájlod?<br>
+            Sie haben keine Datei zum Drucken?<br>
               <a class="blueLink" href="https://www.thingiverse.com" target="_blank">
               Schauen Sie sich auf Thingivers um!
               </a>
@@ -96,7 +96,7 @@ async function buildPrintSection(conn, req) {
           Weitere Informationen
             ${rightArrow}
           </a>
-          <span class="orSep">vagy</span>
+          <span class="orSep">oder</span>
           <a class="blueLink align jumpToPrint">
           Zum Drucken gehen
             ${rightArrow}
@@ -118,7 +118,7 @@ async function buildPrintSection(conn, req) {
           </div>
         </div>
         <h3 class="capitalTitle gothamMedium align fontNorm font16" id="capTitle">
-        Rapid Prototyping mit FDM-Druck
+        Schnelle Prototypen mit FDM-Druck
         </h3>
         <p id="scText" class="align lh" style="color: #3c4043;">Technologie kann eine ausgezeichnete Wahl für Nullserien sein
         bevor das fertige Produkt auf den Markt kommt. Auf diese Weise können Sie viel Zeit und Geld sparen, wenn Sie noch welche haben
@@ -130,11 +130,11 @@ async function buildPrintSection(conn, req) {
         <div>
           <h2 class="gotham font26 align fontNorm">Prozess des 3D-Drucks</h2>
           <h2 class="align font18 lh fontNorm">
-            Ha rendelkezel a modell STL fájljával, akkor az
+          Das heißt, wenn Sie die STL-Datei des Modells haben
             <a class="jumpToPrint blueLink font18">oldalon</a> ezt fel tudod
             tölteni.
-            Ellenkező esetben lehetőség van számos weboldalról letölteni előre
-            elkészített tárgyak modelljét, ilyen például a népszerű és ingyenes
+            Ansonsten ist ein Vorab-Download auf vielen Webseiten möglich
+            Modelle von vorgefertigten Artikeln, z. B. beliebt und kostenlos
             <a class="font18 blueLink" href="https://www.thingiverse.com">Thingiverse</a>.
             <br><br>
             Das hochgeladene Modell erscheint dann im Browser
@@ -160,7 +160,7 @@ async function buildPrintSection(conn, req) {
 
   output += `
     <div id="fdmFadeHolder" style="opacity: 0;">
-      <h2 class="gotham font26 align fontNorm">FDM technológia</h2>
+      <h2 class="gotham font26 align fontNorm">FDM Technologie</h2>
         <h2 class="align font18 lh fontNorm">
         Die FDM-Technologie ist derzeit die gebräuchlichste und kostengünstigste Druckmethode
         Verfahren, mit zahlreichen verfügbaren Materialien und Texturen. Eine ausgezeichnete Wahl vor der Markteinführung des Endprodukts
@@ -168,10 +168,10 @@ async function buildPrintSection(conn, req) {
         </h2>
         <p class="align">
           <a href="https://en.wikipedia.org/wiki/Fused_filament_fabrication" target="_blank" class="blueLink align">
-            További információ
+          Weitere Informationen
             ${rightArrow}
           </a>
-          <span class="orSep">vagy</span>
+          <span class="orSep">oder</span>
           <a class="blueLink align jumpToPrint">
           Zum Drucken gehen
             ${rightArrow}
@@ -193,7 +193,7 @@ async function buildPrintSection(conn, req) {
           </div>
         </div>
         <h3 class="capitalTitle gothamMedium align font16 fontNorm" id="capTitleFdm">
-          FDM nyomtató
+        FDM-Drucker
         </h3>
         <p id="scTextFdm" class="align lh" style="color: #3c4043;">
         FDM-Drucker stellen es Schicht für Schicht präzise aus dem geschmolzenen Filament her
@@ -215,7 +215,7 @@ async function buildPrintSection(conn, req) {
           Weitere Informationen
             ${rightArrow}
           </a>
-          <span class="orSep">vagy</span>
+          <span class="orSep">oder</span>
           <a class="blueLink align jumpToPrint">
           Zum Drucken gehen
             ${rightArrow}
@@ -255,8 +255,8 @@ async function buildPrintSection(conn, req) {
         <h2 class="align font18 lh fontNorm">
         Verschiedene Arten des FDM-Drucks erfordern möglicherweise unterschiedliche Materialien
         Um spezifischere Anforderungen zu erfüllen, werden PLA, ABS, PETG usw. verwendet
-        Neben TPU-Materialien gibt es noch viele andere <a href="/colors" class="blueLink font18">anyag</a> is
-        verfügbar. Für den SLA-Druck verwenden wir ausschließlich UV-Harz
+        Neben TPU-Materialien gibt es noch viele andere <a href="/colors" class="blueLink font18">Filamente.</a>
+        Für den SLA-Druck verwenden wir ausschließlich UV-Harz
         (in besonderen Fällen eine spezielle Kategorie davon, zum Beispiel für Dentalmodelle).
         </h2>
         <p class="align">
@@ -264,7 +264,7 @@ async function buildPrintSection(conn, req) {
           Weitere Informationen
             ${rightArrow}
           </a>
-          <span class="orSep">vagy</span>
+          <span class="orSep">oder</span>
           <a class="blueLink align jumpToPrint">
           Zum Drucken gehen
             ${rightArrow}
@@ -293,7 +293,7 @@ async function buildPrintSection(conn, req) {
         zum Beispiel aus Mais oder Zuckerrohr und ist somit umweltfreundlich.
         Es verfügt über eine hohe Zugfestigkeit und Oberflächengüte, also beides
         kann sowohl zu Hause als auch im Büro verwendet werden. Es erstellt Objekte
-        möglich wie die Herstellung von Haushaltsgeräten, Prototypen, Spielzeug,
+        wie die Herstellung von Haushaltsgeräten, Prototypen, Spielzeug,
         Präsentationsobjekte, Architekturmodelle und Ersatz verlorener Teile.
         </p>
       </div>
@@ -301,9 +301,9 @@ async function buildPrintSection(conn, req) {
       <div class="mtsix">
         <h2 class="gotham font26 align fontNorm">Hilfreiche Blogbeiträge</h2>
         <h2 class="align font18 lh fontNorm">
-        Unsere regelmäßig aktualisierten Blogbeiträge bieten nützliche Informationen für Einsteiger und Experten im 3D-Druck
-        auch für Menschen. Wenn Sie mehr zum Thema lesen möchten, besuchen Sie
-          <a class="font18 blueLink" href="/blogs">blog</a> Weitere interessante Artikel finden Sie auf unserer Website.
+        Unsere regelmäßig aktualisierten Blogbeiträge bieten nützliche Informationen für Einsteiger und Experten im 3D-Druck.
+        Wenn Sie mehr zum Thema lesen möchten, besuchen Sie unseren
+          <a class="font18 blueLink" href="/blogs">Blog.</a> auf unserer Webseite. Dort finden Sie weitere interessante Artikel.
         </h2>
         <div class="flexDiv flexWrap lh flSpAr">
     `;
