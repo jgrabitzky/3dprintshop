@@ -56,7 +56,7 @@ const buildMainSection = (conn, cat) => {
             <div class="topShrink">
               <div class="topInner">
                 <input type="text" autocomplete="off" class="searchBox"
-                  placeholder="Mit szeretnél megtalálni?"
+                  placeholder="Was möchten Sie finden?"
                   onkeyup="searchForItem()" id="sfi" />
                 <div class="categoryImg" onclick="toggleCategory()" id="categoryImg">
                   <img src="/images/icons/vmenu.svg">
@@ -211,8 +211,8 @@ const buildMainSection = (conn, cat) => {
                 <p class="gotham boxTitle">Bérnyomtatás</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
-                    Ha szeretnél nyomtatni, de nem férsz hozzá egy saját 3D nyomtatóhoz, akkor bátran
-                    vedd igénybe a teljesen automatizált <a class="blueLink" href="/print">bérnyomtatás</a> szolgáltatásunkat.
+                  Wenn Sie drucken möchten, aber keinen Zugang zu Ihrem eigenen 3D-Drucker haben, können Sie dies gerne tun
+                  Profitieren Sie von der Vollautomatisierung <a class="blueLink" href="/print">bérnyomtatás</a> unser Service.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
@@ -258,8 +258,7 @@ const buildMainSection = (conn, cat) => {
                 <p class="gotham boxTitle">Produktion</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
-                    Termékfejlesztés, <a href="/prototype" class="blueLink">prototípus- és sorozatgyártás</a> esetén
-                    fordulj bizalommal több éves tapasztalattal rendelkező csapatunkhoz.
+                  Produktentwicklung, <a href="/prototype" class="blueLink">bei Prototypen- und Serienfertigung</a> Kontaktieren Sie unser Team mit langjähriger Erfahrung 
                   </p>
                   <br>
                   <p class="gothamNormal lh">
@@ -307,10 +306,10 @@ const buildMainSection = (conn, cat) => {
                 <p class="gotham boxTitle">Lithophanie</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
-                    A <a href="/print" class="blueLink">litofánia</a> egy tökéletes személyes ajándék lehet szinte
-                    bármilyen alkalomra.
-                    Lepd meg szeretteidet egyedi, dombornyomott ajándékkal, amit azonnal megrendelhetsz az oldalon
-                    keresztül.
+                    A <a href="/print" class="blueLink">Lithofani</a> Es kann fast ein perfektes persönliches Geschenk sein
+                    für jeden Anlass.
+                    Überraschen Sie Ihre Lieben mit einem einzigartigen, geprägten Geschenk, das Sie sofort auf der Website bestellen können
+                    über.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
