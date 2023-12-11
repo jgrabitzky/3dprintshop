@@ -125,9 +125,9 @@ const buildMainSection = (conn, cat) => {
               <div class="darken"></div>
               <div class="textCenter">
                 <h1 class="mainText lh gotham align fontNorm" style="padding: 10px;">
-                  Precíz 3D nyomtatás a Zaccordon
+                Präziser 3D-Druck auf Zaccord
                   <button class="fillBtn instantQuote gotham" onclick="location.href = '/print'">
-                    Azonnali árajánlat
+                  Sofortiges Angebot
                   </button>
                 </h1>
               </div>
@@ -140,13 +140,13 @@ const buildMainSection = (conn, cat) => {
               <div class="textCenter pad lh">
                 <h2 class="serviceTxt align font34 gotham servMain servMain fontNorm">Bérnyomtatás</h2>
                 <h3 class="serviceTxt align gotham fontNorm font16">
-                  FDM és SLA nyomtatás számos színnel és anyaggal. Az intelligens algoritmus
-                  segítségével azonnal láthatod az árat és megrendelheted a feltöltött
-                  termékeket.
+                FDM- und SLA-Druck mit vielen Farben und Materialien. Der intelligente Algorithmus
+                Sie können sofort den Preis sehen und das hochgeladene Produkt bestellen
+                Produkte.
                 </h3>
                 <div class="flexDiv btnAlign">
-                  <button class="whiteBtn gotham font18 trans" onclick="redirect('/print')">További információ</button>
-                  <button class="whiteBtn gotham font18 trans" onclick="redirect('/printHelp')">Segítség</button>
+                  <button class="whiteBtn gotham font18 trans" onclick="redirect('/print')">Weitere Informationen</button>
+                  <button class="whiteBtn gotham font18 trans" onclick="redirect('/printHelp')">Hilfe</button>
                 </div>
               </div>
             </div>
@@ -154,18 +154,18 @@ const buildMainSection = (conn, cat) => {
             <div class="bgService bgCommon" id="protService">
               <div class="darken keepRounded"></div>
               <div class="textCenter pad lh">
-                <h2 class="serviceTxt align font34 gotham servMain fontNorm">Prototípusgyártás</h2>
+                <h2 class="serviceTxt align font34 gotham servMain fontNorm">Prototypenfertigung</h2>
                 <h3 class="serviceTxt align gotham fontNorm font16">
-                  A 3D nyomtatott kisszériás prototípusgyártás egy sokkal költséghatékonyabb és gyorsabb
-                  módja a nullsorozatok gyártásának. Egyedi rendelésekhez bátran vedd fel
-                  felünk a kapcsolatot.
+                Das 3D-gedruckte Kleinserien-Prototyping ist wesentlich kostengünstiger und schneller
+                Möglichkeit, Nullsequenzen zu erzeugen. Nutzen Sie es gerne für Einzelbestellungen
+                kontaktiere uns.
                 </h3>
                 <div class="flexDiv btnAlign">
                   <button class="whiteBtn gotham font18 trans" onclick="redirect('/prototype')">
-                    További információ
+                  Weitere Informationen
                   </button>
                   <button class="whiteBtn gotham font18 trans" onclick="redirect('/prototype#getInCont')">
-                    Kapcsolatfelvétel
+                  Kontakt
                   </button>
                 </div>
               </div>
@@ -173,7 +173,7 @@ const buildMainSection = (conn, cat) => {
           </div>
 
           <h2 class="gotham align font34 printTech fontNorm" id="printTech" style="${popProdsStyle}">
-            Nyomtatási Technológiák
+          Drucktechnologien
           </h2>
 
           <div class="flexProtCont" style="${furtherShow}">
@@ -182,12 +182,12 @@ const buildMainSection = (conn, cat) => {
               <div class="textCenter pad lh">
                 <h2 class="serviceTxt align font34 gotham servMain fontNorm">FDM</h2>
                 <h3 class="serviceTxt align gotham fontNorm font16">
-                  Az FDM nyomtatási technológia kiváló a rapid prototypinghoz és
-                  költséghatékony modellezéshez. Ez esetben a nyomtató olvadt filamentből
-                  készíti el a terméket rétegről-rétegre.
+                Die FDM-Drucktechnologie eignet sich hervorragend für Rapid Prototyping und
+                für eine kostengünstige Modellierung. In diesem Fall besteht der Drucker aus geschmolzenem Filament
+                bereitet das Produkt Schicht für Schicht vor.
                 </h3>
                 <div class="flexDiv btnAlign">
-                  <button class="whiteBtn gotham font18 trans" onclick="redirect('/mitjelent')">További információ</button>
+                  <button class="whiteBtn gotham font18 trans" onclick="redirect('/mitjelent')">Weitere Informationen</button>
                 </div>
               </div>
             </div>
@@ -196,12 +196,12 @@ const buildMainSection = (conn, cat) => {
               <div class="textCenter pad lh">
                 <h2 class="serviceTxt align font34 gotham servMain fontNorm">SLA</h2>
                 <h3 class="serviceTxt align gotham fontNorm font16">
-                  Kiváló választás lehet apróbb vagy nagyobb pontosságot igénylő modellekhez,
-                  hiszen minősége a fröccsöntött műanyagéval vetekszik. Ilyenkor a nyomtató
-                  műgyantából állítja elő a terméket, ami utána UV-fénnyel lesz kezelve.
+                Es kann eine ausgezeichnete Wahl für kleinere oder präzisere Modelle sein,
+                da seine Qualität mit der von Spritzgusskunststoff mithalten kann. In diesem Fall der Drucker
+                stellt das Produkt aus Kunstharz her, das anschließend mit UV-Licht behandelt wird.
                 </h3>
                 <div class="flexDiv btnAlign">
-                  <button class="whiteBtn gotham font18 trans" onclick="redirect('/mitjelent')">További információ</button>
+                  <button class="whiteBtn gotham font18 trans" onclick="redirect('/mitjelent')">Weitere Informationen</button>
                 </div>
               </div>
             </div>
@@ -216,14 +216,14 @@ const buildMainSection = (conn, cat) => {
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    Nincs más dolgod, mint feltölteni a modellről készült STL fájlt és azonnal meg is rendelheted
-                    azt. Szabd teljesen személyre a modelled a színtől kezdve egészen a rétegvastagságig!
+                  Sie müssen lediglich die STL-Datei des Modells hochladen und können es sofort bestellen
+                  Das. Passen Sie Ihr Modell komplett an, von der Farbe bis zur Schichtdicke!
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    Nem kell várnod hosszú napokat egy egyedileg adott árajánlatért, hiszen ezt a terhet
-                    teljesen levesszük a válladról. Az algoritmus azonnal megmondja mennyibe kerül a termék,
-                    így magad döntheted el, hogy megvásárolod vagy nem.
+                  Sie müssen nicht tagelang auf ein individuell erstelltes Angebot warten, da dies eine Belastung darstellt
+                  Wir nehmen es Ihnen komplett ab. Der Algorithmus sagt Ihnen sofort, wie viel das Produkt kostet,
+                  So können Sie selbst entscheiden, ob Sie es kaufen oder nicht.
                   </p>
                 </div>
               </div>
@@ -232,21 +232,21 @@ const buildMainSection = (conn, cat) => {
 
             <div class="greyBoxCont">
               <div class="indexGreyBoxLeft">
-                <p class="gotham boxTitleLeft">Modellezés</p>
+                <p class="gotham boxTitleLeft">Modellieren</p>
                 <div class="greyBoxTextLeft">
                   <p class="gothamNormal lh">
-                    Amennyiben csak egy elképzeléssel rendelkezel, modellel viszont nem, akkor vedd igénybe egy
-                    3D modellező munkatársunk segítségét a kidolgozásban.
+                  Wenn Sie nur eine Idee, aber kein Modell haben, dann nutzen Sie eines
+                  Die Hilfe unseres 3D-Modellierers bei der Entwicklung.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    Tervrajzok, képek, leírások, vagy mindössze egy ötlet alapján végezzük el a 3D modellezést
-                    egy részletes konzultáció után.
+                  Wir führen 3D-Modellierungen auf der Grundlage von Bauplänen, Bildern, Beschreibungen oder einfach nur einer Idee durch
+                  nach ausführlicher Beratung.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    Gyakori alkalmazás lehet törött eszközök, alkatrészek modellezése képek és egy mérettáblázat
-                    alapján, amiket utána kinyomtatunk és elküldünk a megrendelőnek.
+                  Eine häufige Anwendung können defekte Werkzeuge, Teilemodellierungsbilder und eine Größentabelle sein
+                  Auf dieser Grundlage drucken wir es aus und versenden es an den Kunden.
                   </p>
                 </div>
               </div>
@@ -255,7 +255,7 @@ const buildMainSection = (conn, cat) => {
 
             <div class="greyBoxCont">
               <div class="indexGreyBox">
-                <p class="gotham boxTitle">Gyártás</p>
+                <p class="gotham boxTitle">Produktion</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
                     Termékfejlesztés, <a href="/prototype" class="blueLink">prototípus- és sorozatgyártás</a> esetén
@@ -263,14 +263,14 @@ const buildMainSection = (conn, cat) => {
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    Egy termék piacra dobása előtti legfontosabb mérföldkő a prototípus elkészítése, esetleg annak
-                    kisszériás gyártása.
+                  Der wichtigste Meilenstein, bevor ein Produkt auf den Markt kommt, ist die Erstellung eines Prototyps bzw. seines Prototyps
+                  Kleinserienfertigung.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    A 3D nyomtatás erre egy kiváló technológia, gyorsaságából és költséghatékonyságából adódóan.
-                    Emellett a kész termék elkészülte előtt kulcsfontosságú a potenciális vásárlók kezébe adni valami kézzel
-                    foghatót.
+                  Der 3D-Druck ist hierfür aufgrund seiner Geschwindigkeit und Kosteneffizienz eine hervorragende Technologie.
+                  Darüber hinaus ist es entscheidend, bevor das fertige Produkt fertig ist, etwas in die Hände potenzieller Kunden zu legen
+                  greifbar.
                   </p>
                 </div>
               </div>
@@ -279,22 +279,22 @@ const buildMainSection = (conn, cat) => {
 
             <div class="greyBoxCont">
               <div class="indexGreyBoxLeft">
-                <p class="gotham boxTitleLeft">Termékek</p>
+                <p class="gotham boxTitleLeft">Produkte</p>
                 <div class="greyBoxTextLeft">
                   <p class="gothamNormal lh">
-                    A Zaccordon számos előre kinyomtatott termék közül válogathatsz, rengeteg kategóriában.
-                    Sokszor olyan termékekkel is találkozhatsz, amiket nem lehet kapni hétköznapi boltokban
-                    vagy csak sokkal drágábban, mint az oldalon.
+                  Auf Zaccord können Sie aus vielen vorgedruckten Produkten in vielen Kategorien wählen.
+                  Oft findet man Produkte, die in normalen Geschäften nicht zu finden sind
+                  oder einfach viel teurer als auf der Website.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    Minden terméket biológiailag lebomló PLA filamentből nyomtatunk, így nincsen akkora ökológiai
-                    lábnyoma, mint a hagyományos műanyagnak.
+                  Alle Produkte werden aus biologisch abbaubarem PLA-Filament gedruckt und sind daher nicht so ökologisch
+                  Platzbedarf als herkömmlicher Kunststoff.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    A szobroktól és vázáktól kezdődően a szappantartóig szinte minden hétköznapi tárgyat megtalálsz
-                    a webshopban. Minden terméket egy külön modellező tervezett, így vásárlásoddal az ő munkájukat is támogatod.
+                  Von Statuen und Vasen bis hin zu Seifenschalen finden Sie fast jeden gewöhnlichen Gegenstand
+                  im Webshop. Jedes Produkt wurde von einem separaten Modellbauer entworfen, sodass Sie mit Ihrem Kauf auch dessen Arbeit unterstützen.
                   </p>
                 </div>
               </div>
@@ -304,7 +304,7 @@ const buildMainSection = (conn, cat) => {
 
             <div class="greyBoxCont">
               <div class="indexGreyBox">
-                <p class="gotham boxTitle">Litofánia</p>
+                <p class="gotham boxTitle">Lithophanie</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
                     A <a href="/print" class="blueLink">litofánia</a> egy tökéletes személyes ajándék lehet szinte
@@ -314,13 +314,13 @@ const buildMainSection = (conn, cat) => {
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    A nyomtató egy sík vagy görbe felületre készíti el a dombornyomott képet, ami háttérvilágítás
-                    után tisztán látható lesz. 
+                  Der Drucker erzeugt das geprägte Bild auf einer flachen oder gekrümmten Oberfläche, die eine Hintergrundbeleuchtung darstellt
+                  wird danach deutlich sichtbar sein. 
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                    Gyakran használják lámpák vagy egyéb fényforrások búrájaként, így amikor felkapcsoljuk a lámpát
-                    a különböző rétegvastagságú felületek különböző mértékben engedik át a fényt, és előtűnik a monokróm kép.
+                  Es wird oft als Schirm für Lampen oder andere Lichtquellen verwendet, also wenn wir das Licht einschalten
+                  Oberflächen mit unterschiedlichen Schichtdicken lassen das Licht unterschiedlich stark durch und es entsteht ein monochromes Bild.
                   </p>
                 </div>
               </div>
