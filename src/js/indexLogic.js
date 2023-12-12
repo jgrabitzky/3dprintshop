@@ -208,22 +208,22 @@ const buildMainSection = (conn, cat) => {
 
             <div class="greyBoxCont">
               <div class="indexGreyBox">
-                <p class="gotham boxTitle">Bérnyomtatás</p>
+                <p class="gotham boxTitle">Auftragsdruck</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
-                  Wenn Sie drucken möchten, aber keinen Zugang zu Ihrem eigenen 3D-Drucker haben, können Sie dies gerne tun
-                  Profitieren Sie von der Vollautomatisierung <a class="blueLink" href="/print">bérnyomtatás</a> unser Service.
+                  Wenn Sie drucken möchten, aber keinen eigenen 3D-Drucker haben, können Sie dies gerne über tun.
+                  Profitieren Sie von unserem <a class="blueLink" href="/print">Auftragsbruck</a> in unserem Shop.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                  Sie müssen lediglich die STL-Datei des Modells hochladen und können es sofort bestellen
-                  Das. Passen Sie Ihr Modell komplett an, von der Farbe bis zur Schichtdicke!
+                  Sie müssen lediglich die STL-Datei des Modells hochladen und können es sofort bestellen.
+                  Passen Sie Ihr Modell komplett an, von der Farbe bis zur Schichtdicke!
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                  Sie müssen nicht tagelang auf ein individuell erstelltes Angebot warten, da dies eine Belastung darstellt
-                  Wir nehmen es Ihnen komplett ab. Der Algorithmus sagt Ihnen sofort, wie viel das Produkt kostet,
-                  So können Sie selbst entscheiden, ob Sie es kaufen oder nicht.
+                  Sie müssen nicht tagelang auf ein individuell erstelltes Angebot warten, da unser Bestellvorgang alles beinhaltet.
+                  Der Algorithmus sagt Ihnen sofort, wie viel das Produkt kostet und
+                  Sie können Sie selbst entscheiden, ob Sie es kaufen oder nicht.
                   </p>
                 </div>
               </div>
@@ -235,8 +235,8 @@ const buildMainSection = (conn, cat) => {
                 <p class="gotham boxTitleLeft">Modellieren</p>
                 <div class="greyBoxTextLeft">
                   <p class="gothamNormal lh">
-                  Wenn Sie nur eine Idee, aber kein Modell haben, dann nutzen Sie eines
-                  Die Hilfe unseres 3D-Modellierers bei der Entwicklung.
+                  Wenn Sie nur eine Idee, aber kein Modell haben, dann nutzen Sie
+                  die Hilfe unseres 3D-Modellierers bei der Entwicklung.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
@@ -258,18 +258,17 @@ const buildMainSection = (conn, cat) => {
                 <p class="gotham boxTitle">Produktion</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
-                  Produktentwicklung, <a href="/prototype" class="blueLink">bei Prototypen- und Serienfertigung</a> Kontaktieren Sie unser Team mit langjähriger Erfahrung 
+                  Produktentwicklung, <a href="/prototype" class="blueLink"> Prototypen- und Serienfertigung</a> Kontaktieren Sie unser Team mit langjähriger Erfahrung 
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                  Der wichtigste Meilenstein, bevor ein Produkt auf den Markt kommt, ist die Erstellung eines Prototyps bzw. seines Prototyps
+                  Der wichtigste Meilenstein, bevor ein Produkt auf den Markt kommt, ist die Erstellung eines Prototyps bzw. einer
                   Kleinserienfertigung.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
                   Der 3D-Druck ist hierfür aufgrund seiner Geschwindigkeit und Kosteneffizienz eine hervorragende Technologie.
-                  Darüber hinaus ist es entscheidend, bevor das fertige Produkt fertig ist, etwas in die Hände potenzieller Kunden zu legen
-                  greifbar.
+                  Darüber hinaus ist es entscheidend, bevor das Produkt fertig ist, etwas greifbar in die Hände potenzieller Kunden zu legen.
                   </p>
                 </div>
               </div>
@@ -283,12 +282,12 @@ const buildMainSection = (conn, cat) => {
                   <p class="gothamNormal lh">
                   Auf Zaccord können Sie aus vielen vorgedruckten Produkten in vielen Kategorien wählen.
                   Oft findet man Produkte, die in normalen Geschäften nicht zu finden sind
-                  oder einfach viel teurer als auf der Website.
+                  oder einfach viel teurer sind.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                  Alle Produkte werden aus biologisch abbaubarem PLA-Filament gedruckt und sind daher nicht so ökologisch
-                  Platzbedarf als herkömmlicher Kunststoff.
+                  Alle Produkte werden aus biologisch abbaubarem PLA-Filament gedruckt und sind daher ökologischer
+                  als herkömmlicher Kunststoff.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
@@ -306,20 +305,19 @@ const buildMainSection = (conn, cat) => {
                 <p class="gotham boxTitle">Lithophanie</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
-                    A <a href="/print" class="blueLink">Lithofani</a> Es kann fast ein perfektes persönliches Geschenk sein
+                    A <a href="/print" class="blueLink">Lithofanie</a> kann ein perfektes persönliches Geschenk sein
                     für jeden Anlass.
-                    Überraschen Sie Ihre Lieben mit einem einzigartigen, geprägten Geschenk, das Sie sofort auf der Website bestellen können
-                    über.
+                    Überraschen Sie Ihre Lieben mit einem einzigartigen, geprägten Geschenk, das Sie sofort auf der Website bestellen können.
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                  Der Drucker erzeugt das geprägte Bild auf einer flachen oder gekrümmten Oberfläche, die eine Hintergrundbeleuchtung darstellt
-                  wird danach deutlich sichtbar sein. 
+                  Der Drucker erzeugt das geprägte Bild auf einer flachen oder gekrümmten Oberfläche, die eine Hintergrundbeleuchtung benötigt
+                  um danach deutlich sichtbar sein. 
                   </p>
                   <br>
                   <p class="gothamNormal lh">
-                  Es wird oft als Schirm für Lampen oder andere Lichtquellen verwendet, also wenn wir das Licht einschalten
-                  Oberflächen mit unterschiedlichen Schichtdicken lassen das Licht unterschiedlich stark durch und es entsteht ein monochromes Bild.
+                  Es wird oft als Schirm für Lampen oder andere Lichtquellen verwendet. Wenn Sie das Licht einschalten wird die
+                  Oberflächen mit unterschiedlichen Schichtdicken das Licht unterschiedlich stark durclassen und es entsteht ein monochromes Bild.
                   </p>
                 </div>
               </div>
@@ -329,7 +327,7 @@ const buildMainSection = (conn, cat) => {
           
           <p class="gotham align font34" style="margin-top: 60px; margin-bottom: 0; ${popProdsStyle}"
             id="popProds">
-            Legnépszerűbb Termékek
+            Die beliebtesten Produkte
           </p>
         `;
 
