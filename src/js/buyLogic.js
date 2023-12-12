@@ -363,7 +363,7 @@ const buildBuySection = (conn, paramObj, req) => {
         }
 
         output += `
-          <p class="blueHead" style="font-size: 24px;">3. Szállítási & Számlázási Adatok</p>
+          <p class="blueHead" style="font-size: 24px;">3. Versand- und Rechnungsinformationen</p>
         `;
 
         let charge = 0;
@@ -518,7 +518,7 @@ const buildBuySection = (conn, paramObj, req) => {
               <div id="submitBtnCont">
                 <button class="fillBtn btnCommon centerBtn" style="margin-top: 20px;"
                   onclick="submitOrder()" id="submitBtn">
-                  Befehl
+                  Bestellen
                 </button>
               </div>
             </span>

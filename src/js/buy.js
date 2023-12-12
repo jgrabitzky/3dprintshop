@@ -329,7 +329,7 @@ _('diffBilling').addEventListener('click', function toggleForm(e) {
     `;
 
     _('billingForm').innerHTML = `
-      <input type="text" class="dFormField" id="billingName" placeholder="Név"> 
+      <input type="text" class="dFormField" id="billingName" placeholder="Name"> 
     `; 
 
     _('billingHolder').classList = `animate__animated animate__fadeIn`;
@@ -343,10 +343,10 @@ _('diffBilling').addEventListener('click', function toggleForm(e) {
 
     res += '</section>';
     res += `
-      <input type="text" class="dFormField" id="billingPcode" placeholder="Irányítószám"> 
-      <input type="text" class="dFormField" id="billingCity" placeholder="Város"> 
+      <input type="text" class="dFormField" id="billingPcode" placeholder="Postleituahl"> 
+      <input type="text" class="dFormField" id="billingCity" placeholder="Stadt"> 
       <input type="text" class="dFormField" id="billingAddress"
-      placeholder="Cím (hsz., em., ajtó)"> 
+      placeholder="Strasse"> 
     `;
 
     if (!compAdded) {
