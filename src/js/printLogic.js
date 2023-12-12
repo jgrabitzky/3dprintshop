@@ -23,8 +23,8 @@ async function buildPrintSection(conn, req) {
   let src = req.headers['user-agent'];
   let ua = useragent.parse(src);
   let isMobile = ua.isMobile;
-  let dragDropText = isMobile ? 'Tölts fel fájlokat' : 'Húzd ide a fájlokat';
-  let connWord = isMobile ? 'és' : 'vagy';
+  let dragDropText = isMobile ? 'Daten hochladen' : 'Ziehen Sie die Dateien hierher';
+  let connWord = isMobile ? 'és' : 'oder';
 
   // Select relevant blogs
   let res = await query('SELECT * FROM blog WHERE id IN (9, 10, 7)');
@@ -44,16 +44,16 @@ async function buildPrintSection(conn, req) {
             <p class="gotham font18" style="margin-top: 0;" id="or">${connWord}</p>
             <div class="btnCommon fillBtn" id="fdzB" style="width: 60%; margin: 0 auto;
               max-width: 320px;">
-              Böngéssz
+              Durchsuchen
             </div>
             <input type="file" name="file[]" style="display: none;" id="fileInput" multiple
               >
             <input type="submit" id="submitForm" style="display: none;">
             <br>
             <p class="gotham lh">
-            Du kannst Fragen
-              <a href="/print#getQuote" class="blueLink font16">einzigartiges Preisangebot</a>
-              auch wenn Sie keine geeignete Datei zum Drucken haben
+            Fragen
+              <a href="/print#getQuote" class="blueLink font16">nach unserem einzigartiges Preisangebot</a>
+              wenn Sie keine geeignete Datei zum Drucken haben
             </p>
           </form>
         </div>
@@ -87,9 +87,8 @@ async function buildPrintSection(conn, req) {
       <div id="cpFadeHolder" style="opacity: 0;">
         <h1 class="gotham font26 align fontNorm">Präziser, schneller 3D-Druck mit sofortiger Bestellung</h1>
         <h2 class="align font18 lh fontNorm">
-        Zuverlässiger FDM- und SLA-Druck in verschiedenen Farben, auch mit flexiblem TPU. Der Zaccord
-        bietet eine Lösung für durchschnittliche Menschen, die weniger Erfahrung im 3D-Druck haben und a
-        auch für Experten.
+        Zuverlässiger FDM- und SLA-Druck in verschiedenen Farben, auch mit flexiblem TPU. Wir 
+        bieteten verschiedenste Lösungen im 3D-Druck.
         </h2>
         <p class="align">
           <a href="/printHelp" class="blueLink align">
