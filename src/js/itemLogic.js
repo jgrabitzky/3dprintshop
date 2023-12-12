@@ -83,7 +83,7 @@ const buildItemSection = (conn, itemId, req) => {
         `;
       } else {
         popularTxt = `
-          <p class="gotham ddgray">Kategória: ${category}</p>
+          <p class="gotham ddgray">Kategorie: ${category}</p>
         `;
       }
       
@@ -105,7 +105,7 @@ const buildItemSection = (conn, itemId, req) => {
               </p>
               ${popularTxt}
               <p class="gotham font14 qty" style="margin-bottom: 0;">
-                Mennyiség
+                Anzahl
               </p> 
               <div class="quantity buttons_added">
                 <input type="button" value="-" class="minus" id="minus">
@@ -118,13 +118,13 @@ const buildItemSection = (conn, itemId, req) => {
 
               <div class="broHolder flexDiv" id="broHolder">
                 <button class="fillBtn btnCommon bros" onclick="buyItem(${id})">
-                  Vásárlás
+                  Jetzt kaufen
                 </button> 
                 <button class="fillBtn btnCommon bros" onclick="addToCart(${id})">
-                  Kosárba
+                  In den Warenkorb
                 </button>
                 <button class="fillBtn btnCommon bros" id="view3D">
-                  3D
+                  3D Ansicht
                 </button>
               </div>
 
@@ -207,7 +207,7 @@ const buildItemSection = (conn, itemId, req) => {
             output += `
               <hr class="hrStyle">
                 <p id="spec" class="align gotham" style="font-weight: 500;">
-                  Ezek is érdekelhetnek
+                  Das könnte ihnen auch gefallen
                 </p>
                 <div class="flexDiv" style="flex-wrap: wrap;">   
             `;
