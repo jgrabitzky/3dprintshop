@@ -362,7 +362,7 @@ async function buildPrintSection(conn, req) {
         Anfrage für
         </h2>
         <h2 class="align font18 lh fontNorm">
-        Wenn Sie eine Einzelbestellung aufgeben möchten oder nicht, liegen die Dateien, die Sie drucken möchten, im Dateiformat vor
+        Wenn Sie eine Einzelbestellung aufgeben möchten, laden Sie die Dateien die Sie drucken möchten, im Dateiformat vor
         Ihre Modelle, dann kontaktieren Sie uns gerne in Form einer Angebotsanfrage.
         </h2>
         <div class="flexDiv" style="flex-wrap: wrap;" id="normalDiv">
