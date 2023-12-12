@@ -92,20 +92,20 @@ const buildBuySection = (conn, paramObj, req) => {
         let cQuery = 'SELECT * FROM fix_products WHERE id = ? LIMIT 1'; 
         conn.query(cQuery, [product], (err, result, field) => {
           if (err) {
-            reject('Egy nem várt hiba történt, kérlek próbáld újra');
+            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
             return;
           }
 
           // Product does not exist
           if (result.length < 1) {
-            reject('Nincs ilyen termék');
+            reject('Es gibt kein solches Produkt');
             return;
           }
 
           // Product exists, now validate params
           validateParams(conn, paramObj).then(res => {
             if (!res) {
-              reject('Hibás paraméter érték');
+              reject('Falscher Parameterwert');
               return;
             }
 
@@ -163,7 +163,7 @@ const buildBuySection = (conn, paramObj, req) => {
         // Validate params
         validateParams(conn, paramObj).then(res => {
           if (!res) {
-            reject('Hibás paraméter érték');
+            reject('Falscher Parameterwert');
             return;
           }
           
@@ -194,7 +194,7 @@ const buildBuySection = (conn, paramObj, req) => {
 
             // If model is printed with SLA make sure that it's not too large
             if (tech == 'SLA' && !shouldAllowSLA(filePath, scale)) {
-              reject('Az STL file túl nagy az SLA nyomtatáshoz'); 
+              reject('Die STL-Datei ist zu groß für den SLA-Druck'); 
               return;
             }
 
@@ -293,7 +293,7 @@ const buildBuySection = (conn, paramObj, req) => {
         });
       }).catch(err => {
         console.log(err);
-        reject('Egy nem várt hiba történt, kérlek próbáld újra');
+        reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
         return;
       });
     }
@@ -330,7 +330,7 @@ const buildBuySection = (conn, paramObj, req) => {
       return new Promise((resolve, reject) => {
         let output = `
           </div>
-          <p class="blueHead" style="font-size: 24px;">2. Szállítás Módja</p>
+          <p class="blueHead" style="font-size: 24px;">2. Art der Lieferung</p>
         `;
 
         let sortedKeys = [];
@@ -367,7 +367,7 @@ const buildBuySection = (conn, paramObj, req) => {
         `;
 
         let charge = 0;
-        if (discountText != '(3% kedvezmény)') charge += DEFAULT_SHIPPING_PRICE;
+        if (discountText != '(3% Rabatt)') charge += DEFAULT_SHIPPING_PRICE;
 
         genDelivery(conn, userID, !!userID).then(result => {
           output += result;
@@ -375,7 +375,7 @@ const buildBuySection = (conn, paramObj, req) => {
           // Provide 'different billing address' form
           output += `
             <div class="align" style="margin: 10px 0 20px 0;" id="normalBac">
-              <label class="chCont">Cégként vásárolok
+              <label class="chCont">Ich kaufe als Unternehmen
                 <input type="checkbox" id="compNormal"
                   onchange="companyBilling('normalCompname', 'normalCompnum', 'normal',
                     'normalDiv')">
@@ -384,7 +384,7 @@ const buildBuySection = (conn, paramObj, req) => {
             </div>
  
             <button class="btnCommon fillBtn pad centr" id="diffBilling">
-              Eltérő számlázási cím
+            Abweichende Rechnungsadresse
             </button>
             <div id="billingHolder">
               <div id="billingForm" class="flexDiv"
@@ -393,23 +393,23 @@ const buildBuySection = (conn, paramObj, req) => {
               </div>
             </div>
 
-            <textarea placeholder="Megjegyzés a rendeléshez (nem kötelező)" id="comment" class="dFormField"></textarea>
+            <textarea placeholder="Kommentar zur Bestellung (optional)" id="comment" class="dFormField"></textarea>
             
             <p class="align" style="color: #676767">
-              Ha szeretnéd követni a rendelésed státuszát, akkor <a href="/register" class="blueLink font16">regisztrálj</a>
-              egy fiókot.
-              Ellenkező esetben csak emailen keresztül fogunk értesíteni a csomag állapotáról.
+            Wenn Sie den Status Ihrer Bestellung verfolgen möchten, dann <a href="/register" class="blueLink font16">Registrieren</a>
+            Sie sich und ein Konto.
+            Andernfalls benachrichtigen wir Sie ausschließlich per E-Mail über den Status des Pakets.
             </p>
 
             <p class="blueHead" style="font-size: 24px;">
-              4. Válassz Fizetési Módot
+              4. Wählen Sie die Zahlungsmethode
             </p>
 
             <label class="container trans" id="uvetCont">
-              <div style="padding-bottom: 0;">Utánvétel</div>
+              <div style="padding-bottom: 0;">Barzahlung bei Lieferung</div>
               <div class="lh sel">
-                Ez esetben a csomag kiszállítása után történik meg a fizetés készpénzzel vagy
-                bankkártyával és a futárcég ${MONEY_HANDLE} Ft kezelési költséget számol fel.
+              In diesem Fall erfolgt die Zahlung in bar oder nach Zustellung des Pakets
+              mit einer Bankkarte und das Kurierunternehmen erhebt eine Bearbeitungsgebühr von ${MONEY_HANDLE}.
               </div>
               <input type="radio" name="radio" id="uvet">
               <span class="checkmark"></span>
@@ -417,7 +417,7 @@ const buildBuySection = (conn, paramObj, req) => {
             
             <div class="plOuter" id="plOuter">
               <div class="plBlueHeader gotham align font28">
-                Fizetés 
+              Zahlung 
               </div>
               <div class="plFormCont align">
                 <form id="checkout" action="#" method="POST">
@@ -429,7 +429,7 @@ const buildBuySection = (conn, paramObj, req) => {
                     <img class="cardLogos visa" src="/images/paylikeImages/visa.svg">
                   </div>
                   <div>
-                    <label for="card-expiry" class="gotham plLabel">Lejárati Dátum</label>
+                    <label for="card-expiry" class="gotham plLabel">Ablaufdatum</label>
                     <input type="text" id="card-expiry" class="card-expiry dFormField plField"
                       placeholder="HH  /  ÉÉ" pattern="[0-9]{2}  /  ([0-9]{2}|[0-9]{4})" required />
                   </div>
@@ -446,17 +446,17 @@ const buildBuySection = (conn, paramObj, req) => {
                 </div>
               </div>
               <div class="plBlueBottom gotham flexDiv trans" id="plBtnUI">
-                <div>Fizetés</div>
+                <div>Zahlung</div>
                 <div id="plAmountDyn"></div>
               </div>
             </div>
 
             <label class="container trans" id="paylikeCont">
-              <div style="padding-bottom: 0;">Bankkártyás fizetés</div>
+              <div style="padding-bottom: 0;">Kreditkarten Zahlung</div>
               <div class="lh sel">
-                Visa és Mastercard bankkártyával való fizetés a Paylike rendszerén
-                keresztül.
-                Az összeg csak a megrendelés után lesz levéve a kártyáról.
+              Bezahlen mit den Bankkarten Visa und Mastercard im Paylike-System
+              über.
+              Der Betrag wird erst nach der Bestellung von der Karte abgebucht.
                 <span id="plInfoHolder">
                 </span>
               </div>
@@ -465,15 +465,15 @@ const buildBuySection = (conn, paramObj, req) => {
             </label>
             
             <label class="container trans" id="btransfer" style="margin-bottom: 30px;">
-              <div style="padding-bottom: 0;">Banki előre utalás</div>
+              <div style="padding-bottom: 0;">Banküberweisung im Voraus</div>
               <div class="lh sel">
-                Ilyenkor az alábbi számlára való utalással fizethetsz:
+              In solchen Fällen können Sie per Überweisung auf folgendes Konto bezahlen:
                 <span class="blue">${BA_NUM}</span><br>
                 Kedvezményezett neve: <span class="blue">${BA_NAME}</span><br>
                 Fontos, hogy a közleményben tüntetsd fel az alábbi azonosítót:
                 <span class="blue">${orderIDDisplay}</span>
                 <br>
-                A termékek nyomtatását csak az összeg megérkezése után kezdjük el.
+                Erst nach Zahlungseingang beginnen wir mit dem Druck der Produkte.
               </div>
               <input type="radio" name="radio" id="transfer">
               <span class="checkmark"></span>
@@ -484,8 +484,8 @@ const buildBuySection = (conn, paramObj, req) => {
               <p class="align">
                 <label class="chCont note ddgray"
                   style="font-family: 'Roboto', sans-serif; font-size: 14px;">
-                  Elolvastam és elfogadom az
-                  <a href="/aszf" class="blueLink font14">Általános Szerződési Feltételeket</a>
+                  Ich habe es gelesen und akzeptiere die
+                  <a href="/aszf" class="blueLink font14">Allgemeine Geschäftsbedingungen</a>
                   <input type="checkbox" id="agree">
                   <span class="cbMark"></span>
                 </label>
@@ -493,8 +493,8 @@ const buildBuySection = (conn, paramObj, req) => {
               <p class="align">
                 <label class="chCont note ddgray"
                   style="font-family: 'Roboto', sans-serif; font-size: 14px;">
-                  Elolvastam és elfogadom az
-                  <a href="/nyilatkozat" class="blueLink font14">Adatvédelmi Nyilatkozatot</a>
+                  Ich habe es gelesen und akzeptiere die
+                  <a href="/nyilatkozat" class="blueLink font14">Datenschutzerklärung</a>
                   <input type="checkbox" id="agree2">
                   <span class="cbMark"></span>
                 </label>
@@ -502,23 +502,23 @@ const buildBuySection = (conn, paramObj, req) => {
               <p class="align">
                 <label class="chCont note ddgray"
                   style="font-family: 'Roboto', sans-serif; font-size: 14px;">
-                  Elektronikus számlát kérek
+                  Ich möchte eine elektronische Rechnung
                   <input type="checkbox" id="einvoice" checked>
                   <span class="cbMark"></span>
                 </label>
               </p>
               <p class="align bold" id="finalPrice">
                 <span style="color: #4285f4;">
-                  Végösszeg:
+                Endbetrag:
                 </span>
                 <span id="fPrice">${Math.round(finalPrice + charge)}</span>
                 Ft ${discountText}
-                (szállítással együtt)
+                (inklusive Lieferung)
               </p>
               <div id="submitBtnCont">
                 <button class="fillBtn btnCommon centerBtn" style="margin-top: 20px;"
                   onclick="submitOrder()" id="submitBtn">
-                  Megrendelés
+                  Befehl
                 </button>
               </div>
             </span>
@@ -528,7 +528,7 @@ const buildBuySection = (conn, paramObj, req) => {
           resolve(output);
         }).catch(err => {
           console.log(err);
-          reject('Egy nem várt hiba történt, kérlek próbáld újra');
+          reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
           return;
         });
       });
@@ -593,12 +593,12 @@ const buildBuySection = (conn, paramObj, req) => {
               resolve(output);
             }).catch(err => {
               console.log(err);
-              reject('Egy nem várt hiba történt, kérlek próbáld újra');
+              reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
               return;
             });
           }).catch(err => {
             console.log(err);
-            reject('Egy nem várt hiba történt, kérlek próbáld újra');
+            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
             return;
           });
           return;
@@ -626,12 +626,12 @@ const buildBuySection = (conn, paramObj, req) => {
               resolve(output);
             }).catch(err => {
               console.log(err);
-              reject('Egy nem várt hiba történt, kérlek próbáld újra');
+              reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
               return;
             });
           }).catch(err => {
             console.log(err);
-            reject('Egy nem várt hiba történt, kérlek próbáld újra');
+            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
             return;
           });
         } else {
@@ -663,11 +663,11 @@ const buildBuySection = (conn, paramObj, req) => {
               output += '</section>';
               resolve(output);
             }).catch(err => {
-              reject('Egy nem várt hiba történt, kérlek próbáld újra');
+              reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
               return;
             });
           }).catch(err => {
-            reject('Egy nem várt hiba történt, kérlek próbáld újra');
+            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
             return;
           });        
         }
@@ -780,12 +780,12 @@ const buildBuySection = (conn, paramObj, req) => {
             resolve(output);
           }).catch(err => {
             console.log(err);
-            reject('Egy nem várt hiba történt, kérlek próbáld újra');
+            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
             return;
           });
         }).catch(err => {
           console.log(err);
-          reject('Egy nem várt hiba történt, kérlek próbáld újra');
+          reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
           return;
         });
       }
