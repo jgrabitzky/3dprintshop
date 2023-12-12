@@ -21,7 +21,7 @@ const buildAccountSection = (conn, userID) => {
       // Fetch items & parameters from db
       conn.query(sQuery, [userID], function getOrders(err, result, field) {
         if (err) {
-          reject('Egy nem várt hiba történt, kérlek próbáld újra');
+          reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
           return;
         }
 
@@ -31,7 +31,7 @@ const buildAccountSection = (conn, userID) => {
             <div>
               <img src="/images/icons/orderHistory.png" class="emptyCart">
               <p class="dgray align font22">
-                Úgy tűnik, hogy eddig még nem adtál le rendelést
+              Falsche E-Mail-Adresse oder falsches Passwort. Es scheint, dass Sie noch keine Bestellung aufgegeben haben
               </p>
             </div>
           `;
@@ -46,13 +46,13 @@ const buildAccountSection = (conn, userID) => {
             showMoreBtn = `
               <div id="moreHolder" class="align">
                 <button class="fillBtn btnCommon" id="moreOrders" style="margin: 0;">
-                  További rendelések
+                Weitere Bestellungen
                 </button>
               </div>
               <div id="allOrders">
               </div>
               <p class="align note ddgray">
-                A rendelés árak nem tartalmazzák a szállítási és egyéb költségeket!
+              Die Bestellpreise verstehen sich zuzüglich Versand und sonstiger Kosten!
               </p>
             `;
           }
@@ -67,26 +67,26 @@ const buildAccountSection = (conn, userID) => {
               <div class="errorBox" id="errStatusDel"></div>
               <div class="successBox" id="succStatusDel"></div>
               <button class="fillBtn btnCommon centerBtn" id="cDel">
-                Megváltoztatás
+              Ändern
               </button>
               <p class="note align ddgray">
-                A szállítási adatok megváltoztatása akárhányszor lehetséges és vásárláskor is 
-                átírható!
+              Sie können die Lieferdaten so oft wie möglich und zum Zeitpunkt des Kaufs ändern
+              kann umgeschrieben werden!
               </p>
               <hr class="hrStyle">
               <div class="flexDiv" style="flex-wrap: wrap; justify-content: space-evenly;">
                 <input type="password" class="dFormField" id="cpass"
-                  placeholder="Jelenlegi jelszó">
-                <input type="password" class="dFormField" id="pass" placeholder="Új jelszó">
-                <input type="password" class="dFormField" id="rpass" placeholder="Jelszó újra">
+                  placeholder="Aktuelles Passwort">
+                <input type="password" class="dFormField" id="pass" placeholder="Új Neues Passwort">
+                <input type="password" class="dFormField" id="rpass" placeholder="Passwort wiederholen">
               </div>
               <div class="errorBox" id="errStatusPass"></div>
               <div class="successBox" id="succStatusPass"></div>
               <button class="fillBtn btnCommon centerBtn" id="cPass">
-                Megváltoztatás
+              Ändern
               </button>
               <p class="note align ddgray">
-                A jelszónak minimum 6 karakter hosszúnak kell lennie!
+              Das Passwort muss mindestens 6 Zeichen lang sein!
               </p>
             `;
             output += '</section>';
@@ -95,7 +95,7 @@ const buildAccountSection = (conn, userID) => {
         });
       });
     }).catch(err => {
-      reject('Nincs ilyen felhasználó');
+      reject('Kein solcher Benutzer');
     });
   });
 }
