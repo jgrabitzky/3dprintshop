@@ -262,15 +262,15 @@ function submitOrder() {
         _('main').innerHTML = `
           <img src="/images/icons/deliver.png" width="100">
 
-          <p class="gotham font24" style="color: #4285f4;">Sikeres rendelés!</p>
+          <p class="gotham font24" style="color: #4285f4;">Erfolgreiche Bestellung!</p>
           <p class="align dgray lh">
-            A termékek legkésőbb a rendelés napjától számított 10. munkanapon házhoz lesznek
-            szállítva.<br>
-            Köszönjük, hogy a Zaccordot választottad!
+          Die Produkte werden spätestens am 10. Werktag ab dem Tag der Bestellung zu Ihnen nach Hause geliefert
+          geliefert.<br>
+          Vielen Dank, dass Sie sich für Zaccord entschieden haben!
           </p>
           <button class="btnCommon fillBtn" style="margin: 20px auto;"
           onclick="window.location.href='/'">
-            Vissza a főoldalra
+          Zurück zur Hauptseite
           </button>
         `;
         updateCartNum();
