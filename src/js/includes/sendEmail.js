@@ -43,11 +43,12 @@ function sendEmail(from, content, email, subject, attachmentPath = null) {
     `;
 
     var mailOptions = {
-      from: `Zaccord <${from}>`,
+      from: '"Grabitzky" <info@grabitzky.com>',
       to: email,
       subject: subject,
       html: emailContent,
     };
+    console.log("Message sent: %s", info.messageId);
 
     if (attachmentPath) {
       mailOptions.attachments = [{
