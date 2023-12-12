@@ -42,7 +42,7 @@ const forgotPassword = (conn, email) => {
           </p>
         `;
 
-        sendEmail('info@zaccord.com', emailContent, email, subject);
+        sendEmail('info@grabitzky.com', emailContent, email, subject);
         resolve('success');
       });
     });

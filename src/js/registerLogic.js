@@ -49,7 +49,7 @@ const userRegister = (conn, formData, req) => {
         `;
         let subject = 'Köszöntünk a Zaccordon!';
 
-        sendEmail('info@zaccord.com', emailContent, email, subject);
+        sendEmail('info@grabitzky.com', emailContent, email, subject);
 
         // Insert user to delivery_data table
         let sQuery = 'SELECT id FROM users WHERE email = ? LIMIT 1';

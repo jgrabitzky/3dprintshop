@@ -88,7 +88,7 @@ const sendConfEmail = (conn, uid, delType, glsCode) => {
             </div>
           `;
           let subject = 'A csomagod átadtuk a futárszolgálatnak! - Azonosító: ' + uid;
-          sendEmail('info@zaccord.com', emailContent, emailAddr, subject);
+          sendEmail('info@grabitzky.com', emailContent, emailAddr, subject);
           
           resolve('success');
         });

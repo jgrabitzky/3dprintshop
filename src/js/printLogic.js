@@ -145,7 +145,7 @@ async function buildPrintSection(conn, req) {
             <br><br>
             Wenn Sie ein anderes Dateiformat haben oder eine individuelle Bestellung aufgeben möchten, dann
             Fordern Sie ein individuelles Angebot an <a class="blueLink font18 goToQuote">am Ende der Seite</a>
-            Schreiben Sie uns eine E-Mail <a href="mailto:info@zaccord.com" class="blueLink font18">info@zaccord.com</a>
+            Schreiben Sie uns eine E-Mail <a href="mailto:info@grabitzky.com" class="blueLink font18">info@grabitzky.com</a>
             címre.
           </h2>
         </div>
@@ -388,7 +388,7 @@ async function buildPrintSection(conn, req) {
       Für Serienproduktion oder Prototypenfertigung besuchen Sie uns
         <a class="blueLink font18" href="/prototype">Prototípusgyártás</a> Du bist auf der Seite
         kontaktiere uns unter
-        <a class="blueLink font18" href="mailto:info@zaccord.com">info@zaccord.com</a>
+        <a class="blueLink font18" href="mailto:info@grabitzky.com">info@grabitzky.com</a>
         per E-Mail-Adresse.
       <p>
     </section>

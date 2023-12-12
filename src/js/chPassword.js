@@ -64,7 +64,7 @@ const chPassword = (conn, userID, formData) => {
               </p>
             `;
             let subject = 'Sikeres jelszóváltoztatás!';
-            sendEmail('info@zaccord.com', emailContent, email, subject);
+            sendEmail('info@grabitzky.com', emailContent, email, subject);
             
             // Successful change
             resolve('password changed');

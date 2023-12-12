@@ -622,13 +622,13 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                       filename: `E-számla - Zaccord 3D nyomtatás (${uniqueID}).pdf`,
                       path: path.join(__dirname, '..', '..', 'e-invoices', uniqueID + '.pdf')
                     };
-                    sendEmail('info@zaccord.com', emailContent, email, subject, attachmentOptions);
+                    sendEmail('info@grabitzky.com', emailContent, email, subject, attachmentOptions);
                   }).catch(err => {
                     console.log(err);
                     reject('Egy nem várt hiba történt, kérlek próbáld újra');
                   }); 
                 } else {
-                  sendEmail('info@zaccord.com', emailContent, email, subject);
+                  sendEmail('info@grabitzky.com', emailContent, email, subject);
                 }
 
                 // Send a notification email to us about every new order

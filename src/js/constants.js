@@ -5,7 +5,7 @@ const fs = require('fs');
 // Constant variables used for shopping & delivery, product customization
 // NOTE: change these values if you want to use these features
 const EMAIL_HOST_NAME = 'zaccord.com';
-const EMAIL_USER_NAME = 'info@zaccord.com';
+const EMAIL_USER_NAME = 'info@grabitzky.com';
 const EMAIL_PASSWORD = 'Render11Render11';
 const PAYLIKE_ID = '3105ef0c-fbe6-484c-add3-f71538d0d959';
 const SESSION_SECRET = 'oKTgDM!A%fXH%J)Vf=90swRXnrJIZH80(vpeL8YV_zt2UdO!dbCDjQJWfuf:iF8R3O';
