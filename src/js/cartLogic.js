@@ -185,7 +185,7 @@ const buildCartSection = (conn, req) => {
 
                 <div class="flexDiv prodInfo" id="uniqueCont_${tid}">
                   <div id="unitPrice_${tid}">
-                    <p>Egységár: <span id="priceHolder_${tid}">${actualPrice}</span> Ft</p>
+                    <p>Einzelpreis: <span id="priceHolder_${tid}">${actualPrice}</span> Ft</p>
                   </div>
             `;
             
@@ -194,7 +194,7 @@ const buildCartSection = (conn, req) => {
                 output += `
                       <div>
                         <p>
-                          Rétegvastagság:
+                        Schichtdicke:
                           <select class="specSelect chItem" id="rvas${tid}"
                             onchange="updateSpecs(this, ${price}, '${tid}', false, ${isCP})">
                 `;
@@ -210,7 +210,7 @@ const buildCartSection = (conn, req) => {
                       </div>
                       <div>
                         <p>
-                          Sűrűség:
+                        Dichte:
                           <select class="specSelect chItem" id="suruseg${tid}"
                             onchange="updateSpecs(this, ${price}, '${tid}', false, ${isCP})">
                 `;
@@ -231,7 +231,7 @@ const buildCartSection = (conn, req) => {
                 output += `
                       <div>
                         <p>
-                          Rétegvastagság:
+                        Schichtdicke:
                           <select class="specSelect chItem" id="rvas${tid}"
                             onchange="updateSpecs(this, ${price}, '${tid}', false, ${isCP}, true)">
                 `;
@@ -247,7 +247,7 @@ const buildCartSection = (conn, req) => {
                       </div>
                       <div>
                         <p>
-                          Sűrűség:
+                        Dichte:
                           <select class="specSelect chItem" id="suruseg${tid}"
                             onchange="updateSpecs(this, ${price}, '${tid}', false, ${isCP}, true)">
                 `;
@@ -269,7 +269,7 @@ const buildCartSection = (conn, req) => {
               output += `
                     <div id="scaleDiv_${tid}">
                       <p>
-                        Méretezés:
+                      Größenbestimmung:
                         <select class="specSelect chItem" id="scale${tid}"
                           onchange="updateSpecs(this, ${price}, '${tid}', false, ${isCP}, ${isSLA})">
               `;
@@ -291,7 +291,7 @@ const buildCartSection = (conn, req) => {
                 output += `
                     <div>
                       <p>
-                        Falvastagság:
+                      Wandstärke:
                         <select class="specSelect chItem" id="fvas${tid}"
                           onchange="updateSpecs(this, ${price}, '${tid}', false, ${isCP})">
                 `;
@@ -313,7 +313,7 @@ const buildCartSection = (conn, req) => {
                   output += `
                     <div>
                       <p>
-                        Anyag:
+                      Material:
                         <select class="specSelect chItem" id="printMat${tid}"
                           onchange="updateSpecs(this, ${price}, '${tid}', false, ${isCP})">
 
@@ -335,7 +335,7 @@ const buildCartSection = (conn, req) => {
               output += `
                   <div>
                     <p> 
-                      Forma:
+                      Form:
                       <select class="specSelect chItem" id="sphere${tid}"
                         onchange="updateLit('sphere', 'sphere${tid}', '${tid}')">
               `;
@@ -356,7 +356,7 @@ const buildCartSection = (conn, req) => {
               output += `
                     <div>
                       <p> 
-                        Méret:
+                      Größe:
                         <select class="specSelect chItem" id="size${tid}"
                           onchange="${selQuan}">
               `;
@@ -381,7 +381,7 @@ const buildCartSection = (conn, req) => {
             output += `
                   <div id="colorDiv_${tid}">
                     <p> 
-                      Szín:
+                    Farbe:
                       <select class="specSelect chItem" id="color${tid}"
                         onchange="chColor(this, '${tid}')">
             `;
@@ -408,7 +408,7 @@ const buildCartSection = (conn, req) => {
                   </div>
                   <div id="quantityDiv_${tid}">
                     <p>
-                      Mennyiség:
+                    Menge:
                       <select class="specSelect chItem" id="quantity${tid}"
                         onchange="${selQuan}">
             `;
@@ -430,7 +430,7 @@ const buildCartSection = (conn, req) => {
               output += `
                   <div id="printTechDiv_${tid}">
                     <p>
-                      Technológia:
+                    Technologie:
                       <select class="specSelect chItem" id="printTech${tid}"
                         onchange="changeTech('${printTech}', '${tid}', ${price})">
               `;
@@ -505,13 +505,13 @@ const buildCartSection = (conn, req) => {
         output += `
           <p class="align bold" id="finalPrice">
             <span style="color: #4285f4;">
-              Végösszeg:
+            Endbetrag:
             </span>
             ${finalPrice}
             ${ePriceText}
           </p>
           <div class="infoBox" id="infoLogin"></div>
-          <button class="fillBtn btnCommon centerBtn" id="buyCart">Tovább a fizetéshez</button> 
+          <button class="fillBtn btnCommon centerBtn" id="buyCart">Weiter zur Zahlung</button> 
         `;
         output += '</section>';
         output += `
