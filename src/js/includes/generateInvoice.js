@@ -224,7 +224,7 @@ const generateInvoice = (conn, formData) => {
             
             setTimeout(function downloadPDF() {
               request(options, (err, res, body) => {
-                let pathName = path.join(__dirname, '..', '..', 'e-invoices', uniqueID + '.pdf');
+                let pathName = path.join(__dirname, '..', 'e-invoices', uniqueID + '.pdf');
                 fs.writeFile(pathName, body, err => {
                   if (err) {
                     console.log(err);
