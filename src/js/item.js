@@ -99,7 +99,7 @@ function addToCart(id) {
             }
             itemsSoFar['content_' + cid]['quantity_' + cid] = tmpQuantity + quantity;
             setCookie('cartItems', JSON.stringify(itemsSoFar), 365);
-            statusFill('succBox', 'A terméket sikeresen a kosárba helyezted');
+            statusFill('succBox', 'Sie haben das Produkt erfolgreich in den Warenkorb gelegt');
             _('broHolder').style.marginBottom = "20px";
             updateCartNum();
             return;
@@ -118,7 +118,7 @@ function addToCart(id) {
   // Update the number of items in cart on UI
   updateCartNum();
 
-  statusFill('succBox', 'A terméket sikeresen a kosárba helyezted');
+  statusFill('succBox', 'Sie haben das Produkt erfolgreich in den Warenkorb gelegt');
   _('broHolder').style.marginBottom = "20px";
 
   // Add fb tracking for ads

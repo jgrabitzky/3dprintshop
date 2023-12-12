@@ -31,7 +31,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
   } else {
     output += `
       <div>
-        <p>Egységár: ${data.price} Ft</p>
+        <p>Einzelpreis: ${data.price} Ft</p>
       </div>
     `;
 
@@ -40,24 +40,24 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
       if (printTech == 'SLA') postfix = '';
       output += `
         <div>
-          <p>Rétegvastagság: ${data.rvas}mm</p>
+          <p>Schichtdicke: ${data.rvas}mm</p>
         </div>
         <div>
-          <p>Sűrűség: ${data.suruseg}${postfix}</p>
+          <p>Dichte: ${data.suruseg}${postfix}</p>
         </div>
       `;
     }
 
     output += `
       <div>
-        <p>Szín: ${decodeURIComponent(data.color)}</p>
+        <p>Farbe: ${decodeURIComponent(data.color)}</p>
       </div>
     `;
 
     if (isCP) {
       output += `
         <div>
-          <p>Anyag: ${data.printMat}</p>
+          <p>Material: ${data.printMat}</p>
         </div>
       `;
     }
@@ -65,7 +65,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
     if (isCP) {
       output += `
         <div>
-          <p>Technológia: ${data.tech}</p>
+          <p>Technologie: ${data.tech}</p>
         </div>
       `;
     }
@@ -73,24 +73,24 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
     if (!isLit) {
       output += `
         <div>
-          <p>Méretezés: x${data.scale}</p>
+          <p>Größenbestimmung: x${data.scale}</p>
         </div>
       `;
 
       if (printTech != 'SLA') {
         output += `
           <div>
-            <p>Falvastagság: ${data.fvas}mm</p>
+            <p>Wandstärke: ${data.fvas}mm</p>
           </div>
         `;
       }
     } else {
       output += `
         <div>
-          <p>Forma: ${data.sphere}</p>
+          <p>Bilden: ${data.sphere}</p>
         </div>
         <div>
-          <p>Méret: ${data.size.split('x').map(v => Number(v).toFixed(2)).join('x')
+          <p>Größe: ${data.size.split('x').map(v => Number(v).toFixed(2)).join('x')
             .replace(/x/g, 'mm x ') + 'mm'}</p>
         </div>
       `; 
@@ -98,7 +98,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
 
     output += `
       <div>
-        <p>Mennyiség: ${data.quantity}db</p>
+        <p>Menge: ${data.quantity}db</p>
       </div>
     `;
 
@@ -107,7 +107,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
       let text = data.stat ? 'kinyomtatva' : 'folyamatban';
       output += `
         <div>
-          <p>Státusz: <span class="${className}">${text}</span></p>
+          <p>Status: <span class="${className}">${text}</span></p>
         </div>
       `;
     }
@@ -115,7 +115,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
     if (data.finalPO) {
       output += `
         <div>
-          <p>Fizetési mód: ${data.finalPO}</p>
+          <p>Zahlung: ${data.finalPO}</p>
         </div>
       `;
     }
@@ -123,7 +123,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
     if (isOrderTime) {
       output += `
         <div>
-          <p>Rendelési idő: ${data.orderTime}</p>
+          <p>Geschäftszeiten: ${data.orderTime}</p>
         </div>
       `;
     }
@@ -131,7 +131,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
     if (isUID) {
       output += `
         <div>
-          <p>Azonosító: <span class="blue">${data.uid}</span></p>
+          <p>Identifikation: <span class="blue">${data.uid}</span></p>
         </div>
       `;
     }
@@ -139,7 +139,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
 
   output += `
         <div>
-          <p class="bold">Összesen: ${data.quantity * data.price} Ft</p>
+          <p class="bold">Insgesamt: ${data.quantity * data.price} Ft</p>
         </div>
       </div>
       <div class="clear"></div>
