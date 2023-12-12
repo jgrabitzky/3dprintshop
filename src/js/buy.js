@@ -416,8 +416,8 @@ let toggleStates = {
 
 function companyBilling(nameID, numID, id, container) {
   if (!toggleStates[id]) {
-    let compName = createInput(nameID, 'Cégnév');
-    let compNum = createInput(numID, 'Adószám');
+    let compName = createInput(nameID, 'Name der Firma');
+    let compNum = createInput(numID, 'Steuernummer');
     _(container).appendChild(compName); 
     _(container).appendChild(compNum); 
     toggleStates[id] = true;

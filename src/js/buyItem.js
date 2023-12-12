@@ -112,22 +112,22 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
 
     // Make sure both fields are set and valid
     if ((!normalCompname && normalCompnum) || (normalCompname && !normalCompnum)) {
-      reject('Kérlek add meg mindkét adatot a cégről');
+      reject('Bitte geben Sie beide Angaben zum Unternehmen ein');
       return;
     }
 
-    let billingEmail = 'Megegyezik a szállítási címmel';
+    let billingEmail = 'Es stimmt mit der Lieferadresse überein';
     if (billingType !== 'same') {
       billingEmail = `
-        <div><b>Név: </b>${billingName}</div>
-        <div><b>Ország: </b>${billingCountry}</div>
-        <div><b>Cím: </b>${billingPcode} ${billingCity}, ${billingAddress}</div>
+        <div><b>Name: </b>${billingName}</div>
+        <div><b>Stadt: </b>${billingCountry}</div>
+        <div><b>Adresse: </b>${billingPcode} ${billingCity}, ${billingAddress}</div>
       `;    
 
       if (billingCompname) {
         billingEmail += `
-          <div><b>Cégnév: </b>${billingCompname}</div>
-          <div><b>Adószám: </b>${billingCompnum}</div>
+          <div><b>Firma: </b>${billingCompname}</div>
+          <div><b>Steuer ID: </b>${billingCompnum}</div>
         `;
       }
     }
@@ -142,21 +142,21 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
 
     if (billingType != 'same') {      
       if (!billingName || !billingCountry || !billingPcode || !billingCity || !billingAddress) {
-        reject('Kérlek tölts ki minden számlázási adatot');
+        reject('Bitte geben Sie alle Rechnungsinformationen ein');
         return;
       } else if (COUNTRIES.indexOf(billingCountry) < 0) {
         // Make sure the country is in the list of supported countries
-        reject('Kérlek válassz egy érvényes országot');
+        reject('Bitte wählen Sie ein gültiges Land aus');
         return;
       } else if (!Number.isInteger(billingPcode) || billingPcode < 1000 || 
         billingPcode > 9985) {
-        reject('Kérlek valós irányítószámot adj meg');
+        reject('Bitte geben Sie eine echte Postleitzahl ein');
         return;
       }
       
       if (billingType == 'diffYes') {
         if (!billingCompname || !billingCompnum) {
-          reject('Kérlek tölts ki minden céges számlázási adatot');
+          reject('Bitte geben Sie alle Rechnungsinformationen des Unternehmens ein');
           return;
         }
       }
@@ -188,7 +188,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
         // Validate prices
         for (let d of dDataArr) {
           if (!validatePrices(PRINT_MULTS, d)) {
-            return reject('Hibás ár');
+            return reject('Falscher Preis');
           }
           let p = d.price;
           localFinalPrice += p * d.quantity;
@@ -199,35 +199,35 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
 
         // Make sure the final price is valid
         if (Math.round(finalPrice) != Math.round(localFinalPrice * discount)) {
-          reject('Hibás végösszeg');
+          reject('Falsche Summe');
           return;
         }
 
         let priceWithoutDiscount = localFinalPrice; 
 
         if (!name || !city || !address || !mobile || !pcode || !payment) {
-          reject('Hiányzó szállítási információ'); 
+          reject('Fehlende Lieferinformationen'); 
           return;
         } else if (payment == 'credit' && !transactionID) {
-          reject('Add hozzá a bankkártyádat a fizetéshez'); 
+          reject('Fügen Sie zum Bezahlen Ihre Bankkarte hinzu'); 
         // Validate postal code
         } else if (!Number.isInteger(pcode) || pcode < 1000 || pcode > 9985) {
-          reject('Hibás irányítószám'); 
+          reject('Falsche Postleitzahl'); 
           return;
         // Make sure there is a valid shipping price
         } else if ((priceWithoutDiscount <= FREE_SHIPPING_LIMIT && shippingPrice != SHIPPING_PRICE)
           || (priceWithoutDiscount > FREE_SHIPPING_LIMIT && shippingPrice != 0)) {
           console.log(shippingPrice, SHIPPING_PRICE);
-          reject('Hibás szállítási ár');
+          reject('Falscher Versandpreis');
           return;
         // Make sure delivery type is valid
         } else if (DELIVERY_TYPES.indexOf(deliveryType) < 0) {
-          reject('Válassz szállítási módot');
+          reject('Wählen Sie eine Versandart');
           return;
         // Make sure that the necessary packet point fields are set
         } else if (isPP
           && (!packetID || !packetName || !packetZipcode || !packetCity || !packetAddress)) {
-          reject('Hiányzó csomagpont adatok');
+          reject('Fehlende Paketpunktdaten');
           return; 
         }
 
@@ -288,7 +288,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                 resolve([v[0] * scale * quantity, v[1]]);
               }).catch(err => {
                 console.log(err);
-                reject('Hiba történt a fix termék térfogat lekérése közben', err);
+                reject('Beim Abrufen des festen Produktvolumens ist ein Fehler aufgetreten', err);
                 return;
               });
             }));
@@ -301,22 +301,22 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
           Promise.all([normalValidate, litValidate]).then(vals => {
             let [validNormal, validLit] = vals;
             if (!isProdLit && !validNormal && prodType != 'zprod') {
-              reject('Hibás paraméterek');
+              reject('Falsche Parameter');
               return;
             }
 
             if (payment != 'uvet' && payment != 'transfer' && payment != 'credit') {
-              reject('Hibás fizetési mód');
+              reject('Falsche Zahlungsmethode');
               return;
             // Check validity of order ID
             } else if (orderID.length !== 4) {
-              reject('Hibás utalási azonosító');
+              reject('Ungültige Referenz-ID');
               return;
             // Make sure SLA printing can be only applied to smaller models
             } else if (!fixProduct && printTech == 'SLA' &&
               !shouldAllowSLA(path.join(__dirname.replace(path.join('src', 'js'), ''),
               'printUploads', formData.itemID + '.stl'))) {
-              reject('SLA nyomtatáshoz a maximális méret 115mm x 65mm x 150mm');
+              reject('Für den SLA-Druck beträgt die maximale Größe 115 mm x 65 mm x 150 mm');
               return;
             // Validate lithophane parameters
             } else if (isProdLit) {
@@ -329,7 +329,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
               };
 
               if (!validLit) {
-                reject('Hibás paraméter érték');
+                reject('Falscher Parameterwert');
                 return;
               }
             }
@@ -347,7 +347,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                   let originalPrice = data[0].price;
                   if (calcPrice(PRINT_MULTS, originalPrice, rvas, suruseg, scale, fvas) != price) {
                     // Check if price is correct with the given parameters
-                    reject('Hibás ár'); 
+                    reject('Falscher Preis'); 
                     return;
                   }
                 }
@@ -405,7 +405,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                 conn.query(iQuery, valueArr, (err, result, field) => {
                   if (err) {
                     console.log(err, 'asd');
-                    reject('Egy nem várt hiba történt, kérlek próbáld újra');
+                    reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
                     return;
                   }
 
@@ -421,7 +421,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
 
                     conn.query(mQuery, [packetID], (err, result, fields) => {
                       if (err) {
-                        reject('Egy nem várt hiba történt, kérlek próbáld újra');
+                        reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
                         return;
                       } 
 
@@ -441,7 +441,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
 
                         conn.query(updateQuery, updateParams, (err, result, fields) => {
                           if (err) {
-                            reject('Egy nem várt hiba történt, kérlek próbáld újra');
+                            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
                             return;
                           }                    
 
@@ -466,7 +466,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                         ppUpdated = true;
                         conn.query(pQuery, pValues, function packetInsert(err, result, field) {
                           if (err) {
-                            reject('Egy nem várt hiba történt, kérlek próbáld újra');
+                            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
                             return;
                           }                    
                           
@@ -515,7 +515,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
           conn.query(dQuery, deliveryArr, (err, result, field) => {
             if (err) {
               console.log(err);
-              reject('Egy nem várt hiba történt, kérlek próbáld újra');
+              reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
               return;
             }
            
@@ -530,11 +530,11 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                 let emailContent = `
                   <p style="font-size: 24px;">Megkaptuk a rendelésed!</p>
                   <p style="font-size: 16px;">
-                    Amennyiben rendelkezel Zaccord fiókkal, a rendelésed státuszát ott tudod
-                    nyomon követni.<br>
-                    Ezen felül emailben is értesítünk, amikor a csomagod átadtuk a
-                    futárszolgálatnak.<br>
-                    Köszönjük, hogy a Zaccordot választottad!
+                  Wenn Sie über ein Zaccord-Konto verfügen, können Sie dort den Status Ihrer Bestellung überprüfen
+                  Lieferung.<br>
+                  Darüber hinaus benachrichtigen wir Sie auch per E-Mail, wenn Ihr Paket zugestellt wurde
+                  Kurierdienst.<br>
+                  Vielen Dank, dass Sie sich für Zaccord entschieden haben!
                   </p>
 
                   <hr style="border: 0;
@@ -548,22 +548,22 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                       Személyes & Szállítási Adatok
                     </p>
                     <div style="font-size: 14px;">
-                      <div><b>Név: </b>${name}</div>
-                      <div><b>Cím: </b>${pcode} ${city}, ${address}</div>
-                      <div><b>Telefonszám: </b>${mobile}</div>
+                      <div><b>Name: </b>${name}</div>
+                      <div><b>Adresse: </b>${pcode} ${city}, ${address}</div>
+                      <div><b>Telefon: </b>${mobile}</div>
                       <div>
-                        <b>Fizetési mód: </b>
-                        ${payment == 'transfer' ? 'előre utalás' : (payment == 'credit' ?
+                        <b>Zahlung: </b>
+                        ${payment == 'transfer' ? 'Verweise weiterleiten' : (payment == 'credit' ?
                         'bankkártyás fizetés' : 'utánvét')}
                         ${
                           payment == 'transfer' ? `<div>
-                                                      <div><b>Számlaszám:</b> ${BA_NUM}</div>
+                                                      <div><b>Accountnummer:</b> ${BA_NUM}</div>
                                                       <div>
-                                                        <b>Kedvezményezett neve:</b> ${BA_NAME}
+                                                        <b>Name des Begünstigten:</b> ${BA_NAME}
                                                       </div>
                                                       <div>
                                                         <b>
-                                                          Közleményben feltűntetendő azonosító:
+                                                        Bezeichner, der in der Ankündigung angezeigt werden soll:
                                                         </b> ${orderIDDisplay}
                                                       </div>
                                                    </div>
