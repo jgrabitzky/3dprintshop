@@ -43,12 +43,12 @@ function sendEmail(from, content, email, subject, attachmentPath = null) {
     `;
 
     var mailOptions = {
-      from: '"Grabitzky" <info@grabitzky.com>',
+      from: `Grabitzky <${from}>`,
       to: email,
       subject: subject,
       html: emailContent,
     };
-    console.log("Message sent: %s", info.messageId);
+    console.log("Message sent: %s", messageId);
 
     if (attachmentPath) {
       mailOptions.attachments = [{
@@ -57,7 +57,7 @@ function sendEmail(from, content, email, subject, attachmentPath = null) {
       }];
     }
 
-    transporter.sendMail(mailOptions, function(error, info) {
+    transporter.sendMail(mailOptions, function(error) {
       if (error) {
         console.log(error);
         reject('Egy nem várt hiba történt, kérlek próbáld újra (email)');
