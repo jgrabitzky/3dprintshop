@@ -11,7 +11,7 @@ _('cDel').addEventListener('click', function changeDelInfo(e) {
   _('errStatusDel').innerHTML = '';
 
   // Only postal code validation can be performed; other params are too ambiguous
-  if (!Number.isInteger(pcode) || pcode < 10000 || pcode > 99985) {
+  if (!Number.isInteger(pcode)) {
     statusFill('errStatusDel', 'Bitte geben Sie eine echte Postleitzahl ein');
     return;
   } else {
