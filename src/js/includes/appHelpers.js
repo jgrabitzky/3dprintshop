@@ -95,7 +95,7 @@ function toClientRegister(res, stat, req, formData, userSession) {
 
 function validatePcode(pcode) {
   // Validates a Hungarian post code
-  if (!Number.isInteger(pcode) || pcode < 1000 || pcode > 9985) {
+  if (!Number.isInteger(pcode)) {
     return false;
   }
   return true;
