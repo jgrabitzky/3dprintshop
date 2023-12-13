@@ -202,7 +202,7 @@ async function buildPrintSection(conn, req) {
     </div>
 
     <div id="slaFadeHolder" style="opacity: 0;">
-      <h2 class="gotham font26 align fontNorm">SLA technológia</h2>
+      <h2 class="gotham font26 align fontNorm">SLA Technologie</h2>
         <h2 class="align font18 lh fontNorm">
         Die SLA-Technologie ist viel genauer als FDM, aber auch teurer. Es wird häufig in der Medizin und
         für medizinische Zwecke, etwa zum Drucken eines Prothesenprototyps oder zur anatomischen Modellierung,
@@ -249,7 +249,7 @@ async function buildPrintSection(conn, req) {
 
 
     <div id="matFadeHolder">
-      <h2 class="gotham font26 align fontNorm">FDM nyomtatási anyagok</h2>
+      <h2 class="gotham font26 align fontNorm">FDM-Druckmaterialien</h2>
         <h2 class="align font18 lh fontNorm">
         Verschiedene Arten des FDM-Drucks erfordern möglicherweise unterschiedliche Materialien
         Um spezifischere Anforderungen zu erfüllen, werden PLA, ABS, PETG usw. verwendet
