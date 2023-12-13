@@ -90,7 +90,7 @@ function displayFiles() {
     let size = formatBytes(file.size);
     if (file.size > 100 * 1048576) {
       // Make sure none of the files are above 100MB
-      errorMsg('A maximum fájlméret 100MB');
+      errorMsg('Die maximale Dateigröße beträgt 100 MB');
       return;
     }
 
@@ -115,11 +115,11 @@ function displayFiles() {
 
     // Make sure images for lithophane and STLs for custom print are not mixed
     if (hasStl && hasImg) {
-      errorMsg('Egyszerre vagy csak képeket vagy csak STL fájlokat tölthtesz fel');
+      errorMsg('Sie können jeweils nur Bilder oder nur STL-Dateien hochladen');
       return;
     // Make sure only STls and images (PNG, JPG/JPEG) are uploaded
     } else if (wrongFileType) {
-      errorMsg('Csak STL fájlok és képek (PNG, JPG, JPEG) tölthetők fel');
+      errorMsg('Es können nur STL-Dateien und Bilder (PNG, JPG, JPEG) hochgeladen werden');
       return;
     }
 
@@ -127,7 +127,7 @@ function displayFiles() {
     if (hasImg && files.length > 1) {
       _('fileInput').files = subFirstN(1, _('fileInput').files);
       _('prew').innerHTML = prewContent;
-      errorMsg('Egyszerre csak 1 képet tölthetsz fel');
+      errorMsg('Sie können jeweils nur 1 Bild hochladen');
       return;
     }
 
@@ -173,7 +173,7 @@ function displayFiles() {
           _('bigPrew').innerHTML += `
             <img src="/images/icons/loader.gif" width="24" style="margin: 0 auto"
               class="animate__animated animate__fadeIn">
-            <p class="blue">Ez akár pár percig is eltarthat...</p>
+            <p class="blue">Das kann ein paar minuten dauern...</p>
           `;
           _('continue').style.cursor = "not-allowed";
           _('continue').style.opacity = "0.8";
@@ -236,7 +236,7 @@ function dropFile(e) {
   let uploadedFiles = savedContent.files.length;
   if (getCookie('cartItems') && (numOfItemsSoFar + uploadedFiles) > 15) {
     _('bigPrew').innerHTML = '';     
-    errorMsg('A fájlok feltöltésével több mint 15 termék lenne a kosaradban')
+    errorMsg('Wenn Sie die Dateien hochladen, befinden sich mehr als 15 Produkte in Ihrem Warenkorb')
     return;
   }
 

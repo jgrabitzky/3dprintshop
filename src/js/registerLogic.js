@@ -17,7 +17,7 @@ const userRegister = (conn, formData, req) => {
     // Make sure email is not already in the system
     conn.query('SELECT id FROM users WHERE email = ?', [email], (err, result, fields) => {
       if (result.length > 0) {
-        reject('Ez az e-mail cím már foglalt');
+        reject('Diese E-Mail-Adresse ist bereits vergeben');
         return;
       }
 
@@ -30,24 +30,24 @@ const userRegister = (conn, formData, req) => {
       conn.query(sQuery, [email, hash, userAgent, ip], function (err, result, fields) {
         if (err) {
           console.log(err);
-          reject('Egy nem várt hiba történt, kérlek próbáld űjra');
+          reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
           throw err;
         }
 
         // TODO do img source when deployed to server & email
         // On successful registration send a welcome email to user
         let emailContent = `
-          <p style="font-size: 22px;">Köszöntünk a Zaccord-on!</p>
+          <p style="font-size: 22px;">Willkommen bei Zaccord!</p>
           <p style="line-height: 1.4;">
-            Ezt a levelet azért kapod, mert nemrégiben regisztráltál a Zaccordra.
-            A Zaccord egy olyan szolgáltatás, ahol a vásárlók 3D nyomtatóval készített
-            tárgyakat vehetnek vagy a már meglévő tervüket beküldhetik hozzánk és mi azt
-            kinyomtatjuk nekik.
-            A küldetésünk az, hogy minden ötletet megvalósítsunk és népszerűsítsük a 3D-s
-            technológiával készült termékeket.
+          Sie erhalten diese Mail, weil Sie sich kürzlich bei Zaccord registriert haben.
+          Zaccord ist ein Service, bei dem Kunden 3D-Drucker herstellen
+          Sie können Objekte kaufen oder uns ihr bestehendes Design schicken, und wir werden es tun
+          Wir drucken es für sie aus.
+          Unsere Mission ist es, alle Ideen in 3D umzusetzen und zu fördern
+          Technologieprodukte.
           </p>
         `;
-        let subject = 'Köszöntünk a Zaccordon!';
+        let subject = 'Willkommen bei Zaccord!';
 
         sendEmail('info@grabitzky.com', emailContent, email, subject);
 
@@ -56,7 +56,7 @@ const userRegister = (conn, formData, req) => {
         conn.query(sQuery, [email], (err, result, field) => {
           if (err) {
             console.log(err);
-            reject('Egy nem várt hiba történt, kérlek próbáld űjra');
+            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
             return;
           }
 
@@ -65,7 +65,7 @@ const userRegister = (conn, formData, req) => {
           conn.query(iQuery, [userID], (err, result, field) => {
             if (err) {
           console.log(err);
-              reject('Egy nem várt hiba történt, kérlek próbáld űjra');
+              reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
               return;
             }
 

@@ -34,7 +34,7 @@ const buildAdminSection = (conn) => {
           reject('Hiba történt');
           return;
         } else if (result.length === 0) {
-          resolve('Nincsen rendelés az adatbázisban');
+          resolve('Es sind keine Bestellungen in der Datenbank vorhanden');
           return;
         }
 
@@ -42,21 +42,21 @@ const buildAdminSection = (conn) => {
         let output = `
           <section class="keepBottom" style="margin-top: 40px;">
             <input type="text" autocomplete="off" class="searchBox" id="searchOrder"
-              placeholder="Keresés az adatbázisban (utalási azonosító alapján)"
+              placeholder="Suche in der Datenbank (basierend auf Referenz-ID)"
               style="width: 100%; margin-bottom: 20px;" onkeyup="jumpToOrder()">
             <p class="align">
-              <a download href="/spreadsheets/shippingCredentials.xlsx" class="blueLink">Szállitás xlsx</a>
+              <a download href="/spreadsheets/shippingCredentials.xlsx" class="blueLink">Lieferung</a>
               <button id="markAll" class="fillBtn btnCommon" onclick="markAll()">
-                Megbassza az összeset
+                Alle abbrechen
               </button>
               <button class="fillBtn btnCommon" onclick="goToID('protQuotes')">
-                Prototípus kérések
+              Prototypenanfragen
               </button>
               <button class="fillBtn btnCommon" onclick="downloadSTLs()">
-                STL letöltés
+              STL-Download
               </button>
               <button class="fillBtn btnCommon" onclick="goToID('zprod')">
-                Z-termék
+              Z-Produkt
               </button>
               <span id="downloadStatus">
               </span>
@@ -140,26 +140,26 @@ const buildAdminSection = (conn) => {
           let compInfo = '';
           if (normalCompname && normalCompnum) {
             compInfo = `
-              <div class="inBox"><b>Cégnév:</b> ${normalCompname}</div>
-              <div class="inBox"><b>Adószám:</b> ${normalCompnum}</div>
+              <div class="inBox"><b>Name der Firma:</b> ${normalCompname}</div>
+              <div class="inBox"><b>Steuernummer:</b> ${normalCompnum}</div>
             `; 
           }
 
           let cColor = hexColors[color];
 
-          let sendCE = 'Csomag szállítás/átvétel alatt';
+          let sendCE = 'Paket unter Lieferung/Quittung';
           let isPP = PACKET_POINT_TYPES_R.indexOf(deliveryType) > -1;
           
           if (isEInvoice) {
             var invoicePart = `
               <p id="invGen_${uniqueID}">
-                <a class="blueLink" href="/e-invoices/${uniqueID}.pdf" download>E-számla letöltés</a>
+                <a class="blueLink" href="/e-invoices/${uniqueID}.pdf" download>E-Rechnung herunterladen</a>
               </p>
             `;
           } else {
             var invoicePart = `
               <p id="invGen_${uniqueID}">
-                <a class="blueLink" onclick="generateInvoice(${uniqueID}, ${lookup})">Számla generálás</a>
+                <a class="blueLink" onclick="generateInvoice(${uniqueID}, ${lookup})">Rechnungserstellung</a>
               </p>
             `;
           }
@@ -169,10 +169,10 @@ const buildAdminSection = (conn) => {
               <span id="seHolder_${uniqueID}" style="display: block; width: 100%;">
                 <button class="fillBtn btnCommon" style="margin-right: 0;" id="se_${uniqueID}"
                   onclick="sendConfEmail('${uniqueID}', '${deliveryType}')">
-                  Megerősítő email küldése
+                  Senden einer Bestätigungs-E-Mail
                 </button>
                 <input type="text" id="glsCode_${uniqueID}" class="dFormField"
-                  placeholder="csomagkövető kód"
+                  placeholder="cPaketverfolgungscode"
                   style="background-color: #fff; border: 1px solid #c3c3c3; width: auto;">
                 ${invoicePart}
                 <p id="plink_${uniqueID}">
@@ -184,7 +184,7 @@ const buildAdminSection = (conn) => {
               </span>
               <span id="excelDel_${uniqueID}">
                 <button class="fillBtn btnCommon" onclick="delFromExcel(${uniqueID})">
-                  Törlés az excelből
+                Aus Excel löschen
                 </button>
               </span>
             `;
@@ -193,7 +193,7 @@ const buildAdminSection = (conn) => {
           if (litSphere) {
             var productName = 'Litofánia';
           } else {
-            var productName = result[i].name ? result[i].name : 'Bérnyomtatott termék';
+            var productName = result[i].name ? result[i].name : 'Produkt gedruckt';
           }
 
           if (litSize) {
@@ -202,10 +202,10 @@ const buildAdminSection = (conn) => {
           }
 
           let transferText = '';
-          if (isTransfer === 'előre utalás') {
+          if (isTransfer === 'Verweise weiterleiten') {
             transferText = `
               <div class="inBox">
-                <b>Utalási azonosító:</b> ${transferID}
+                <b>Empfehlungs-ID:</b> ${transferID}
               </div>
             `;
           }
@@ -222,7 +222,7 @@ const buildAdminSection = (conn) => {
             cpText = `
               <div class="inBox">
                 <b>Forrás:</b>
-                <a download="${downloadFname}.stl" href="/printUploads/${cpFname}.stl" class="blueLink">STL fájl</a>
+                <a download="${downloadFname}.stl" href="/printUploads/${cpFname}.stl" class="blueLink">STL-Datei</a>
                 <a download="${downloadFname}.gcode" href="/gcode/${cpFname}.gcode" class="blueLink">G-code</a>
               </div>
             `;
@@ -231,7 +231,7 @@ const buildAdminSection = (conn) => {
             let ext = x[x.length - 1];
             var litLink = `
               <div class="inBox">
-                <b>Forrás:</b>
+                <b>Quelle:</b>
                 <a download="${lastName}_${litSize}_${color}_${litSphere}.${ext}"
                   href="/printUploads/lithophanes/${litFname}" class="blueLink">
                   Kép
@@ -267,29 +267,29 @@ const buildAdminSection = (conn) => {
           
           let bInfo = `
             <div class="inBox">
-              <b>Számlázási cím = szállítási cím</b>
+              <b>Rechnungsadresse = Lieferadresse</b>
             </div>
           `;
 
           if (comment) {
             bInfo += `
-              <div class="inBox"><b>Megjegyzés:</b> ${comment}</div>
+              <div class="inBox"><b>Kommentar:</b> ${comment}</div>
             `;
           }
 
           if (billingName) {
             bInfo = `
-              <div class="inBox"><b>Név:</b> ${billingName}</div>
-              <div class="inBox"><b>Ország:</b> ${billingCountry}</div>
-              <div class="inBox"><b>Város:</b> ${billingCity}</div>
-              <div class="inBox"><b>Irsz.:</b> ${billingPcode}</div>
-              <div class="inBox"><b>Cím:</b> ${billingAddress}</div>
+              <div class="inBox"><b>Name:</b> ${billingName}</div>
+              <div class="inBox"><b>Land:</b> ${billingCountry}</div>
+              <div class="inBox"><b>Stadt:</b> ${billingCity}</div>
+              <div class="inBox"><b>Postleitzahl:</b> ${billingPcode}</div>
+              <div class="inBox"><b>Adresse:</b> ${billingAddress}</div>
             `; 
 
             if (billingCompname) {
               bInfo += `
-                <div class="inBox"><b>Cégnév:</b> ${billingCompname}</div>
-                <div class="inBox"><b>Adószám:</b> ${billingCompTaxNum}</div>
+                <div class="inBox"><b>Name der Firma:</b> ${billingCompname}</div>
+                <div class="inBox"><b>Steuernummer:</b> ${billingCompTaxNum}</div>
               `; 
             }
           }
@@ -300,8 +300,8 @@ const buildAdminSection = (conn) => {
             <div style="${style}; text-align: center; user-select: text; padding: 10px;"
               id="box_${i}" class="flexDiv bigBox trans">
               <div class="flexDiv smallBox">
-                <div class="inBox"><b>Terméknév:</b> ${productName}</div>
-                <div class="inBox"><b>Ár:</b> ${aPrice} Ft</div>
+                <div class="inBox"><b>Produktname:</b> ${productName}</div>
+                <div class="inBox"><b>Jahr:</b> ${aPrice} Ft</div>
                 <div class="inBox">
                   <b>Szín:</b>
                   <span style="color: #${cColor}; background-color: #a2a2a2;
@@ -316,60 +316,60 @@ const buildAdminSection = (conn) => {
             }
             output += `
                 <div class="inBox"><b>Rvas:</b> ${rvas}mm</div>
-                <div class="inBox"><b>Sűrűség:</b> ${suruseg}${postfix}</div>
-                <div class="inBox"><b>Méretezés:</b> x${scale}</div>
+                <div class="inBox"><b>Dichte:</b> ${suruseg}${postfix}</div>
+                <div class="inBox"><b>Größenbestimmung:</b> x${scale}</div>
                 <div class="inBox"><b>Fvas:</b> ${fvas}mm</div>
             `;
 
             if (printTech != 'SLA') {
               output += `
-                <div class="inBox"><b>Anyag:</b> ${printMat}</div>
+                <div class="inBox"><b>Material:</b> ${printMat}</div>
               `;
             }
 
             output += `
-                <div class="inBox"><b>Technológia:</b> ${printTech}</div>
+                <div class="inBox"><b>Technologie:</b> ${printTech}</div>
             `;
           } else {
             output += `
-                <div class="inBox"><b>Forma:</b> ${litSphere}</div>
-                <div class="inBox"><b>Méret:</b> ${litSize}</div>
+                <div class="inBox"><b>Form:</b> ${litSphere}</div>
+                <div class="inBox"><b>Größe:</b> ${litSize}</div>
                 ${litLink}
             `;
           }
 
           if (transactionID) {
             output += `
-              <div class="inBox"><b>Tranzakciós ID:</b> ${transactionID}</div>
+              <div class="inBox"><b>Transaktions-ID:</b> ${transactionID}</div>
             `; 
           }
 
           output += `
-                <div class="inBox"><b>Mennyiség:</b> ${quantity}db</div>
+                <div class="inBox"><b>Menge:</b> ${quantity}db</div>
               </div>
               <div class="flexDiv smallBox" id="transT_${i}">
                 <div class="inBox">
-                  <b>Fizetési mód:</b>
+                  <b>Zahlung:</b>
                   <span id="paymentType_${uniqueID}">${isTransfer}</span>
                 </div>
               </div>
               <div class="flexDiv smallBox" id="pers_${i}">
                 <div style="display: none;" id="uid_${i}">${uid}</div>
-                <div class="inBox"><b>Név:</b> <span id="customerName_${uniqueID}">${name}</span></div>
-                <div class="inBox"><b>Irsz.:</b> <span id="postalCode_${uniqueID}">${postalCode}</span></div>
-                <div class="inBox"><b>Város:</b> <span id="city_${uniqueID}">${city}</span></div>
-                <div class="inBox"><b>Cím:</b> <span id="address_${uniqueID}">${address}</span></div>
+                <div class="inBox"><b>Name:</b> <span id="customerName_${uniqueID}">${name}</span></div>
+                <div class="inBox"><b>Postleitzahl.:</b> <span id="postalCode_${uniqueID}">${postalCode}</span></div>
+                <div class="inBox"><b>Stadt:</b> <span id="city_${uniqueID}">${city}</span></div>
+                <div class="inBox"><b>Adresse:</b> <span id="address_${uniqueID}">${address}</span></div>
                 <div class="inBox"><b>Tel.:</b> <span id="mobile_${uniqueID}">${mobile}</span></div>
                 <div class="inBox"><b>E-mail:</b> <span id="email_${uniqueID}">${uemail || nlEmail}</span></div>
-                <div class="inBox"><b>Szállítási mód:</b> ${delTypeTxt}</div>
-                <div class="inBox"><b>Azonosító:</b> <span id="id_${uniqueID}">${uniqueID}</div>
+                <div class="inBox"><b>Versandart:</b> ${delTypeTxt}</div>
+                <div class="inBox"><b>Identifikation:</b> <span id="id_${uniqueID}">${uniqueID}</div>
                 ${compInfo}
                 ${packetPointData}
                 ${sendCE}
               </div>
               <div class="flexDiv smallBox">
                 <div class="inBox" id="bot_${i}">
-                  <b>Rendelési idő:</b> <div id="ot_${i}">${orderTime}</div>
+                  <b>Geschäftszeiten:</b> <div id="ot_${i}">${orderTime}</div>
                 </div>
                 ${cpText}
               </div>
@@ -377,20 +377,20 @@ const buildAdminSection = (conn) => {
                 ${bInfo} 
               </div>
               <div class="align" style="margin: 10px 0 20px 0;" id="bac">
-                <label class="chCont">Megjelölés készként
+                <label class="chCont">als erledigt markieren
                   <input type="checkbox" id="ch_${i}" ${checked} value="${Number(!status)}"
                   onclick="updateStatus(${oid}, ${i})">
                   <span class="cbMark"></span>
                 </label>
               </div>
               <div class="gotham blue align font18" style="margin-bottom: 20px;">
-                <b>Összesen:</b>
+                <b>Insgesamt:</b>
                 <b id="allp_${i}" class="pc">${tFinalPrice}</b>
                 <span class="blk">Ft</span>
                 <span style="display: none; margin-top: 10px;" id="totpHolder_${i}" class="align">
-                  <b class="gotham blue">Egész rendelés ár:</b>
+                  <b class="gotham blue">Gesamtpreis der Bestellung:</b>
                   <span id="totp_${i}" class="blk totalPrice_${uniqueID}"></span>
-                  <span class="blk">Ft (szállítással együtt)</span>
+                  <span class="blk">HUF (einschließlich Lieferung)</span>
                   <br><br>
                 </span>
               </div>
@@ -406,15 +406,15 @@ const buildAdminSection = (conn) => {
           }
 
           output += `
-            <p class="mainTitle ffprot" id="protQuotes">Prototípus ajánlatkérések</p>
+            <p class="mainTitle ffprot" id="protQuotes">Prototyp-RFPs</p>
             <div style="overflow-x: auto;">
               <table class="protTbl">
                 <tr>
-                  <th>Név</th>
+                  <th>Name</th>
                   <th>Email</th>
                   <th>Mobil</th>
-                  <th>Üzenet</th>
-                  <th>Idő</th>
+                  <th>Nachricht</th>
+                  <th>Zeit</th>
                 </tr>
           `;
           for (let i = 0; i < res.length; i++) {
@@ -433,26 +433,26 @@ const buildAdminSection = (conn) => {
                 </table>
               </div>
             </section>
-            <p class="mainTitle" id="zprod">Z-termék</p>
+            <p class="mainTitle" id="zprod">Z-Produkt</p>
             <div style="width: 80%; margin: 0 auto;">
-              <p>Új Z-termék generálás</p>
+              <p>Neue Z-Produktgeneration</p>
               <input type="text" placeholder="Ár" id="zprodPrice">
-              <input type="text" placeholder="Érvényesség ideje (nap)" id="zprodExpiry"
+              <input type="text" placeholder="Gültigkeitsdauer (Tage)" id="zprodExpiry"
                value="3">
-              <button id="genZprod">Generálás</button>
+              <button id="genZprod">Generation</button>
               <span id="genStatus"></span>
             </div>
             <div style="width: 80%; margin: 0 auto;">
-              <p>Generált Z-termékek</p>
+              <p>Generierte Z-Produkte</p>
               <div style="overflow-x: auto;">
                 <table class="protTbl">
                   <tr id="zprodTbl">
                     <th>URL</th>
-                    <th>Ár</th>
+                    <th>Jahr</th>
                     <th>Aktív</th>
-                    <th>Generálás ideje</th>
-                    <th>Érvényesség (nap)</th>
-                    <th>Törlés</th>
+                    <th>Generationszeit</th>
+                    <th>Gültigkeit (Tag)</th>
+                    <th>Streichung</th>
                   </tr>
             `;
             

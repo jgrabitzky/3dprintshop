@@ -9,7 +9,7 @@ const buildReferencePage = (conn) => {
     let iQuery = 'SELECT * FROM reference_images';
     conn.query(iQuery, (err, result, fields) => {
       if (err) {
-        reject('Problem during reference image fetch from database');
+        reject('Problem beim Abrufen des Referenzbilds aus der Datenbank');
         return;
       }
 

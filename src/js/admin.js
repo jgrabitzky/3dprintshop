@@ -18,7 +18,7 @@ if (_('ok')) {
         let p = encodeURIComponent(_('pass').value);
         window.location.href = '/lick_weebshit?user=' + u + '&pass=' + p;
       } else {
-        _('status').innerHTML = '<p>Hibás bejelentkezési adatok</p>';
+        _('status').innerHTML = '<p>Inkorrekte Log-in Information</p>';
       }
     });
   });
@@ -100,7 +100,7 @@ _('genZprod').addEventListener('click', (e) => {
   let expiry = Number(_('zprodExpiry').value);
 
   if (!re.test(price) || !re.test(expiry)) {
-    _('genStatus').innerText = 'Az ár és az érvényesség csak számok lehetnek'; 
+    _('genStatus').innerText = 'Preis und Gültigkeit können nur Zahlen sein'; 
     return false;
   }
 
@@ -203,7 +203,7 @@ function sendConfEmail(uid, delType) {
   // Make sure GLS packet tracker code is not empty 
   let glsCode = _('glsCode_' + uid).value;
   if (!glsCode) {
-    alert('Add meg a csomagkövetési kódot!');
+    alert('Geben Sie den Paketverfolgungscode ein!');
     return false;
   } else {
     data.glsCode = glsCode;
@@ -217,9 +217,9 @@ function sendConfEmail(uid, delType) {
     body: JSON.stringify(data)
   }).then(response => response.json()).then(data => {
     if (data.success) {
-      _('seHolder_' + uid).innerHTML = 'Email sikeresen elküldve';
+      _('seHolder_' + uid).innerHTML = 'Email wurde erfolgreich Versendet';
     } else {
-      _('seHolder_' + uid).innerHTML = 'Hiba történt';
+      _('seHolder_' + uid).innerHTML = 'Ein Fehler ist aufgetreten';
     }
   }).catch(err => {
     console.log(err);
@@ -253,7 +253,7 @@ function generateInvoice(ID, p) {
     if (msg.success) {
       _('invGen_' + ID).innerHTML = 'siker';
     } else {
-      _('invGen_' + ID).innerHTML = 'úú ezt nagyon elbasztam';
+      _('invGen_' + ID).innerHTML = 'Wow, ich habe das wirklich vermasselt';
     }
   });
 }
@@ -301,7 +301,7 @@ function delFromExcel(id) {
 }
 
 function downloadSTLs() {
-  _('downloadStatus').innerHTML = 'Várjál mert csomagol';
+  _('downloadStatus').innerHTML = 'Warte, er packt';
   fetch('/downloadSTLs', {
     headers: {
       'Content-Type': 'application/json'
@@ -373,7 +373,7 @@ function createPacket(id, n, ppID, isPP, dt) {
     eshop: 'Zaccord'
   };
 
-  if (_('paymentType_' + id).innerText == 'utánvét') {
+  if (_('paymentType_' + id).innerText == 'Barzahlung bei Lieferung') {
     data['cod'] = val;
   }
 
@@ -407,10 +407,10 @@ function createPacket(id, n, ppID, isPP, dt) {
     body: JSON.stringify(data)
   }).then(resp => resp.json()).then(data => {
     if (data.success) {
-      _('plink_' + id).innerHTML = 'Elküldve';
-      alert('Sikeresen elküldve');
+      _('plink_' + id).innerHTML = 'Gesendet';
+      alert('Erfolgreich gesendet');
     } else {
-      alert('Hiba történt');
+      alert('Ein Fehler ist aufgetreten');
       console.log(data);
     }
   });

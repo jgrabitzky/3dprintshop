@@ -8,13 +8,13 @@ const sendConfEmail = (conn, uid, delType, glsCode) => {
     let mQuery = 'SELECT uid FROM orders WHERE unique_id = ? LIMIT 1';
     conn.query(mQuery, [uid], (err, result, fields) => {
       if (err) {
-        reject('Egy nem várt hiba történt');
+        reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
         return;
       }
       
       // If there is no order with such uid report an error
       if (result.length < 1) {
-        reject('Nincs ilyen rendelés');
+        reject('Eine solche Anordnung gibt es nicht');
         return;
       }
 
@@ -24,7 +24,7 @@ const sendConfEmail = (conn, uid, delType, glsCode) => {
       let uQuery = 'SELECT email FROM users WHERE id = ? LIMIT 1';
       conn.query(uQuery, [userID], (err, result, fields) => {
         if (err) {
-          reject('Egy nem várt hiba történt');
+          reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
           return;
         }
 
@@ -63,31 +63,31 @@ const sendConfEmail = (conn, uid, delType, glsCode) => {
               <p style="font-size: 24px;">A csomagod átadtuk a futárszolgálatnak!</p>
               <p style="font-size: 16px;">Kedves Vásárlónk,</p>
               <p style="font-size: 16px;">
-                A(z) <span style="color: #4285f4;">${uid}</span> azonosító számú rendelésed
-                átadásra került a kiszállítást végző szolgáltatónak.
+                A(z) <span style="color: #4285f4;">${uid}</span> Ihre Bestellidentifikationsnummer
+                an den Lieferdienstleister übergeben wurde.
               </p>
               <p style="font-size: 16px;">
                 Választott szállítási mód: <span style="color: #4285f4;">${delText}</span>
                 <br>
-                A megrendelésről bővebb információ weboldalunkon, a
-                <span style="color: #4285f4;">Fiók</span> menüpont alatt található.
+                Weitere Informationen zur Bestellung auf unserer Website, a
+                <span style="color: #4285f4;">Warenkorb</span> zu finden.
               </p>
               <p style="font-size: 16px;">
-                A csomag státuszát a
+              Der Status des Pakets ist a
                 <a href="${trackURL}"
-                  style="color: #4285f4; text-decoration: none;">futárszolgálat rendszerében</a>
-                tudod megtekinteni az alábbi azonosítóval:
+                  style="color: #4285f4; text-decoration: none;">im Kurierdienstsystem</a>
+                  Sie können es mit der folgenden Kennung anzeigen:
                 <span style="color: #4285f4;">${glsCode}</span>
               </p>
               <p style="font-size: 16px;">
-                Köszönjük, hogy a Zaccordot választottad!
+              Vielen Dank, dass Sie sich für Zaccord entschieden haben!
               </p>
               <p style="font-size: 16px;">
                 Zaccord
               </p>
             </div>
           `;
-          let subject = 'A csomagod átadtuk a futárszolgálatnak! - Azonosító: ' + uid;
+          let subject = 'Ihr Paket wurde dem Kurierdienst übergeben! - Kennung: ' + uid;
           sendEmail('info@grabitzky.com', emailContent, emailAddr, subject);
           
           resolve('success');
