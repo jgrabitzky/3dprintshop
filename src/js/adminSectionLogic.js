@@ -121,13 +121,13 @@ const buildAdminSection = (conn) => {
           let printMat = result[i].printMat ? result[i].printMat : 'PLA';
           let isEInvoice = result[i].e_invoice;
 
-          let isTransfer = 'utánvét';
+          let isTransfer = 'Barzahlung bei Lieferung';
           let lookup = shippingPrice - MONEY_HANDLE;
           if (Number(result[i].is_transfer)) {
-            isTransfer = 'előre utalás';
+            isTransfer = 'Verweise weiterleiten';
             lookup += MONEY_HANDLE;
           } else if (transactionID) {
-            isTransfer = 'bankkártyás fizetés';
+            isTransfer = 'Kreditkarten Zahlung';
             lookup += MONEY_HANDLE;
           } 
 
@@ -172,7 +172,7 @@ const buildAdminSection = (conn) => {
                   Senden einer Bestätigungs-E-Mail
                 </button>
                 <input type="text" id="glsCode_${uniqueID}" class="dFormField"
-                  placeholder="cPaketverfolgungscode"
+                  placeholder="Paketverfolgungscode"
                   style="background-color: #fff; border: 1px solid #c3c3c3; width: auto;">
                 ${invoicePart}
                 <p id="plink_${uniqueID}">
@@ -221,7 +221,7 @@ const buildAdminSection = (conn) => {
             let downloadFname = `${lastName}_${color}_${quantity}_${pm}_${suruseg}_${rvas}_${printTech}_${fv}_${scale}`;
             cpText = `
               <div class="inBox">
-                <b>Forrás:</b>
+                <b>Quelle:</b>
                 <a download="${downloadFname}.stl" href="/printUploads/${cpFname}.stl" class="blueLink">STL-Datei</a>
                 <a download="${downloadFname}.gcode" href="/gcode/${cpFname}.gcode" class="blueLink">G-code</a>
               </div>
@@ -253,14 +253,14 @@ const buildAdminSection = (conn) => {
           let packetPointData = '';
           if (isPP) {
             packetPointData = `
-              <div class="inBox"><b>Csomagpont Név:</b> <span id="pname_${uniqueID}">${packetName}</div>
-              <div class="inBox"><b>Csomagpont Cím:</b> ${packetZipcode}, ${packetCity}</div>
+              <div class="inBox"><b>Name des Paketpunkts:</b> <span id="pname_${uniqueID}">${packetName}</div>
+              <div class="inBox"><b>Adresse des Paketpunkts:</b> ${packetZipcode}, ${packetCity}</div>
             `;
 
             if (ppLat && ppLon) {
               packetPointData += `
-                <div class="inBox"><b>Csomagpont Lat.:</b> ${ppLat}</div>
-                <div class="inBox"><b>Csomagpont Lon.:</b> ${ppLon}</div>
+                <div class="inBox"><b>Paketpunkt Lat.:</b> ${ppLat}</div>
+                <div class="inBox"><b>Paketpunkt Lon.:</b> ${ppLon}</div>
               `;
             }
           }
@@ -311,7 +311,7 @@ const buildAdminSection = (conn) => {
 
           if (!litSphere) {
             let postfix = '%';
-            if (suruseg == 'Tömör' || suruseg == 'Üreges') {
+            if (suruseg == 'Solide' || suruseg == 'Hohl') {
               postfix = '';
             }
             output += `

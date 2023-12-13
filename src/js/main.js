@@ -136,7 +136,7 @@ function sortByCat(cat, cid, isEye = false) {
       scrollTop: 0
     }, 800);
   }).catch(err => {
-    _('dynamicShowcase').innerHTML = '<p>Hoppá... hiba történt a rendezés során</p>';
+    _('dynamicShowcase').innerHTML = '<p>Ups... beim Sortieren ist ein Fehler aufgetreten</p>';
   });
 }
 

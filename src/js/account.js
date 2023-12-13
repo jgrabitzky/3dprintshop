@@ -11,8 +11,8 @@ _('cDel').addEventListener('click', function changeDelInfo(e) {
   _('errStatusDel').innerHTML = '';
 
   // Only postal code validation can be performed; other params are too ambiguous
-  if (!Number.isInteger(pcode) || pcode < 1000 || pcode > 9985) {
-    statusFill('errStatusDel', 'Kérlek valós irányítószámot adj meg');
+  if (!Number.isInteger(pcode) || pcode < 10000 || pcode > 99985) {
+    statusFill('errStatusDel', 'Bitte geben Sie eine echte Postleitzahl ein');
     return;
   } else {
     // Send data to server for further validation
@@ -34,14 +34,14 @@ _('cDel').addEventListener('click', function changeDelInfo(e) {
       return response.json();
     }).then(data => {
       if (data.success) { 
-        statusFill('succStatusDel', 'A szállítási adatok sikeresen megváltoztak');
+        statusFill('succStatusDel', 'Die Versanddetails wurden erfolgreich geändert');
       } else if (data.error) {
         _('errStatusDel').innerHTML = data.error;
       } else {
-        statusFill('errStatusDel', 'Egy nem várt hiba történt, próbáld újra');
+        statusFill('errStatusDel', 'Ein Fehler ist aufgetreten');
       }
     }).catch(err => {
-      statusFill('errStatusDel', 'Egy nem várt hiba történt, próbáld újra');
+      statusFill('errStatusDel', 'Ein Fehler ist aufgetreten');
     });
   }
 });
@@ -57,7 +57,7 @@ _('cPass').addEventListener('click', function changePassword(e) {
 
   // Make sure new password is at least 6 characters long
   if (npass.length < 6) {
-    statusFill('errStatusPass', 'A jelszónak minimum 6 karakter hosszúnak kell lennie');
+    statusFill('errStatusPass', 'Das Passwort muss mindestens 6 Zeichen lang sein');
     return;
   } else {
     // Send data to server for further validation
@@ -80,9 +80,9 @@ _('cPass').addEventListener('click', function changePassword(e) {
         _('errStatusPass').innerHTML = data.error;
         return;
       }
-      statusFill('succStatusPass', 'Sikeresen megváltoztattad a jelszavad');
+      statusFill('succStatusPass', 'Sie haben Ihr Passwort erfolgreich geändert');
     }).catch(err => {
-      statusFill('errStatusPass', 'Egy nem várt hiba történt, próbáld újra');
+      statusFill('errStatusPass', 'Ein Fehler ist aufgetreten');
     });
   }
 });
@@ -105,7 +105,7 @@ if (_('moreOrders')) {
       _('allOrders').classList = 'animate__animated animate__fadeIn';
       _('allOrders').innerHTML += data;
     }).catch(err => {
-      _('moreHolder').innerHTML = '<p>Hiba történt, kérlek próbáld újra</p>';
+      _('moreHolder').innerHTML = '<p>Es ist ein Fehler aufgetreten. Versuchen Sie es erneut</p>';
     });
   });
 }
