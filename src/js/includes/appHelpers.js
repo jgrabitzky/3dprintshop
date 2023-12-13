@@ -35,9 +35,9 @@ function buildPage(req, res, conn, userID, buildFunc, htmlPath) {
 function validateParams(formData) {
   // Validates prototype parameters
   if (!formData.email || !formData.name || !formData.tel || !formData.message) {
-    return 'Kérlek tölts ki minden mezőt';
+    return 'Bitte füllen Sie alle Felder aus';
   } else if (!validateEmail.validate(formData.email)) {
-    return 'Kérlek valós e-mailt adj meg';
+    return 'Bitte geben Sie eine echte E-Mail-Adresse ein.';
   } else {
     return 'success';
   }
@@ -46,13 +46,13 @@ function validateParams(formData) {
 function validateRegisterParams(formData) {
   // Validate params for user sign up
   if (!formData.email || !formData.pass || !formData.passConf) {
-    return 'Kérlek tölts ki minden mezőt';
+    return 'Bitte füllen Sie alle Felder aus';
   } else if (!validateEmail.validate(formData.email)) {
-    return 'Kérlek valós e-mailt adj meg'
+    return 'Bitte geben Sie eine echte E-Mail-Adresse ein'
   } else if (formData.pass != formData.passConf) {
-    return 'A jelszavak nem egyeznek';
+    return 'Die Passwörter stimmen nicht überein';
   } else if (formData.pass.length < 6) {
-    return 'A jelszónak minimum 6 karakterből kell állnia';
+    return 'Das Passwort muss aus mindestens 6 Zeichen bestehen';
   } else {
     return 'success';
   }
@@ -65,7 +65,7 @@ function toClientPrototype(res, stat, req, formData) {
   } else {
     sendPrototype(conn, formData, req).then(data => {
       // Auto log in user after successful registration
-      responseData.success = 'Sikeres kapcsolatfelvétel<br>Hamarosan részletes árajánlattal jelentkezünk számodra';
+      responseData.success = 'Erfolgreiche Kontaktaufnahme<br>Wir werden uns zeitnah mit einem detaillierten Preisangebot bei Ihnen melden';
       res.writeHead(200, {'Content-Type': 'application/json'});
       res.end(JSON.stringify(responseData));
     }).catch(err => {
@@ -83,7 +83,7 @@ function toClientRegister(res, stat, req, formData, userSession) {
       // Auto log in user after successful registration
       userSession(req, res, function uSession() {
         req.user.id = data;
-        responseData.success = '<p>Sikeres regisztráció</p>';
+        responseData.success = '<p>Erfolgreiche Registrierung</p>';
         res.writeHead(200, {'Content-Type': 'application/json'});
         res.end(JSON.stringify(responseData));
       });
@@ -104,11 +104,11 @@ function validatePcode(pcode) {
 function validateUploadFile(cFile, err) {
   // Make sure that the number of files to be uploaded is between 1 and 5 (both inclusive)
   if (!Array.isArray(cFile) && !cFile.size) {
-    return ['cFile', 'Válassz egy fájlt'];
+    return ['cFile', 'Wählen Sie eine Datei aus'];
   } else if (cFile.length > 5) {
-    return ['sfupload', 'Maximum 5db fájlt tölthetsz fel'];
+    return ['sfupload', 'Sie können maximal 5 Dateien hochladen'];
   } else if (err) {
-    return ['sfupload', 'Hiba történt'];
+    return ['sfupload', 'Ein Fehler ist aufgetreten'];
   }
   return 'success';
 }
@@ -155,7 +155,7 @@ function createDefaultThumbnail(fname) {
       fname + '.png');
     fs.copyFile(source, destination, (err) => {
       if (err) {
-        reject('Hiba az alapértelmezett thumbnail készítése közben');
+        reject('Fehler beim Erstellen der Standard-Miniaturansicht');
       }
       resolve('success');
     });
@@ -177,7 +177,7 @@ function createThumbnail(fname) {
       thumbnails[0].toBuffer(function(err, buf) {      
         fs.writeFile(path.join(basePath(__dirname), 'printUploads', 'thumbnails',
           fname + '.png'), buf, function (err) {
-          if (err) reject('Hiba a thumbnail készítése közben');
+          if (err) reject('Fehler beim Erstellen der Standard-Miniaturansicht');
           resolve('success');
         });
       });
@@ -242,8 +242,8 @@ function parseUploadFiles(form, req, res, userID) {
 
       // Make sure that only 1 image is uploaded
       if (isMoreImages(cFile, allImgs)) {
-        imgError(res, userID, 'sfupload', 'Egyszerre csak 1 képet tölthetsz fel');
-        reject('Egyszerre csak 1 képet tölthetsz fel');
+        imgError(res, userID, 'sfupload', 'Sie können jeweils nur 1 Bild hochladen');
+        reject('Sie können jeweils nur 1 Bild hochladen');
         return;
       }
 
@@ -256,7 +256,7 @@ function parseUploadFiles(form, req, res, userID) {
         
         // Make sure the extension is valid
         if (['png', 'jpg', 'jpeg', 'stl'].indexOf(extension) < 0) {
-          reject('Hibás fájlkiterjesztés');
+          reject('Falsche Dateierweiterung');
           return;
         } 
 
@@ -275,7 +275,7 @@ function parseUploadFiles(form, req, res, userID) {
           mv(oldpath, newpath, err => {
             if (err) {
               console.log(err);
-              reject('Hiba a fájlok átvitelekor');
+              reject('Fehler beim Übertragen der Dateien');
               return;
             }
 
@@ -290,13 +290,13 @@ function parseUploadFiles(form, req, res, userID) {
                   resolve('success');
                 }).catch(err => {
                   console.log(err);
-                  reject('Hiba az alapértelmezett thumbnail készítése közben');
+                  reject('Fehler beim Erstellen der Standard-Miniaturansicht');
                 });
               } else {
                 createThumbnail(uploadFnames[i]).then(res => {
                   resolve('success');
                 }).catch(err => {
-                  reject('Hiba a thumbnail készítése közben');
+                  reject('Fehler beim Erstellen der Miniaturansichtn');
                 });
               }
             } else {
@@ -305,7 +305,7 @@ function parseUploadFiles(form, req, res, userID) {
               resizeLitImage(newpath).then(res => {
                 resolve('success');
               }).catch(err => {
-                reject('Hiba a litofán kép átméretezése közben');
+                reject('Fehler beim Ändern der Größe des Lithophan-Bildes');
               });
             }
           });
