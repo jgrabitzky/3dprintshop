@@ -48,7 +48,7 @@ function sendEmail(from, content, email, subject, attachmentPath = null) {
       subject: subject,
       html: emailContent,
     };
-    console.log("Message sent: %s", messageId);
+    console.log("Message sent: %s");
 
     if (attachmentPath) {
       mailOptions.attachments = [{
