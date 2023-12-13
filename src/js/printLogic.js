@@ -74,7 +74,7 @@ async function buildPrintSection(conn, req) {
             </p> 
 
             <p class="gotham font16 hideOnMobile" style="color: #2d2d2d;">
-              <span class="gothamBold">Max. méret:</span> ${PRINT_SIZES_PLA[0]}mm x ${PRINT_SIZES_PLA[1]}mm x ${PRINT_SIZES_PLA[2]}mm (FDM)<br> ${PRINT_SIZES_SLA[0]}mm x ${PRINT_SIZES_SLA[1]}mm x ${PRINT_SIZES_SLA[2]}mm (SLA) 
+              <span class="gothamBold">Max. Max. Grösse:</span> ${PRINT_SIZES_PLA[0]}mm x ${PRINT_SIZES_PLA[1]}mm x ${PRINT_SIZES_PLA[2]}mm (FDM)<br> ${PRINT_SIZES_SLA[0]}mm x ${PRINT_SIZES_SLA[1]}mm x ${PRINT_SIZES_SLA[2]}mm (SLA) 
             </p> 
           </div>
         </div>
@@ -119,8 +119,8 @@ async function buildPrintSection(conn, req) {
         <h3 class="capitalTitle gothamMedium align fontNorm font16" id="capTitle">
         Schnelle Prototypen mit FDM-Druck
         </h3>
-        <p id="scText" class="align lh" style="color: #3c4043;">Technologie kann eine ausgezeichnete Wahl für Nullserien sein
-        bevor das fertige Produkt auf den Markt kommt. Auf diese Weise können Sie viel Zeit und Geld sparen, wenn Sie noch welche haben
+        <p id="scText" class="align lh" style="color: #3c4043;">FDM ist eine ausgezeichnete Wahl für Nullserien
+        bevor das fertige Produkt auf den Markt kommt. Auf diese Weise können Sie viel Zeit und Geld sparen.
         Mögliche Fehler werden bereits in den frühen Phasen der Produktentwicklung aufgedeckt.
         </p>
       </div>
@@ -129,12 +129,11 @@ async function buildPrintSection(conn, req) {
         <div>
           <h2 class="gotham font26 align fontNorm">Prozess des 3D-Drucks</h2>
           <h2 class="align font18 lh fontNorm">
-          Das heißt, wenn Sie die STL-Datei des Modells haben
-            <a class="jumpToPrint blueLink font18">oldalon</a> ezt fel tudod
-            tölteni.
-            Ansonsten ist ein Vorab-Download auf vielen Webseiten möglich
-            Modelle von vorgefertigten Artikeln, z. B. beliebt und kostenlos
-            <a class="font18 blueLink" href="https://www.thingiverse.com">Thingiverse</a>.
+          Wenn Sie die STL-Datei des Modells haben können sie die Datei 
+            <a class="jumpToPrint blueLink font18">hier</a> hochladen und bestellen.
+            Ansonsten ist ein Download auf vielen Webseiten möglich.
+            Viele Modelle von vorgefertigten Artikeln gibt es kostenlos
+            <a class="font18 blueLink" href="https://www.thingiverse.com">Thingiverse</a> zum Download.
             <br><br>
             Das hochgeladene Modell erscheint dann im Browser
             in einer interaktiven Form, in der Sie das Produkt in 3D betrachten können. Hier
@@ -144,9 +143,9 @@ async function buildPrintSection(conn, req) {
             versichern.
             <br><br>
             Wenn Sie ein anderes Dateiformat haben oder eine individuelle Bestellung aufgeben möchten, dann
-            Fordern Sie ein individuelles Angebot an <a class="blueLink font18 goToQuote">am Ende der Seite</a>
-            Schreiben Sie uns eine E-Mail <a href="mailto:info@grabitzky.com" class="blueLink font18">info@grabitzky.com</a>
-            címre.
+            fordern Sie ein individuelles Angebot <a class="blueLink font18 goToQuote">am Ende der Seite</a> an.
+            Oder senden Sie uns eine E-Mail an <a href="mailto:info@grabitzky.com" class="blueLink font18">info@grabitzky.com</a>
+            Wir setzen uns dann schnellstmöglich mit ihnen in Verbindung.
           </h2>
         </div>
         <div>
@@ -315,12 +314,12 @@ async function buildPrintSection(conn, req) {
       </div>
     </div>
     <div id="litFadeHolder">
-      <h2 class="gotham font26 align fontNorm">Örökítsd meg legszebb képeidet 3D-ben!</h2>
+      <h2 class="gotham font26 align fontNorm">Verewigen Sie Ihre schönsten Bilder in 3D!</h2>
         <h2 class="align font18 lh fontNorm">
-        Wir drucken Ihre schönsten Bilder auch in Form einer Lithophanie,
-        so verewigt durch die
-        Deine schönsten Momente. Sie benötigen insgesamt ein Bild zum Hochladen auf Zaccord
-        und dann können Sie das Produkt sofort kaufen.
+        Wir drucken Ihre schönsten Bilder auch in Form einer Lithophanie.
+        So verewigen Sie ihre
+        schönsten Momente. Sie benötigen insgesamt ein Bild zum Hochladen auf Zaccord
+        und dann können Sie das Produkt sofort bestellen.
         </h2>
         <p class="align">
           <a href="/lithophaneHelp" class="blueLink align">
@@ -350,8 +349,8 @@ async function buildPrintSection(conn, req) {
         Gedrucktes Lithophan und das Originalbild
         </h3>
         <p id="scTextLit" class="align lh" style="color: #3c4043;">
-        Im Grundfall handelt es sich bei fertigem Lithophan um eine schwer entfernbare,
-        gibt Ihnen ein geprägtes Bild. Bei Hintergrundbeleuchtung ist das Bild selbst jedoch kristallklar.
+        Im Grundfall handelt es sich bei einem fertigem Lithophan um eine ein geprägtes Bild das 
+        Bei Hintergrundbeleuchtung selbst kristallklar ist.
         Aus dem hochgeladenen digitalen Bild erstellt der 3D-Drucker ein echtes, greifbares Lithophan,
         das dank der Technologie das Originalbild realistisch wiedergibt.
         </p>
@@ -362,8 +361,8 @@ async function buildPrintSection(conn, req) {
         Anfrage für
         </h2>
         <h2 class="align font18 lh fontNorm">
-        Wenn Sie eine Einzelbestellung aufgeben möchten, laden Sie die Dateien die Sie drucken möchten, im Dateiformat vor
-        Ihre Modelle, dann kontaktieren Sie uns gerne in Form einer Angebotsanfrage.
+        Wenn Sie eine Einzelbestellung aufgeben möchten, laden Sie die Dateien die Sie drucken möchten im Dateiformat STL hoch.
+        Wir kontaktieren Sie gerne in Form einer Angebotsanfrage.
         </h2>
         <div class="flexDiv" style="flex-wrap: wrap;" id="normalDiv">
           <input type="text" class="dFormField" id="name" placeholder="Név" value="">
@@ -386,10 +385,10 @@ async function buildPrintSection(conn, req) {
 
       <p class="align lh font18 notoSans">
       Für Serienproduktion oder Prototypenfertigung besuchen Sie uns
-        <a class="blueLink font18" href="/prototype">Prototípusgyártás</a> Du bist auf der Seite
-        kontaktiere uns unter
+        <a class="blueLink font18" href="/prototype">Prototypenfertigung</a> hier auf der Seite oder
+        kontaktieren sie uns unter
         <a class="blueLink font18" href="mailto:info@grabitzky.com">info@grabitzky.com</a>
-        per E-Mail-Adresse.
+        per E-Mail.
       <p>
     </section>
     ${LAZY_LOAD}
