@@ -1,6 +1,6 @@
 // Validate emails with regex
 function validateEmail(email) {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)) {
     return true;
   }
   return false;
@@ -9,19 +9,19 @@ function validateEmail(email) {
 function regVal(email, pass, passConf, statName, btn) {
   let errStatus = document.getElementById(statName);
   if (!email || !pass || !passConf) {
-    errStatus.innerHTML = '<p>Kérlek tölts ki minden mezőt</p>';
+    errStatus.innerHTML = '<p>Bitte füllen Sie alle Felder aus</p>';
     _(btn).disabled = false;
     return false;
   } else if (!validateEmail(email)) {
-    errStatus.innerHTML = '<p>Kérlek valós e-mailt adj meg</p>';
+    errStatus.innerHTML = '<p>Bitte geben Sie eine echte E-Mail-Adresse ein</p>';
     _(btn).disabled = false;
     return false;
   } else if (pass.length < 6) {
-    errStatus.innerHTML = '<p>A jelszónak minimum 6 karakterből kell állnia</p>';
+    errStatus.innerHTML = '<p>Das Passwort muss aus mindestens 6 Zeichen bestehen</p>';
     _(btn).disabled = false;
     return false;
   } else if (pass != passConf) {
-    errStatus.innerHTML = '<p>A jelszavak nem egyeznek</p>';
+    errStatus.innerHTML = '<p>Die Passwörter stimmen nicht überein</p>';
     _(btn).disabled = false;
     return false;
   }
