@@ -31,7 +31,7 @@ const buildAccountSection = (conn, userID) => {
             <div>
               <img src="/images/icons/orderHistory.png" class="emptyCart">
               <p class="dgray align font22">
-              Falsche E-Mail-Adresse oder falsches Passwort. Es scheint, dass Sie noch keine Bestellung aufgegeben haben
+              Hier können Sie ihre Adressdaten ändern oder vervollständigen
               </p>
             </div>
           `;
@@ -77,7 +77,7 @@ const buildAccountSection = (conn, userID) => {
               <div class="flexDiv" style="flex-wrap: wrap; justify-content: space-evenly;">
                 <input type="password" class="dFormField" id="cpass"
                   placeholder="Aktuelles Passwort">
-                <input type="password" class="dFormField" id="pass" placeholder="Új Neues Passwort">
+                <input type="password" class="dFormField" id="pass" placeholder="Neues Passwort">
                 <input type="password" class="dFormField" id="rpass" placeholder="Passwort wiederholen">
               </div>
               <div class="errorBox" id="errStatusPass"></div>
