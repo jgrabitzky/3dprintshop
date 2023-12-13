@@ -130,7 +130,7 @@ function submitOrder() {
     statusFill('errStatus', 'Kérlek töltsd ki a szállítási adatokat');
     resetSubmitBtn();
     return;
-  } else if (!Number.isInteger(pcode) || pcode < 1000 || pcode > 9985) {
+  } else if (!Number.isInteger(pcode)) {
     statusFill('errStatus', 'Kérlek valós irányítószámot adj meg');
     resetSubmitBtn();
     return;
@@ -299,7 +299,7 @@ function validateComp(isComp) {
   if (!billingName || !billingCountry || !billingPcode || !billingCity || !billingAddress) {
     statusFill('errStatus', 'Kérlek tölts ki minden számlázási adatot'); 
     return false;
-  } else if (!Number.isInteger(billingPcode) || billingPcode < 1000 || billingPcode > 9985) {
+  } else if (!Number.isInteger(billingPcode)) {
     statusFill('errStatus', 'Kérlek valós irányítószámot adj meg'); 
     return false;
   }
