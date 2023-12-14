@@ -246,7 +246,7 @@ const buildAdminSection = (conn) => {
           let tFinalPrice = Math.round(quantity * aPrice);
           let nextOt = result[i + 1] ? result[i + 1].order_time : '';
           let prevOt = result[i - 1] ? result[i - 1].order_time : '';
-          if (quantity * aPrice < 1 && orderTime != nextOt && orderTime != prevOt) {
+          if (quantity * aPrice < 800 && orderTime != nextOt && orderTime != prevOt) {
             tFinalPrice += 800 - tFinalPrice;
           }
 
