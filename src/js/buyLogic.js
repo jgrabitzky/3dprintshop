@@ -214,7 +214,7 @@ const buildBuySection = (conn, paramObj, req) => {
             thPath = (thPath[thPath.length - 3] + '/' + thPath[thPath.length - 2] + '/' +
                 thPath[thPath.length - 1]); 
 
-            let pName = 'Bérnyomtatott Termék #' + (i + 1);
+            let pName = 'Bestelltes Produkt #' + (i + 1);
             if (isFromCrt) pName = 'Bérnyomtatott Termék';
 
             var data = {
