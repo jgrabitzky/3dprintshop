@@ -211,7 +211,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
         } else if (payment == 'credit' && !transactionID) {
           reject('Fügen Sie zum Bezahlen Ihre Bankkarte hinzu'); 
         // Validate postal code
-        } else if (!Number.isInteger(pcode) || pcode < 1000 || pcode > 9985) {
+        } else if (!Number.isInteger(pcode)) {
           reject('Falsche Postleitzahl'); 
           return;
         // Make sure there is a valid shipping price
