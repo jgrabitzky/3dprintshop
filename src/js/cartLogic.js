@@ -97,7 +97,7 @@ const buildCartSection = (conn, req) => {
 
               var url = 'uploadPrint?file=' + tid;
               var imgUrl = 'printUploads/thumbnails/' + tid + '.png';
-              var productName = 'Bérnyomtatott Termék';
+              var productName = 'Bestelltes Produkt'; //Bérnyomtatott Termék
               var price = Number(content['price_' + tid]);
               allowSLA = shouldAllowSLA(fPath, scale);
 

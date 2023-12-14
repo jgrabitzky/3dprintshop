@@ -209,13 +209,13 @@ const buildBuySection = (conn, paramObj, req) => {
             }
             finalPrice += price * quantity;
 
-            // Build image path for thumbnail
+            // Build image path for thumbnail Bérnyomtatott Termék
             thPath = thPath.split('/');
             thPath = (thPath[thPath.length - 3] + '/' + thPath[thPath.length - 2] + '/' +
                 thPath[thPath.length - 1]); 
 
             let pName = 'Bestelltes Produkt #' + (i + 1);
-            if (isFromCrt) pName = 'Bérnyomtatott Termék';
+            if (isFromCrt) pName = 'Bestelltes Produkt';
 
             var data = {
               'orderID': orderID,

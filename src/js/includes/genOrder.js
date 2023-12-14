@@ -76,7 +76,7 @@ const genOrder = (conn, userID, limit = '3, 2147483647', threeLimit = false) => 
           imgURL = 'printUploads/lithophanes/' + litFname;
         }
         
-        if (cpFname) name = 'Bérnyomtatott Termék';
+        if (cpFname) name = 'Bestelltes Produkt'; //Bérnyomtatott Termék
         else if (litFname) name = 'Litofánia';
 
         let data = {
