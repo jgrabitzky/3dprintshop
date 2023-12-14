@@ -345,7 +345,7 @@ const buildAdminSection = (conn) => {
           }
 
           output += `
-                <div class="inBox"><b>Menge:</b> ${quantity}db</div>
+                <div class="inBox"><b>Menge:</b> ${quantity}Stück</div>
               </div>
               <div class="flexDiv smallBox" id="transT_${i}">
                 <div class="inBox">
