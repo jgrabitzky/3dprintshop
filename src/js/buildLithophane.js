@@ -32,7 +32,7 @@ const buildLithophane = (conn, userID, filePaths, width, height) => {
     output += '</div>';
 
     // Default price is the same for all lihophanes
-    let totalPrice = 2990;
+    let totalPrice = 29;
 
     // Build output
     output += `
@@ -43,7 +43,7 @@ const buildLithophane = (conn, userID, filePaths, width, height) => {
         <div>
           <p>
             <span class="blue gotham">Preis:</span>
-            <span id="priceHolder">${totalPrice}</span> Ft 
+            <span id="priceHolder">${totalPrice}</span> € 
           </p>
         </div>
         <div>
