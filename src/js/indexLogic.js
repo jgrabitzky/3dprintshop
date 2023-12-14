@@ -138,7 +138,7 @@ const buildMainSection = (conn, cat) => {
             <div class="bgService bgCommon" id="cprintService">
               <div class="darken keepRounded"></div>
               <div class="textCenter pad lh">
-                <h2 class="serviceTxt align font34 gotham servMain servMain fontNorm">Bérnyomtatás</h2>
+                <h2 class="serviceTxt align font34 gotham servMain servMain fontNorm">3D Druck</h2>
                 <h3 class="serviceTxt align gotham fontNorm font16">
                 FDM- und SLA-Druck mit vielen Farben und Materialien. Der intelligente Algorithmus
                 Sie können sofort den Preis sehen und das hochgeladene Produkt bestellen

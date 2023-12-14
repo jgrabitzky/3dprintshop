@@ -21,7 +21,7 @@ async function buildBlog(conn, blogID, req) {
     <!DOCTYPE html>
     <html lang="hu">
       <head>
-        <title>${title} - Zaccord 3D Nyomtatás Blog</title>
+        <title>${title} - Zaccord 3D-Druck-Blog</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/animate/animate.css">
@@ -56,8 +56,8 @@ async function buildBlog(conn, blogID, req) {
     <h1 class="gotham fontNorm font34 blogPageTitle" style="margin-top: 0;">${title}</h1>
     <div class="blogHeaderCont notoSans">
       <div><span class="hideSeekBlog">Írta:</span> ${author}</div>
-      <div><span class="hideSeekBlog">Kulcsszavak:</span> ${categories}</div> 
-      <div>Utoljára frissítve: ${lastUpdate}</div> 
+      <div><span class="hideSeekBlog">Schlüsselwörter:</span> ${categories}</div> 
+      <div>Letzte Aktualisierung: ${lastUpdate}</div> 
     </div>
     <div class="clear"></div>
     <hr class="hrStyle">
@@ -68,8 +68,8 @@ async function buildBlog(conn, blogID, req) {
   content += `
     <hr class="hrStyle">
     <p class="font18 align ttt notoSans">
-      3D nyomtatáshoz látogass el a <a class="blueLink font18" href="/print">bérnyomtatás</a> vagy
-      a <a class="blueLink font18" href="/prototype">prototípusgyártás</a> oldalra.
+    Informationen zum 3D-Druck von Prototypen finden Sie unter <a class="blueLink font18" href="/print">3D Druck</a> vagy
+      a <a class="blueLink font18" href="/prototype">Prototypenfertigung</a> oldalra.
     </p>
   `;
   content += '</div>'
