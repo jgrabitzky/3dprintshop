@@ -229,7 +229,7 @@ const buildCustomPrint = (conn, userID, filePaths) => {
 
       content += `
         <div class="specChBox trans" id="specChMat">
-          <div class="specChBoxTitle gothamBold font22">Nyomtatás anyaga</div>
+          <div class="specChBoxTitle gothamBold font22">Druckmaterial</div>
           <div class="specChImgBox">
             <img src="/images/specChImg/materials.jpg">
           </div>
@@ -240,11 +240,6 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           Einwirkung von Hitze oder UV-Licht ausgesetzt werden, sollte es flexibel sein
           oder wie viel Belastung es ausgesetzt sein wird.
           </div>
-          //<div class="specChProps gothamNormal">
-          //  <div>Hőállóság</div>
-          //  <div>Szakítószilárdság</div>
-          //  <div>Rugalmasság</div>
-          //</div>
           <div class="specChValBox font32 blue">
             <p data-value="PLA" id="chmat">PLA</p>
             <p class="otherPrice">Preis: ${Math.round(totalPrice)} €</p>
