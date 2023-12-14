@@ -326,14 +326,9 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           Die Farbe des Druckmaterials. Derzeit ein Produkt mit nur einer Farbe
           Wir können innerhalb eines Modells nur eine Farbe drucken.
           </div>
-          <div class="specChProps gothamNormal">
-            <div>Aussehen</div>
-            <div>Lieferzeit</div>
-            <div>Oberflächenqualität</div>
-          </div>
           <div class="specChValBox font32 blue">
             <p data-value="Fehér" id="chcolor">Fehér</p>
-            <p class="otherPrice">Ár: ${Math.round(totalPrice)} Ft</p>
+            <p class="otherPrice">Preis: ${Math.round(totalPrice)} €</p>
           </div>
         </div>
 
@@ -373,11 +368,6 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           dies nennt man Schichtdicke. Je kleiner die Zwischenschicht
           Je größer die Entfernung, desto genauer und detaillierter wird das gewünschte Modell sein.
           allerdings erhöht sich die Druckzeit drastisch.
-          </div>
-          <div class="specChProps gothamNormal">
-            <div>Aussehen</div>
-            <div>Druckzeit</div>
-            <div>Oberflächenqualität</div>
           </div>
           <div class="specChValBox font32 blue">
             <p data-value="0.20" id="chlh">0.20mm</p>
@@ -424,11 +414,6 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           dies nennt man Schichtdicke. Je kleiner die Zwischenschicht
           Je größer die Entfernung, desto genauer und detaillierter wird das gewünschte Modell sein.
           allerdings erhöht sich die Druckzeit drastisch.
-          </div>
-          <div class="specChProps gothamNormal">
-            <div>Aussehen</div>
-            <div>Druckzeit</div>
-            <div>Oberflächenqualität</div>
           </div>
           <div class="specChValBox font32 blue">
             <p data-value="0.05" id="chlhSLA">0.05mm</p>
@@ -477,11 +462,6 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           es lohnt sich, einen höheren Wert einzustellen. Durch Erhöhen der Dichte erhöht sich a
           Druckzeit und das Gewicht des Modells.
           </div>
-          <div class="specChProps gothamNormal">
-            <div>Stabilität</div>
-            <div>Druckzeit</div>
-            <div>Menge</div>
-          </div>
           <div class="specChValBox font32 blue">
             <p data-value="20" id="chinf">20%</p>
             <p class="otherPrice">Preis: ${Math.round(totalPrice)} €</p>
@@ -519,13 +499,8 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           Je mehr Material zur Herstellung des Produkts benötigt wird, desto robuster ist es aber auch
           wird sein Bei skulpturalen oder weniger häufig genutzten Objekten ist dies nicht erforderlich
           dichte Füllung des Produkts hingegen für regelmäßig genutzte Geräte
-          es lohnt sich, einen höheren Wert einzustellen. Durch Erhöhen der Dichte erhöht sich a
+          es lohnt sich, einen höheren Wert einzustellen. Durch Erhöhen der Dichte erhöht sich die Stabilität.
           Druckzeit und das Gewicht des Modells.
-          </div>
-          <div class="specChProps gothamNormal">
-            <div>Stabilität</div>
-            <div>Druckzeit</div>
-            <div>Menge</div>
           </div>
           <div class="specChValBox font32 blue">
             <p data-value="Tömör" id="chinfSLA">Tömör</p>
@@ -566,11 +541,6 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           ein Prozess, der eine Größenänderung mit sich bringt. Zum Beispiel 10 mm x 10 mm x 10 mm
           Ein Produkt mit den Abmessungen x0,5 hat die Maße 5 mm x 5 mm x 5 mm.
           </div>
-          <div class="specChProps gothamNormal">
-            <div>Größe</div>
-            <div>Druckbarkeit</div>
-            <div>Rauszoomen</div>
-          </div>
           <div class="specChValBox font32 blue">
             <p data-value="1.0" id="chscale">x1.0</p>
             <p class="otherPrice">Preis: ${Math.round(totalPrice)} €</p>
@@ -608,11 +578,6 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           Es verleiht dem Objekt Stabilität, verlängert jedoch die Druckzeit. Es ist wichtig, dass
           Die Änderung dieses Werts hat keinen Einfluss auf die Abmessungen des Produkts, da a
           Der Drucker verdickt die Wände nach innen.
-          </div>
-          <div class="specChProps gothamNormal">
-            <div>Stabilität</div>
-            <div>Druckbarkeit</div>
-            <div>Halten</div>
           </div>
           <div class="specChValBox font32 blue">
             <p data-value="1.2" id="chshell">1.2mm</p>
