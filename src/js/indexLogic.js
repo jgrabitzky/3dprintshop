@@ -40,13 +40,13 @@ const buildMainSection = (conn, cat) => {
     let catQuery = 'SELECT DISTINCT category FROM fix_products ORDER BY category ASC';
     conn.query(catQuery, (e, res, f) => {
       if (e) {
-        reject('Egy nem várt hiba történt, kérlek próbáld újra 1', e);
+        reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut 1', e);
         return;
       }
 
       conn.query(sQuery, function (err, result, fields) {
         if (err) {
-          reject('Egy nem várt hiba történt, kérlek próbáld újra 2');
+          reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut 2');
           return;
         }
 
@@ -141,8 +141,7 @@ const buildMainSection = (conn, cat) => {
                 <h2 class="serviceTxt align font34 gotham servMain servMain fontNorm">3D Druck</h2>
                 <h3 class="serviceTxt align gotham fontNorm font16">
                 FDM- und SLA-Druck mit vielen Farben und Materialien. Der intelligente Algorithmus
-                Sie können sofort den Preis sehen und das hochgeladene Produkt bestellen
-                Produkte.
+                Sie können sofort den Preis sehen und das hochgeladene Produkt bestellen.
                 </h3>
                 <div class="flexDiv btnAlign">
                   <button class="whiteBtn gotham font18 trans" onclick="redirect('/print')">Weitere Informationen</button>
@@ -156,8 +155,8 @@ const buildMainSection = (conn, cat) => {
               <div class="textCenter pad lh">
                 <h2 class="serviceTxt align font34 gotham servMain fontNorm">Prototypenfertigung</h2>
                 <h3 class="serviceTxt align gotham fontNorm font16">
-                Das 3D-gedruckte Kleinserien-Prototyping ist wesentlich kostengünstiger und schneller
-                Möglichkeit, Nullsequenzen zu erzeugen. Nutzen Sie es gerne für Einzelbestellungen
+                Die 3D-gedruckte Kleinserien oder Prototypenfertigung ist eine wesentlich kostengünstigere und schnelle
+                Möglichkeit Nullsequenzen zu erzeugen. Nutzen Sie es gerne für Einzelbestellungen
                 kontaktiere uns.
                 </h3>
                 <div class="flexDiv btnAlign">
@@ -183,7 +182,7 @@ const buildMainSection = (conn, cat) => {
                 <h2 class="serviceTxt align font34 gotham servMain fontNorm">FDM</h2>
                 <h3 class="serviceTxt align gotham fontNorm font16">
                 Die FDM-Drucktechnologie eignet sich hervorragend für Rapid Prototyping und
-                für eine kostengünstige Modellierung. In diesem Fall besteht der Drucker aus geschmolzenem Filament
+                für eine kostengünstige Modellierung. In diesem Fall besteht der Drucke aus geschmolzenem Filament
                 bereitet das Produkt Schicht für Schicht vor.
                 </h3>
                 <div class="flexDiv btnAlign">
@@ -211,7 +210,7 @@ const buildMainSection = (conn, cat) => {
                 <p class="gotham boxTitle">Auftragsdruck</p>
                 <div class="greyBoxText">
                   <p class="gothamNormal lh">
-                  Wenn Sie drucken möchten, aber keinen eigenen 3D-Drucker haben, können Sie dies gerne über tun.
+                  Wenn Sie drucken möchten, aber keinen eigenen 3D-Drucker haben, können Sie dies gerne für Sie tun.
                   Profitieren Sie von unserem <a class="blueLink" href="/print">Auftragsbruck</a> in unserem Shop.
                   </p>
                   <br>
@@ -365,7 +364,7 @@ const buildMainSection = (conn, cat) => {
           let newestQuery = 'SELECT * FROM fix_products ORDER BY date_added DESC LIMIT 4';
           conn.query(newestQuery, function displayNewItems(err, newRes, fields) {
             if (err) {
-              reject('Egy nem várt hiba történt, kérlek próbáld újra 3');
+              reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut. 3');
               return;
             }
             
@@ -373,7 +372,7 @@ const buildMainSection = (conn, cat) => {
               </div>
               <section class="mainShowcase" id="toggleLower" style="${catToggle}">
                 <hr class="hrStyle" style="margin-top: 0;">
-                <p class="mainTitle" style="margin-top: 20px;">Újdonságok</p>
+                <p class="mainTitle" style="margin-top: 20px;">Nachricht</p>
                 <div class="dynamicShowcase newies">
             `;
 
@@ -402,7 +401,7 @@ const buildMainSection = (conn, cat) => {
             // Finally, select products from other categories 
             output += `
               <hr class="hrStyle" style="${catToggle}">
-              <p class="mainTitle" style="margin-top: 20px; ${catToggle}">További Termékek</p>
+              <p class="mainTitle" style="margin-top: 20px; ${catToggle}">Mehr Produkte</p>
               <div class="dynamicShowcase" style="${moreShow}">
             `;
        
@@ -411,7 +410,7 @@ const buildMainSection = (conn, cat) => {
             let catRes = conn.query(uniqueCategories, (err, catRes, fields) => {
               for (let i = 0; i < catRes.length; i++) {
                 if (err) {
-                  reject('Egy nem várt hiba történt, kérlek próbáld újra 4');
+                  reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut 4');
                   return;
                 }
                 
@@ -423,7 +422,7 @@ const buildMainSection = (conn, cat) => {
                 let innerRes = new Promise((resolve, reject) => {
                   conn.query(moreQuery, [currentCat], (err, innerRes, fields) => {
                     if (err) {
-                      reject('Egy nem várt hiba történt, kérlek próbáld újra 5');
+                      reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut 5');
                       return;
                     }
                    
@@ -441,7 +440,7 @@ const buildMainSection = (conn, cat) => {
                         <div class="seeMore trans"
                           onclick="sortByCat('${currentCat}', ${catToNum[currentCat]}, true)">
                           <img src="/images/icons/eye.svg" width="24" height="24"
-                            alt="További termékek a(z) ${currentCat} kategóriában">
+                            alt="Weitere Produkte in der ${currentCat} Kategorie">
                         </div>
                       </div>
                     `;
