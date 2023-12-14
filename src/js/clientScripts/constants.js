@@ -18,10 +18,10 @@ for (let i = 0.8; i <= 4; i += 0.4) {
   WALL_WIDTH_VALUES.push(Number(i.toFixed(2)));
 }
 
-const MIN_PRICE = 1990;
+const MIN_PRICE = 4.95;
 const SLA_MULTIPLIER = 1.9;
 const MAX_QUANTITY = 100;
 const MIN_QUANTITY = 1;
-const FREE_SHIPPING_LIMIT = 30000;
+const FREE_SHIPPING_LIMIT = 80;
 const DISCOUNT = 0.97;
 const PRINT_SIZE_SLA = [250, 220, 120];

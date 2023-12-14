@@ -6,7 +6,7 @@ function genQuan(chargeNote = '') {
   return `
     <div style="text-align: center;">
       <p class="gotham font14 qty" style="margin-bottom: 0; margin-top: 10px;">
-        Mennyiség
+        Menge
       </p> 
       <div class="quantity buttons_added">
         <input type="button" value="-" class="minus" id="minus" style="padding-left: 11px;">
@@ -20,7 +20,7 @@ function genQuan(chargeNote = '') {
     <div class="contHolder flexDiv gotham" style="margin-top: 30px;">
       <div class="contTitle" id="descTitle" style="padding-left: 0;">
         <div>
-          Specifikációk            
+        Spezifikationen            
         </div>
         <div class="hoverItem" id="descTitle_anim" style="display: block;"></div>
       </div>
