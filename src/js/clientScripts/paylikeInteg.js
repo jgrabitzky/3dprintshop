@@ -106,7 +106,7 @@ plForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
   plSubmit.disabled = true;
-  plSubmitUI.innerText = 'Folyamatban...';
+  plSubmitUI.innerText = 'Druckvorgang...';
   plError.innerHTML = '';
 
   // First get card credentials

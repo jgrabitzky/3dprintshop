@@ -56,11 +56,11 @@ const genOrder = (conn, userID, limit = '3, 2147483647', threeLimit = false) => 
         
         let finalPO;
         if (transID) {
-          finalPO = 'bankkártyás fizetés';
+          finalPO = 'Kreditkarten Zahlung';
         } else if (paymentOption) {
-          finalPO = 'előre utalás';
+          finalPO = 'Überweisung';
         } else {
-          finalPO = 'utánvét';
+          finalPO = 'Barzahlung bei Lieferung';
         }
 
         /*
@@ -105,11 +105,11 @@ const genOrder = (conn, userID, limit = '3, 2147483647', threeLimit = false) => 
           let invoiceLink = '';
           if (result[i].e_invoice) {
             invoiceLink = `
-              - <a class="blueLink font20" href="/e-invoices/${uniqueID}.pdf" target="_blank">E-számla letöltés</a>
+              - <a class="blueLink font20" href="/e-invoices/${uniqueID}.pdf" target="_blank">Rechnung</a>
             `;
           }
           output += `
-            <p class="gotham font20 group">Rendelés (${orderTime.substring(0, 10)}) ${invoiceLink}</p>
+            <p class="gotham font20 group">Bestelldatum (${orderTime.substring(0, 10)}) ${invoiceLink}</p>
           `;
         }
 

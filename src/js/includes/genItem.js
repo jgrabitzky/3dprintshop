@@ -98,13 +98,13 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
 
     output += `
       <div>
-        <p>Menge: ${data.quantity}db</p>
+        <p>Menge: ${data.quantity}Stück</p>
       </div>
     `;
 
     if (isStat) {
       let className = data.stat ? 'delivered' : 'inProgress';
-      let text = data.stat ? 'kinyomtatva' : 'folyamatban';
+      let text = data.stat ? 'Gedruckt' : 'Druckvorgang';
       output += `
         <div>
           <p>Status: <span class="${className}">${text}</span></p>
