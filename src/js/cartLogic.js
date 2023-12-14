@@ -481,7 +481,7 @@ const buildCartSection = (conn, req) => {
 
         let ePriceText = '<span id="extraPrice"></span>';
         let extraPrice = 0; 
-        if (finalPrice < 800) {
+        if (finalPrice < 2) {
           extraPrice = 800 - finalPrice;
           finalPrice += extraPrice;
           ePriceText = `<span id="extraPrice">(+${extraPrice} Ft felárral együtt)</span>`;
