@@ -167,7 +167,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
           <div class="itemSpecifications">
           <div class="specBox gotham">
           <div>
-          <div class="specTitle">Forma</div>
+          <div class="specTitle">Format</div>
           <select class="specSelect" id="sphere">
           <option value="Domború" selected>Konvex</option>
               <option value="Homorú">Konkav</option>
@@ -176,7 +176,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
           </div>
 
           <div>
-            <div class="specTitle">Méret</div>
+            <div class="specTitle">Größe</div>
             <select class="specSelect" id="size" onchange="updateLit()">
             </select>
           </div>
