@@ -6,19 +6,19 @@ const buildColors = (conn) => {
 
   const desc = [
     `Das beliebte, vielseitige Standard-FDM-Druckmaterial in vielen Farben und Texturen.`,
-    `Egyszerűen használható nyomtatási anyag, a PLA-nál erősebb, hőállóbb és tartósabb.`,
-    `Könnyen csiszolható és megmunkálható, a felületét acetonnal lehet kezelni a sima felület elérése végett.`,
-    `Rugalmas és erős nyomtatási anyag, amely megtartja az eredeti formát és alakot.`,
-    `Az ABS-hez hasonló anyag, viszont attól szebb nyomatot eredményez, emellett UV-fény álló is.`,
-    'Fa részecskék és PLA keveréke, ami nyomtatás után élethű fa hatást eredményez.',
-    'Fémforgács és PLA keveréke, ami nyomtatás után élethű fém hatást eredményez.',
-    'Kőzet részecskék és PLA keveréke, ami nyomtatás után élethű kőzetes hatást eredményez.',
-    'Színátmenetes PLA anyagok, így egy modellen belül több szín is alkalmazható.',
-    'Az SLA technológiájú nyomtatók standard alapanyaga.',
-    'Rugalmas és erős nyomtatási anyag, amely megtartja az eredeti formát és alakot.',
-    'Rugalmas és erős nyomtatási anyag, amely megtartja az eredeti formát és alakot.',
-    'Magas olvadáspontú, nagy szakítószilárdságú és erős anyag ipari alkalmazásra, funkcionális alkatrészekhez.',
-    'Szénszálas, erős és tartós anyag ipari alkalmazásra.'
+    `Einfach zu verwendendes Druckmaterial, stärker, hitzebeständiger und langlebiger als PLA.`,
+    `Es lässt sich leicht schleifen und bearbeiten, seine Oberfläche kann mit Aceton behandelt werden, um eine glatte Oberfläche zu erzielen.`,
+    `Flexibles und starkes Druckmaterial, das seine ursprüngliche Form und Gestalt behält.`,
+    `Es ist ein ABS-ähnliches Material, erzeugt aber einen schöneren Druck und ist außerdem UV-beständig.`,
+    'Eine Mischung aus Holzpartikeln und PLA, die nach dem Drucken einen naturgetreuen Holzeffekt ergibt.',
+    'Eine Mischung aus Metallspänen und PLA, die nach dem Drucken einen naturgetreuen Metalleffekt ergibt.',
+    'Eine Mischung aus Gesteinspartikeln und PLA, die nach dem Drucken einen naturgetreuen Felseffekt ergibt.',
+    'PLA-Materialien mit Farbverlauf, sodass mehrere Farben innerhalb eines Modells verwendet werden können.',
+    'Es ist das Standardmaterial für Drucker mit SLA-Technologie.',
+    'Flexibles und starkes Druckmaterial, das seine ursprüngliche Form und Gestalt behält.',
+    'Flexibles und starkes Druckmaterial, das seine ursprüngliche Form und Gestalt behält.',
+    'Hoher Schmelzpunkt, hohe Zugfestigkeit und starkes Material für industrielle Anwendungen und Funktionsteile.',
+    'Kohlefaser, starkes und langlebiges Material für den industriellen Einsatz.'
   ];
 
   return new Promise((resolve, reject) => {
@@ -62,7 +62,7 @@ const buildColors = (conn) => {
                 let inStock = result[i].in_stock;
                 let info = result[i].info;
                 let stockClass = inStock ? 'inStock' : 'notInStock';
-                let stockText = inStock ? 'Raktáron' : 'Nincs raktáron';
+                let stockText = inStock ? 'Auf Lager' : 'Ausverkauft';
                 output += `
                   <span id="${colorName}_${currentMaterial.toUpperCase()}"></span>
                   <div class="colorBox trans">
