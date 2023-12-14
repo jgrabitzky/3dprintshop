@@ -1,7 +1,7 @@
 const buildColors = (conn) => {
   const furtherInfo = `
-    További információt a <a class="blueLink font16" href="/materialHelp">Nyomtatási Anyagok</a> oldalon és a
-    <a class="blueLink font16" href="https://www.3djake.hu">beszállító</a> oldalán találsz.
+    Weitere Informationen finden Sie unter <a class="blueLink font16" href="/materialHelp">Druckmaterialien</a> und auf der
+    Seite des <a class="blueLink font16" href="https://www.3djake.de">Anbieters</a>.
   `;
 
   const desc = [
