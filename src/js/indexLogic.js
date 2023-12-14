@@ -5,21 +5,21 @@ const CONTACT_FORM = `
   <div class="mtsix" style="width: calc(100% - 40px); max-width: 1300px; margin: 0 auto;">
     <hr class="hrStyle">
     <h2 class="gotham font26 align fontNorm" id="getQuote">
-      Kapcsolatfelvétel
+    Kontakt
     </h2>
     <h2 class="align font18 lh fontNorm gothamNormal">
-      Egyedi nyomtatás, kérdés vagy speciális igény esetén bátran vedd fel velünk a kapcsolatot!
+    Für individuelle Drucke, Fragen oder besondere Wünsche können Sie sich gerne an uns wenden!
     </h2>
     <div class="flexDiv" style="flex-wrap: wrap;" id="normalDiv">
-      <input type="text" class="dFormField" id="name" placeholder="Név" value="">
+      <input type="text" class="dFormField" id="name" placeholder="Name" value="">
       <input type="email" class="dFormField" id="email" placeholder="Email">
       <input type="text" class="dFormField protmob" id="mobile"
-        placeholder="Telefonszám" value="">
-      <textarea placeholder="CAD modell URL, termékkel szembeni elvárások: anyag, szín, technológia stb."
+        placeholder="Telefon" value="">
+      <textarea placeholder="CAD-Modell-URL, Produkterwartungen: Material, Farbe, Technologie usw."
         id="message" class="dFormField" style="width: 100%; height: 100px;"></textarea>
     </div>
     <button class="fillBtn btnCommon" id="submitBtn" style="display: block; margin: 0 auto;">
-      Küldés
+      Absenden
     </button>
     <div id="pstatus" class="align errorBox gothamNormal lh" style="margin-top: 20px;"></div>
     <div id="succstat" class="align successBox gothamNormal lh" style="margin-top: 20px;"></div>
