@@ -74,7 +74,7 @@ function resetSubmitBtn() {
   _('submitBtnCont').innerHTML = `
     <button class="fillBtn btnCommon centerBtn" style="margin-top: 20px;"
       onclick="submitOrder()" id="submitBtn">
-      Megrendelés
+      Bestellen
     </button>
   `;
 }
