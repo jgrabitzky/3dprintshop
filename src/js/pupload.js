@@ -161,7 +161,7 @@ function displayFiles() {
         <label for="submitForm" tabindex="0"
           class="btnCommon fillBtn animate__animated animate__fadeIn"
           style="margin: 20px auto; width: 60%; max-width: 320px;" id="continue">
-          Tovább
+          Weiter
         </label> 
       `; 
 
