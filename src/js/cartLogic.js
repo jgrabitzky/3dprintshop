@@ -185,7 +185,7 @@ const buildCartSection = (conn, req) => {
 
                 <div class="flexDiv prodInfo" id="uniqueCont_${tid}">
                   <div id="unitPrice_${tid}">
-                    <p>Einzelpreis: <span id="priceHolder_${tid}">${actualPrice}</span> Ft</p>
+                    <p>Einzelpreis: <span id="priceHolder_${tid}">${actualPrice}</span> €</p>
                   </div>
             `;
             
@@ -453,7 +453,7 @@ const buildCartSection = (conn, req) => {
             output += `
                 <div>
                   <p class="bold">Összesen: <span id="totpHolder_${tid}">
-                    ${quantity * actualPrice}</span> Ft
+                    ${quantity * actualPrice}</span> €
                   </p>
                 </div>
               </div>
@@ -484,14 +484,14 @@ const buildCartSection = (conn, req) => {
         if (finalPrice < 2) {
           extraPrice = 800 - finalPrice;
           finalPrice += extraPrice;
-          ePriceText = `<span id="extraPrice">(+${extraPrice} Ft felárral együtt)</span>`;
+          ePriceText = `<span id="extraPrice">(+${extraPrice} € felárral együtt)</span>`;
         }
 
         finalPrice = `
           <span id="fPrice">
             ${Math.round(finalPrice * discount)}
           </span>
-          Ft
+          €
         `;
 
         if (discount == DISCOUNT) {
