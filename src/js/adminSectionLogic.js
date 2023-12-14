@@ -246,7 +246,7 @@ const buildAdminSection = (conn) => {
           let tFinalPrice = Math.round(quantity * aPrice);
           let nextOt = result[i + 1] ? result[i + 1].order_time : '';
           let prevOt = result[i - 1] ? result[i - 1].order_time : '';
-          if (quantity * aPrice < 800 && orderTime != nextOt && orderTime != prevOt) {
+          if (quantity * aPrice < 1 && orderTime != nextOt && orderTime != prevOt) {
             tFinalPrice += 800 - tFinalPrice;
           }
 
@@ -301,7 +301,7 @@ const buildAdminSection = (conn) => {
               id="box_${i}" class="flexDiv bigBox trans">
               <div class="flexDiv smallBox">
                 <div class="inBox"><b>Produktname:</b> ${productName}</div>
-                <div class="inBox"><b>Jahr:</b> ${aPrice} €</div>
+                <div class="inBox"><b>Einzelpreis:</b> ${aPrice} €</div>
                 <div class="inBox">
                   <b>Farbe:</b>
                   <span style="color: #${cColor}; background-color: #a2a2a2;
