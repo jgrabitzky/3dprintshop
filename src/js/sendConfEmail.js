@@ -63,11 +63,11 @@ const sendConfEmail = (conn, uid, delType, glsCode) => {
               <p style="font-size: 24px;">A csomagod átadtuk a futárszolgálatnak!</p>
               <p style="font-size: 16px;">Kedves Vásárlónk,</p>
               <p style="font-size: 16px;">
-                A(z) <span style="color: #4285f4;">${uid}</span> Ihre Bestellidentifikationsnummer
-                an den Lieferdienstleister übergeben wurde.
+                Ihre Bestellung mit der <span style="color: #4285f4;">${uid}</span> Bestellnummer
+                wird an den Lieferdienstleister übergeben.
               </p>
               <p style="font-size: 16px;">
-                Választott szállítási mód: <span style="color: #4285f4;">${delText}</span>
+              Ausgewählte Versandart: <span style="color: #4285f4;">${delText}</span>
                 <br>
                 Weitere Informationen zur Bestellung auf unserer Website, a
                 <span style="color: #4285f4;">Warenkorb</span> zu finden.

@@ -123,7 +123,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
     if (isOrderTime) {
       output += `
         <div>
-          <p>Geschäftszeiten: ${data.orderTime}</p>
+          <p>Bestellzeit: ${data.orderTime}</p>
         </div>
       `;
     }
@@ -131,7 +131,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
     if (isUID) {
       output += `
         <div>
-          <p>Identifikation: <span class="blue">${data.uid}</span></p>
+          <p>Bestellnummer:<span class="blue">${data.uid}</span></p>
         </div>
       `;
     }

@@ -191,7 +191,7 @@ const buildAdminSection = (conn) => {
           }
 
           if (litSphere) {
-            var productName = 'Litofánia';
+            var productName = 'Lithofanie';
           } else {
             var productName = result[i].name ? result[i].name : 'Produkt gedruckt';
           }
@@ -221,7 +221,7 @@ const buildAdminSection = (conn) => {
             let downloadFname = `${lastName}_${color}_${quantity}_${pm}_${suruseg}_${rvas}_${printTech}_${fv}_${scale}`;
             cpText = `
               <div class="inBox">
-                <b>Quelle:</b>
+                <b>Bild Download:</b>
                 <a download="${downloadFname}.stl" href="/printUploads/${cpFname}.stl" class="blueLink">STL-Datei</a>
                 <a download="${downloadFname}.gcode" href="/gcode/${cpFname}.gcode" class="blueLink">G-code</a>
               </div>
@@ -303,7 +303,7 @@ const buildAdminSection = (conn) => {
                 <div class="inBox"><b>Produktname:</b> ${productName}</div>
                 <div class="inBox"><b>Jahr:</b> ${aPrice} Ft</div>
                 <div class="inBox">
-                  <b>Szín:</b>
+                  <b>Farbe:</b>
                   <span style="color: #${cColor}; background-color: #a2a2a2;
                     border-radius: 8px; padding: 3px;">${color}</span>
                 </div>
@@ -315,10 +315,10 @@ const buildAdminSection = (conn) => {
               postfix = '';
             }
             output += `
-                <div class="inBox"><b>Rvas:</b> ${rvas}mm</div>
+                <div class="inBox"><b>Schichtdicke:</b> ${rvas}mm</div>
                 <div class="inBox"><b>Dichte:</b> ${suruseg}${postfix}</div>
                 <div class="inBox"><b>Größenbestimmung:</b> x${scale}</div>
-                <div class="inBox"><b>Fvas:</b> ${fvas}mm</div>
+                <div class="inBox"><b>Wandstärke:</b> ${fvas}mm</div>
             `;
 
             if (printTech != 'SLA') {
@@ -362,14 +362,14 @@ const buildAdminSection = (conn) => {
                 <div class="inBox"><b>Tel.:</b> <span id="mobile_${uniqueID}">${mobile}</span></div>
                 <div class="inBox"><b>E-mail:</b> <span id="email_${uniqueID}">${uemail || nlEmail}</span></div>
                 <div class="inBox"><b>Versandart:</b> ${delTypeTxt}</div>
-                <div class="inBox"><b>Identifikation:</b> <span id="id_${uniqueID}">${uniqueID}</div>
+                <div class="inBox"><b>Bestellnummer:</b> <span id="id_${uniqueID}">${uniqueID}</div>
                 ${compInfo}
                 ${packetPointData}
                 ${sendCE}
               </div>
               <div class="flexDiv smallBox">
                 <div class="inBox" id="bot_${i}">
-                  <b>Geschäftszeiten:</b> <div id="ot_${i}">${orderTime}</div>
+                  <b>Bestellzeit:</b> <div id="ot_${i}">${orderTime}</div>
                 </div>
                 ${cpText}
               </div>
