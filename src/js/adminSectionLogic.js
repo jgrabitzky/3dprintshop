@@ -301,7 +301,7 @@ const buildAdminSection = (conn) => {
               id="box_${i}" class="flexDiv bigBox trans">
               <div class="flexDiv smallBox">
                 <div class="inBox"><b>Produktname:</b> ${productName}</div>
-                <div class="inBox"><b>Jahr:</b> ${aPrice} Ft</div>
+                <div class="inBox"><b>Jahr:</b> ${aPrice} €</div>
                 <div class="inBox">
                   <b>Farbe:</b>
                   <span style="color: #${cColor}; background-color: #a2a2a2;
@@ -386,7 +386,7 @@ const buildAdminSection = (conn) => {
               <div class="gotham blue align font18" style="margin-bottom: 20px;">
                 <b>Insgesamt:</b>
                 <b id="allp_${i}" class="pc">${tFinalPrice}</b>
-                <span class="blk">Ft</span>
+                <span class="blk">€</span>
                 <span style="display: none; margin-top: 10px;" id="totpHolder_${i}" class="align">
                   <b class="gotham blue">Gesamtpreis der Bestellung:</b>
                   <span id="totp_${i}" class="blk totalPrice_${uniqueID}"></span>

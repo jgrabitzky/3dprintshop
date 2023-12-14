@@ -31,7 +31,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
   } else {
     output += `
       <div>
-        <p>Einzelpreis: ${data.price} Ft</p>
+        <p>Einzelpreis: ${data.price} €</p>
       </div>
     `;
 
@@ -139,7 +139,7 @@ function genItem(isOrderTime = false, isStat = false, isPaymentOption = false, d
 
   output += `
         <div>
-          <p class="bold">Insgesamt: ${data.quantity * data.price} Ft</p>
+          <p class="bold">Insgesamt: ${data.quantity * data.price} €</p>
         </div>
       </div>
       <div class="clear"></div>
