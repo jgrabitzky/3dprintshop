@@ -77,7 +77,7 @@ const genOrder = (conn, userID, limit = '3, 2147483647', threeLimit = false) => 
         }
         
         if (cpFname) name = 'Bestelltes Produkt'; //Bérnyomtatott Termék
-        else if (litFname) name = 'Litofánia';
+        else if (litFname) name = 'Lithophane';
 
         let data = {
           'orderTime': orderTime,

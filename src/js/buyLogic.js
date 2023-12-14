@@ -268,7 +268,7 @@ const buildBuySection = (conn, paramObj, req) => {
           let prodURL = '';
           let imgURL = 'printUploads/lithophanes/' + file;
           let price = calcLitPrice(size);
-          let name = 'Litofánia'
+          let name = 'Lithophane'
 
           let data = {
             'orderID': orderID,

@@ -117,7 +117,7 @@ const buildCartSection = (conn, req) => {
 
               var url = 'uploadPrint?image=' + tid;
               var imgUrl = 'printUploads/lithophanes/' + lithophaneFile;
-              var productName = 'Litofánia';
+              var productName = 'Lithophane';
               var litSphere = content['sphere_' + tid];
               var litSize = content['size_' + tid];
               var litColor = content['color_' + tid];
