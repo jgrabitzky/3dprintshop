@@ -161,7 +161,7 @@ function changeTech(techBefore, tid, price) {
 
   _('uniqueCont_' + tid).innerHTML += `
     <div>
-      <p class="bold">Összesen: <span id="totpHolder_${tid}">
+      <p class="bold">Gesamtpreis: <span id="totpHolder_${tid}">
         ${newPrice}</span> Ft
       </p>
     </div>

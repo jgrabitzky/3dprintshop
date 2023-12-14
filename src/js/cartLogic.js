@@ -452,7 +452,7 @@ const buildCartSection = (conn, req) => {
 
             output += `
                 <div>
-                  <p class="bold">Összesen: <span id="totpHolder_${tid}">
+                  <p class="bold">Gesamtpreis: <span id="totpHolder_${tid}">
                     ${quantity * actualPrice}</span> €
                   </p>
                 </div>
