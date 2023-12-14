@@ -70,11 +70,11 @@ async function buildPrintSection(conn, req) {
             </p> 
 
             <p class="gotham font16" style="color: #2d2d2d;">
-            Laden Sie ein Bild für die Lithophanie und eine STL-Datei für den Auftragsdruck hoch
+            Laden Sie ein Bild für die Lithophanie oder eine STL-Datei für den Auftragsdruck hoch
             </p> 
 
             <p class="gotham font16 hideOnMobile" style="color: #2d2d2d;">
-              <span class="gothamBold">Max. Max. Grösse:</span> ${PRINT_SIZES_PLA[0]}mm x ${PRINT_SIZES_PLA[1]}mm x ${PRINT_SIZES_PLA[2]}mm (FDM)<br> ${PRINT_SIZES_SLA[0]}mm x ${PRINT_SIZES_SLA[1]}mm x ${PRINT_SIZES_SLA[2]}mm (SLA) 
+              <span class="gothamBold">Max. Größe:</span> ${PRINT_SIZES_PLA[0]}mm x ${PRINT_SIZES_PLA[1]}mm x ${PRINT_SIZES_PLA[2]}mm (FDM)<br> ${PRINT_SIZES_SLA[0]}mm x ${PRINT_SIZES_SLA[1]}mm x ${PRINT_SIZES_SLA[2]}mm (SLA) 
             </p> 
           </div>
         </div>
@@ -326,7 +326,7 @@ async function buildPrintSection(conn, req) {
           Weitere Informationen
             ${rightArrow}
           </a>
-          <span class="orSep">vagy</span>
+          <span class="orSep">oder</span>
           <a class="blueLink align jumpToPrint">
           Zum Drucken gehen
             ${rightArrow}
@@ -349,8 +349,8 @@ async function buildPrintSection(conn, req) {
         Gedrucktes Lithophan und das Originalbild
         </h3>
         <p id="scTextLit" class="align lh" style="color: #3c4043;">
-        Im Grundfall handelt es sich bei einem fertigem Lithophan um eine ein geprägtes Bild das 
-        Bei Hintergrundbeleuchtung selbst kristallklar ist.
+        Im Grunde handelt es sich bei einem fertigem Lithophan um eine ein geprägtes Bild das 
+        bei Hintergrundbeleuchtung selbst kristallklar ist.
         Aus dem hochgeladenen digitalen Bild erstellt der 3D-Drucker ein echtes, greifbares Lithophan,
         das dank der Technologie das Originalbild realistisch wiedergibt.
         </p>
@@ -365,15 +365,15 @@ async function buildPrintSection(conn, req) {
         Wir kontaktieren Sie gerne in Form einer Angebotsanfrage.
         </h2>
         <div class="flexDiv" style="flex-wrap: wrap;" id="normalDiv">
-          <input type="text" class="dFormField" id="name" placeholder="Név" value="">
+          <input type="text" class="dFormField" id="name" placeholder="Name" value="">
           <input type="email" class="dFormField" id="email" placeholder="Email">
           <input type="text" class="dFormField protmob" id="mobile"
-            placeholder="Telefonszám" value="">
+            placeholder="Telefon" value="">
           <textarea placeholder="CAD-Modell-URL, Produkterwartungen: Material, Farbe, Technologie usw."
             id="message" class="dFormField" style="width: 100%; height: 100px;"></textarea>
         </div>
         <button class="fillBtn btnCommon" id="submitBtn" style="display: block; margin: 0 auto;">
-          Küldés
+          Absenden
         </button>
         <div id="pstatus" class="align errorBox" style="margin-top: 20px;"></div>
         <div id="succstat" class="align successBox" style="margin-top: 20px;"></div>
