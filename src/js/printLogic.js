@@ -358,7 +358,7 @@ async function buildPrintSection(conn, req) {
       
       <div class="mtsix">
         <h2 class="gotham font26 align fontNorm" id="getQuote">
-        Anfrage für
+        Anfrage
         </h2>
         <h2 class="align font18 lh fontNorm">
         Wenn Sie eine Einzelbestellung aufgeben möchten, laden Sie die Dateien die Sie drucken möchten im Dateiformat STL hoch.
@@ -368,7 +368,7 @@ async function buildPrintSection(conn, req) {
           <input type="text" class="dFormField" id="name" placeholder="Name" value="">
           <input type="email" class="dFormField" id="email" placeholder="Email">
           <input type="text" class="dFormField protmob" id="mobile"
-            placeholder="Telefon" value="">
+            placeholder="Telefonnummer" value="">
           <textarea placeholder="CAD-Modell-URL, Produkterwartungen: Material, Farbe, Technologie usw."
             id="message" class="dFormField" style="width: 100%; height: 100px;"></textarea>
         </div>
