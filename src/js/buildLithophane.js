@@ -37,24 +37,24 @@ const buildLithophane = (conn, userID, filePaths, width, height) => {
     // Build output
     output += `
       <p class="align note ddgray" style="display: none;" id="clickNote">
-        Nyomj a képre a litofán nézetért
+      Klicken Sie auf das Bild, um die Lithofan-Ansicht zu sehen
       </p>
       <div class="flexDiv" id="customProps" style="flex-wrap: wrap; margin-top: 10px;">
         <div>
           <p>
-            <span class="blue gotham">Egységár:</span>
+            <span class="blue gotham">Preis:</span>
             <span id="priceHolder">${totalPrice}</span> Ft 
           </p>
         </div>
         <div>
           <p>
-            <span class="blue gotham">Méret:</span>
+            <span class="blue gotham">Größe:</span>
             <span id="sizeHolder"></span>
           </p>
         </div>
       </div>
       <p class="align note ddgray" id="chargeNote" style="margin-bottom: 30px;">
-        A litofánia (dombornyomott) nézethez kattints a képre
+      Klicken Sie auf das Bild, um zur Ansicht der Lithophanie (geprägt) zu gelangen
       </p>
     `;
 
@@ -64,23 +64,23 @@ const buildLithophane = (conn, userID, filePaths, width, height) => {
       output += `
         <p class="align">
           <a href="/lithophaneHelp" target="_blank" class="blueLink">
-            Mit jelent a litofánia formája?
+          Was bedeutet die Form der Lithophanie?
           </a>
         </p>
 
         <p class="align note ddgray">
-          A specifikációk megváltoztatása árváltozást vonhat maga után!
+        Eine Änderung der Spezifikationen kann zu einer Preisänderung führen!
         </p>
 
         <div class="specBox" style="justify-content: center;">
           <button class="fillBtn btnCommon threeBros" id="buyLit">
-            Vásárlás
+            Kaufen
           </button> 
           <button class="fillBtn btnCommon threeBros" id="toCart">
-            Tovább a kosárhoz
+            In den Warekorb
           </button>
           <button class="fillBtn btnCommon threeBros" id="newFile">
-            Új fájl feltöltése 
+          Laden Sie eine neue Datei hoch
           </button>
         </div>
       `;
