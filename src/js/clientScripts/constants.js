@@ -1,7 +1,7 @@
 const LIT_FORMS = ['Domború', 'Homorú', 'Sima'];
 const LAYER_WIDTH_VALUES = [0.12, 0.2, 0.28];
 const INFILL_VALUES = [];
-const LIT_PRICES = {'100': 19.90, '150': 29.90, '200': 39.90};
+const LIT_PRICES = {'100': 10, '150': 15, '200': 20};
 for (let i = 10; i <= 90; i += 10) {
   INFILL_VALUES.push(i);
 }
@@ -18,7 +18,7 @@ for (let i = 0.8; i <= 4; i += 0.4) {
   WALL_WIDTH_VALUES.push(Number(i.toFixed(2)));
 }
 
-const MIN_PRICE = 4.95;
+const MIN_PRICE = 5;
 const SLA_MULTIPLIER = 1.9;
 const MAX_QUANTITY = 100;
 const MIN_QUANTITY = 1;
