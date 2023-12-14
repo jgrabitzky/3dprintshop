@@ -124,7 +124,7 @@ const buildAdminSection = (conn) => {
           let isTransfer = 'Barzahlung bei Lieferung';
           let lookup = shippingPrice - MONEY_HANDLE;
           if (Number(result[i].is_transfer)) {
-            isTransfer = 'Verweise weiterleiten';
+            isTransfer = 'Überweisung';
             lookup += MONEY_HANDLE;
           } else if (transactionID) {
             isTransfer = 'Kreditkarten Zahlung';
@@ -202,7 +202,7 @@ const buildAdminSection = (conn) => {
           }
 
           let transferText = '';
-          if (isTransfer === 'Verweise weiterleiten') {
+          if (isTransfer === 'Überweisung') {
             transferText = `
               <div class="inBox">
                 <b>Empfehlungs-ID:</b> ${transferID}

@@ -135,8 +135,8 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
     let compInfo = '';
     if (normalCompname) {
       compInfo = `
-        <div><b>Cégnév: </b>${normalCompname}</div>
-        <div><b>Adószám: </b>${normalCompnum}</div>
+        <div><b>Name der Firma: </b>${normalCompname}</div>
+        <div><b>Steuernummer: </b>${normalCompnum}</div>
       `;
     }
 
@@ -545,7 +545,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
 
                   <div style="text-align: center; line-height: 1.7; width: 50%; float: left;">
                     <p style="font-weight: bold; font-size: 16px;">
-                      Személyes & Szállítási Adatok
+                    Persönliche und Versandinformationen
                     </p>
                     <div style="font-size: 14px;">
                       <div><b>Name: </b>${name}</div>
@@ -553,8 +553,8 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                       <div><b>Telefon: </b>${mobile}</div>
                       <div>
                         <b>Zahlung: </b>
-                        ${payment == 'transfer' ? 'Verweise weiterleiten' : (payment == 'credit' ?
-                        'bankkártyás fizetés' : 'utánvét')}
+                        ${payment == 'transfer' ? 'Überweisung' : (payment == 'credit' ?
+                        'Kreditkarten Zahlung' : 'Barzahlung bei Lieferung')}
                         ${
                           payment == 'transfer' ? `<div>
                                                       <div><b>Accountnummer:</b> ${BA_NUM}</div>
@@ -572,14 +572,14 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                         }
                       </div>
                       <div>
-                        <b>Átvétel: </b> ${!isPP ? 'házhozszállítás' : 'csomagpont átvétel'}
+                        <b>Übernehmen: </b> ${!isPP ? 'Hauslieferung' : 'Paketpunktabholung'}
                       </div>
                       ${compInfo}
                     </div>
                   </div>
 
                   <div style="text-align: center; width: 50%; float: left; line-height: 1.7;">
-                    <p style="font-weight: bold; font-size: 16px;">Számlázási Adatok</p>
+                    <p style="font-weight: bold; font-size: 16px;">Abrechnungsdaten</p>
                     <div style="font-size: 14px;">
                       ${billingEmail}
                     </div>
@@ -587,8 +587,8 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                   <div style="clear: both;"></div>
                   <br>
                   <p style="font-size: 14px; text-align: center;">
-                    Az alábbi termék azonosítóval tudod nyomonkövetni a
-                    rendelésed a Zaccord fiókodban:
+                  Sie können es mit der untenstehenden Produkt-ID verfolgen
+                  Ihre Bestellung in Ihrem Zaccord-Konto:
                     <span style="color: #4285f4;">${uniqueID}</span>
                   </p>
 
@@ -597,14 +597,14 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                   </div>
                   <b style="font-size: 16px;">${emailTotPrice}</b>
                   <p style="color: #7d7d7d; font-size: 14px;">
-                    Az oldalon feltüntetett árak tartalmazzák az áfát!
+                  Die auf der Seite angezeigten Preise verstehen sich inklusive Mehrwertsteuer!
                   </p>
                   <p style="color: #7d7d7d; font-size: 14px;">
                     
                   </p>
                 `;
 
-                let subject = 'Megkaptuk a rendelésed! - Azonosító: ' + uniqueID;
+                let subject = 'Wir haben Ihre Bestellung erhalten! - Kennung: ' + uniqueID;
                 
                 // If customer selects the e-invoice option generate the invoice first
                 // Then download it from the server and send it as an attachment
@@ -619,21 +619,21 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                   generateInvoice(conn, formData).then(resp => {
                     console.log(resp);
                     let attachmentOptions = {
-                      filename: `E-számla - Zaccord 3D nyomtatás (${uniqueID}).pdf`,
+                      filename: `E-Rechnung – Zaccord 3D-Druck (${uniqueID}).pdf`,
                       path: path.join(__dirname, '..', '..', 'e-invoices', uniqueID + '.pdf')
                     };
                     sendEmail('info@grabitzky.com', emailContent, email, subject, attachmentOptions);
                   }).catch(err => {
                     console.log(err);
-                    reject('Egy nem várt hiba történt, kérlek próbáld újra');
+                    reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
                   }); 
                 } else {
                   sendEmail('info@grabitzky.com', emailContent, email, subject);
                 }
 
                 // Send a notification email to us about every new order
-                let sj = 'Dől a zsé, jönnek a rendelők! - Azonosító: ' + uniqueID;
-                let cnt = '<p style="font-size: 18px;">Új rendelés érkezett!</p>';
+                let sj = 'Die Sonne scheint, ihr Paket kommt! - Kennung: ' + uniqueID;
+                let cnt = '<p style="font-size: 18px;">Eine neue Bestellung ist eingetroffen!</p>';
                 sendOwnerEmails(sj, cnt);
 
                 // Also record user & order credentials in an excel spreadsheet
@@ -659,7 +659,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                         amount = 0;
                       }
                       let rowContent = [
-                        name, normalCompname, pcode, city, address, mobile, email, 'Alkatrészek',
+                        name, normalCompname, pcode, city, address, mobile, email, 'Teile',
                         ...packageDimensions, 0.5, '', amount
                       ];
                       let worksheet = workbook.getWorksheet('Shipping');
@@ -668,7 +668,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                     });
                   }).catch(err => {
                     console.log(err);
-                    reject('Hiba történt, kérlek próbáld újra');
+                    reject('Es ist ein Fehler aufgetreten. Versuchen Sie es erneut');
                     return;
                   });
                 }

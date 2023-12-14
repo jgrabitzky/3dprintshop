@@ -280,7 +280,7 @@ function delFromExcel(id) {
     name, pcode, city, address, mobile, email 
   };
 
-  _('excelDel_' + id).innerHTML = 'Folyamatban...';
+  _('excelDel_' + id).innerHTML = 'Druckvorgang...';
   
   fetch('/delFromExcel', {
     headers: {

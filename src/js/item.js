@@ -34,25 +34,25 @@ function addToCart(id) {
   // Validation on client-side
   _('status').innerHTML = '';
   if (LAYER_WIDTH_VALUES.indexOf(rvas) < 0) {
-    displayErrorMsg('A rétegvastagság értéke nem megfelelő');
+    displayErrorMsg('Der Wert der Schichtdicke ist nicht korrekt');
     return;
   } else if (INFILL_VALUES.indexOf(suruseg) < 0) {
-    displayErrorMsg('A sűrűség értéke nem megfelelő');
+    displayErrorMsg('Der Dichtewert ist falsch');
     return; 
   } else if (PCOLORS['pla'].indexOf(color) < 0) {
-    displayErrorMsg('A szín értéke nem megfelelő');
+    displayErrorMsg('Der Farbwert ist falsch');
     return; 
   } else if (SCALE_VALUES.indexOf(scale) < 0) {
-    displayErrorMsg('A méretezés értéke nem megfelelő');
+    displayErrorMsg('Der Skalierungswert ist falsch');
     return; 
   } else if (WALL_WIDTH_VALUES.indexOf(fvas) < 0) {
-    displayErrorMsg('A falvastagság értéke nem megfelelő');
+    displayErrorMsg('Der Wert der Wandstärke ist nicht korrekt');
     return;
   } else if (!_('quantity').value || quantity % 1 !== 0) {
-    displayErrorMsg('A mennyiség értéke nem megfelelő');
+    displayErrorMsg('Der Mengenwert ist nicht korrekt');
     return; 
   } else if (quantity < MIN_QUANTITY || quantity > MAX_QUANTITY) {
-    displayErrorMsg(`Egyféle termékből maximum ${MAX_QUANTITY}db rendelhető`);
+    displayErrorMsg(`Maximal eine Produktart ${MAX_QUANTITY}pro Bestellung`);
     return;
   }
 
@@ -94,7 +94,7 @@ function addToCart(id) {
             // Maximum quantity for a single item is MAX_QUANTITY
             let tmpQuantity = Number(itemsSoFar['content_' + cid]['quantity_' + cid]);
             if (tmpQuantity + quantity > MAX_QUANTITY) {
-              displayErrorMsg(`Egyféle termékből maximum ${MAX_QUANTITY}db rendelhető`);
+              displayErrorMsg(`Es können maximal ${MAX_QUANTITY}eines Produkttyps bestellt werden`);
               return;
             }
             itemsSoFar['content_' + cid]['quantity_' + cid] = tmpQuantity + quantity;
@@ -240,7 +240,7 @@ function calcSLAPrice(p, lw, infill, scale) {
 
 function manageDiscountTxt(newPrice) {
   if (newPrice > FREE_SHIPPING_LIMIT) {
-    _('discount').innerHTML = `(${Math.round((1 - DISCOUNT) * 100)}% kedvezmény)`;
+    _('discount').innerHTML = `(${Math.round((1 - DISCOUNT) * 100)}% Rabatt)`;
   } else {
     _('discount').innerHTML = '';
   }
@@ -289,7 +289,7 @@ function buyItem(id) {
   let size = getModelSize();
 
   if (!_('quantity').value) {
-    displayErrorMsg('A mennyiség értéke nem megfelelő');
+    displayErrorMsg('Der Mengenwert ist nicht korrekt');
     return; 
   }
 
