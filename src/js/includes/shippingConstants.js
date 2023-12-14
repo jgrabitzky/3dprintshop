@@ -1,8 +1,8 @@
-const PACKETA_POINT = 1390;
-const POST_TO_ADDR = 1890;
-const GLS_POINT = 1990;
-const GLS_TO_ADDR = 2490;
-const FREE_SHIPPING_LIMIT = 30000;
+const PACKETA_POINT = 6;
+const POST_TO_ADDR = 6;
+const GLS_POINT = 6;
+const GLS_TO_ADDR = 6;
+const FREE_SHIPPING_LIMIT = 80;
 const MONEY_HANDLE = 390;
 const PACKET_POINT_TYPES = ['packetaPoint', 'glsPoint'];
 const PACKET_POINT_TYPES_R = ['pointPacketa', 'pointGls'];
@@ -21,9 +21,9 @@ const SHIPPING_OBJ = {
   },
 
   'mpl': {
-    title: 'MPL házhozszállítás',
-    desc: 'A futárszolgálat a megadott címre fogja szállítani a rendelt terméket/termékeket.',
-    price: `Szállítási költség: ${FREE_SHIPPING_LIMIT} Ft alatt ${POST_TO_ADDR} Ft, felette ingyenes.`,
+    title: 'DHL Lieferung',
+    desc: 'Der Kurierdienst liefert das bestellte Produkt/die bestellten Produkte an die angegebene Adresse.',
+    price: `Versandkosten: ${FREE_SHIPPING_LIMIT} unter ${POST_TO_ADDR} Ft, felette ingyenes.`,
     actualPrice: POST_TO_ADDR,
     divID: 'mplToAddr',
     radioID: 'toAddrMpl',
@@ -34,7 +34,7 @@ const SHIPPING_OBJ = {
 
   'glsAddr': {
     title: 'GLS házhozszállítás',
-    desc: 'A futárszolgálat a megadott címre fogja szállítani a rendelt terméket/termékeket.',
+    desc: 'Der Kurierdienst liefert das bestellte Produkt/die bestellten Produkte an die angegebene Adresse.',
     price: `Szállítási költség: ${FREE_SHIPPING_LIMIT} Ft alatt ${GLS_TO_ADDR} Ft, felette ingyenes.`,
     actualPrice: GLS_TO_ADDR,
     divID: 'glsToAddr',

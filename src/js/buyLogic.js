@@ -67,7 +67,7 @@ const buildBuySection = (conn, paramObj, req) => {
       </script>
       <section class="keepBottom">
         <span id="main">
-          <p class="blueHead" style="font-size: 24px; margin-top: 0;">1. Termékek</p>
+          <p class="blueHead" style="font-size: 24px; margin-top: 0;">1. Produkt</p>
           <div id="emlHolder">
     `;
 
@@ -512,7 +512,7 @@ const buildBuySection = (conn, paramObj, req) => {
                 Endbetrag:
                 </span>
                 <span id="fPrice">${Math.round(finalPrice + charge)}</span>
-                Ft ${discountText}
+                € ${discountText}
                 (inklusive Lieferung)
               </p>
               <div id="submitBtnCont">

@@ -416,7 +416,7 @@ const buildCartSection = (conn, req) => {
             for (let i = MIN_QUANTITY; i <= MAX_QUANTITY; i++) {
               let selected = quantity == i ? 'selected' : '';
               output += `
-                <option value="${i}" ${selected}>${i}db</option>
+                <option value="${i}" ${selected}>${i}Stück</option>
               `;
             }
 
