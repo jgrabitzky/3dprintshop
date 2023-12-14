@@ -169,7 +169,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
           <div>
           <div class="specTitle">Format</div>
           <select class="specSelect" id="sphere">
-          <option value="Domború">selected>Konvex</option>
+          <option value="Domború" selected>Konvex</option>
               <option value="Homorú">Konkav</option>
               <option value="Sima">Glatt</option>
             </select>
