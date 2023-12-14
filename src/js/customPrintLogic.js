@@ -240,11 +240,11 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           Einwirkung von Hitze oder UV-Licht ausgesetzt werden, sollte es flexibel sein
           oder wie viel Belastung es ausgesetzt sein wird.
           </div>
-          <div class="specChProps gothamNormal">
-            <div>Hőállóság</div>
-            <div>Szakítószilárdság</div>
-            <div>Rugalmasság</div>
-          </div>
+          //<div class="specChProps gothamNormal">
+          //  <div>Hőállóság</div>
+          //  <div>Szakítószilárdság</div>
+          //  <div>Rugalmasság</div>
+          //</div>
           <div class="specChValBox font32 blue">
             <p data-value="PLA" id="chmat">PLA</p>
             <p class="otherPrice">Preis: ${Math.round(totalPrice)} €</p>
