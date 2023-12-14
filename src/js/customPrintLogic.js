@@ -83,8 +83,8 @@ const buildCustomPrint = (conn, userID, filePaths) => {
       if (isMoreFiles) {
         subpriceText = `
           <p class="gotham align">
-            <span class="blue gotham">Ár:</span>
-            <span id="subprice_${i}">${Math.round(basePrice)}</span> Ft
+            <span class="blue gotham">Grundpreis:</span>
+            <span id="subprice_${i}">${Math.round(basePrice)}</span> €
           </p>
           <p class="gotham align">
             <span class="blue gotham">Méret:</span>
@@ -170,8 +170,8 @@ const buildCustomPrint = (conn, userID, filePaths) => {
         <div class="flexDiv" id="customProps" style="flex-wrap: wrap; margin-top: 10px;">
           <div>
             <p>
-              <span class="blue gotham">Gesamt:</span>
-              <span id="priceHolder">${Math.round(totalPrice)}</span> Ft
+              <span class="blue gotham">Grundpreis:</span>
+              <span id="priceHolder">${Math.round(totalPrice)}</span> €
             </p>
           </div>
           <div>
