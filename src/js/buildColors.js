@@ -5,7 +5,7 @@ const buildColors = (conn) => {
   `;
 
   const desc = [
-    `A népszerű, sokoldalú, standrad FDM nyomtatási anyag számos színben és textúrában.`,
+    `Das beliebte, vielseitige Standard-FDM-Druckmaterial in vielen Farben und Texturen.`,
     `Egyszerűen használható nyomtatási anyag, a PLA-nál erősebb, hőállóbb és tartósabb.`,
     `Könnyen csiszolható és megmunkálható, a felületét acetonnal lehet kezelni a sima felület elérése végett.`,
     `Rugalmas és erős nyomtatási anyag, amely megtartja az eredeti formát és alakot.`,
