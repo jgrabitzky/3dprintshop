@@ -45,7 +45,7 @@ function updateCookie(param, qty = null, cookieID = null) {
 
 function updateOPrice(price) {
   for (let el of document.getElementsByClassName('otherPrice')) {
-    el.innerText = 'Ár: ' + price + ' Ft';
+    el.innerText = 'Preis: ' + price + ' €';
   }
 }
 
