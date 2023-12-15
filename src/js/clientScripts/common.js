@@ -45,12 +45,12 @@ function updateCookie(param, qty = null, cookieID = null) {
 
 function updateOPrice(price) {
   for (let el of document.getElementsByClassName('otherPrice')) {
-    el.innerText = 'Ár: ' + price + ' Ft';
+    el.innerText = 'Preis: ' + price + ' €';
   }
 }
 
 function smoothPrice(price) {
-  if (price <= 8000) {
+  if (price <= 10) {
     return Math.round(price);
   } else {
     return Math.round(price);
