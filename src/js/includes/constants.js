@@ -101,7 +101,7 @@ function calcCPPrice(volume, area) {
 function getCoords(path) {
   let stl = new NodeStl(path, {density: DENSITY}); 
   let volume = stl.volume;
-  let area = stl.area / 1000;
+  let area = stl.area / 100;
   return [volume, area];
 }
 
