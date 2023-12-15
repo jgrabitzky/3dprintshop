@@ -4,12 +4,12 @@ const fs = require('fs');
 
 // Constant variables used for shopping & delivery, product customization
 // NOTE: change these values if you want to use these features
-const EMAIL_HOST_NAME = '';
+const EMAIL_HOST_NAME = 'smtp.strato.de';
 const DOWNLOAD_STLS_URL = '';
-const EMAIL_USER_NAME = '';
-const EMAIL_PASSWORD = '';
+const EMAIL_USER_NAME = 'info@grabitzky.com';
+const EMAIL_PASSWORD = 'Julian@20399$';
 const PAYLIKE_ID = '';
-const SESSION_SECRET = '';
+const SESSION_SECRET = 'oKTgDM!A%fXH%J)Vf=90swRXnrJIZH80(vpeL8YV_zt2UdO!dbCDjQJWfuf:iF8R3O';
 const LIT_FORMS = ['Domború', 'Homorú', 'Sima'];
 const LIT_PRICES = {'100': 1990, '150': 2990, '200': 3990};
 const LAYER_WIDTH_VALUES = [0.12, 0.2, 0.28];
@@ -74,7 +74,7 @@ const COUNTRIES = ["Albánia", "Andorra", "Argentína", "Ausztrália", "Ausztria
 
 const FIX_ADD_CPRINT = 500;
 const SUCCESS_RETURN = '{"success": true}';
-const OWNER_EMAILS = []; //['mark@pearscom.com', 'turcsanmate113@gmail.com'];
+const OWNER_EMAILS = ['info@grabitzky.com']; //['mark@pearscom.com', 'turcsanmate113@gmail.com'];
 
 // For printing
 const M = 12; // cost/min in forint
@@ -114,12 +114,13 @@ const REF_BG = `
 
 // NOTE: change ADMIN constants if you want to use that feature
 // Admin URLs (marked with capital letters), password & username
-const ADMIN_LOGIN_URL = '';
-const CONF_EMAIL_URL = '';
-const STATUS_UPDATE_URL = '';
-const ADMIN_PAGE_ACCESS = '';
-const ADMIN_UNAME = '';
-const ADMIN_PASSWORD = '';
+const ADMIN_LOGIN_URL = '/adminLogin';
+const CONF_EMAIL_URL = '/sendConfEmail';
+const STATUS_UPDATE_URL = '/updateOrderStatus';
+const ADMIN_PAGE_ACCESS = '/lick_weebshit';
+const ADMIN_UNAME = 'weebshit';
+const ADMIN_PASSWORD = 'HJ!RCY~KuK(xhX2-';
+
 
 const LAZY_LOAD = `
   <script src="/js/includes/lazyLoad.js"></script>

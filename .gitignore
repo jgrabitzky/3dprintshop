@@ -2,8 +2,5 @@
 *.swo
 node_modules
 robots.txt
-src/js/includes/connConstants.js
-src/js/includes/constants.js
-src/js/constants.js
-src/js/clientScripts/constants.js
+
 

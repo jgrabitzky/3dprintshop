@@ -4,9 +4,9 @@ const fs = require('fs');
 
 // Constant variables used for shopping & delivery, product customization
 // NOTE: change these values if you want to use these features
-const EMAIL_HOST_NAME = 'grabitzky.com';
+const EMAIL_HOST_NAME = 'smtp.strato.de';
 const EMAIL_USER_NAME = 'info@grabitzky.com';
-const EMAIL_PASSWORD = 'Render11Render11';
+const EMAIL_PASSWORD = 'Julian@20399$';
 const PAYLIKE_ID = '3105ef0c-fbe6-484c-add3-f71538d0d959';
 const SESSION_SECRET = 'oKTgDM!A%fXH%J)Vf=90swRXnrJIZH80(vpeL8YV_zt2UdO!dbCDjQJWfuf:iF8R3O';
 const SHIPPING_PRICE = 1690;
@@ -86,7 +86,7 @@ const COUNTRIES = ["Albánia", "Andorra", "Argentína", "Ausztrália", "Ausztria
 
 const FIX_ADD_CPRINT = 500;
 const SUCCESS_RETURN = '{"success": true}';
-const OWNER_EMAILS = []; //['mark@pearscom.com', 'turcsanmate113@gmail.com'];
+const OWNER_EMAILS = ['info@grabitzky.com']; //['mark@pearscom.com', 'turcsanmate113@gmail.com'];
 
 // For printing
 const B = 40; // build speed: 40mm/s
