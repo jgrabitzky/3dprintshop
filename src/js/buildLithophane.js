@@ -32,7 +32,7 @@ const buildLithophane = (conn, userID, filePaths, width, height) => {
     output += '</div>';
 
     // Default price is the same for all lihophanes
-    let totalPrice = 19;
+    let totalPrice = 9;
 
     // Build output
     output += `
