@@ -18,7 +18,7 @@ const PRINT_MATERIALS = ['PLA', 'ABS', 'PETG', 'TPU'];
 const LAYER_WIDTH_VALUES_SLA = [0.05, 0.07, 0.1];
 const INFILL_VALUES_SLA = ['Üreges', 'Tömör'];
 const PRINT_TECHS = ['FDM', 'SLA'];
-const MIN_PRICE = 1;
+const MIN_PRICE = 4;
 const BOX_SIZES = [[18, 16, 5], [18, 7, 12], [15, 20, 15], [15, 20, 25], [30, 30, 20]];
 const BILLINGO_API_KEY = '';
 const BILLINGO_PRODNUM_1 = 13026788; // 6821423 custom print
@@ -74,7 +74,7 @@ const COUNTRIES = ["Albánia", "Andorra", "Argentína", "Ausztrália", "Ausztria
 
 const FIX_ADD_CPRINT = 500;
 const SUCCESS_RETURN = '{"success": true}';
-const OWNER_EMAILS = ['info@grabitzky.com']; //['mark@pearscom.com', 'turcsanmate113@gmail.com'];
+const OWNER_EMAILS = ['info@grabitzky.com']; //['markg@pearscom.com', 'turcsanmate113@gmail.com'];
 
 // For printing
 const M = 12; // cost/min in forint
@@ -96,7 +96,7 @@ function calcCPPrice(volume, area) {
   console.log(outerShellVolume);
   let innerVolume = volume - outerShellVolume; // 20% infill
   console.log(innerVolume);
-  let finalPrice = Math.round(outerShellVolume * DENSITY + innerVolume * DENSITY * 0.2) * PRICE_PER_GRAMM * 7;
+  let finalPrice = Math.round(outerShellVolume * DENSITY + innerVolume * DENSITY * 0.5) * PRICE_PER_GRAMM * 7;
   console.log(Math.round);
   console.log(finalPrice);
   console.log("Density", DENSITY);
