@@ -91,10 +91,16 @@ function smoothPrice(price) {
 }
 
 function calcCPPrice(volume, area) {
+  console.log(area);
   let outerShellVolume = 0.12 * area; // 100% infill
+  console.log(outerShellVolume);
   let innerVolume = volume - outerShellVolume; // 20% infill
+  console.log(innerVolume);
   let finalPrice = Math.round(outerShellVolume * DENSITY + innerVolume * DENSITY * 0.2) * PRICE_PER_GRAMM * 7;
+  console.log("Density", DENSITY);
+  console.log("Preis per Gramm", PRICE_PER_GRAMM);
   return finalPrice < MIN_PRICE ? MIN_PRICE : finalPrice;
+  console.log(finalPrice);
 }
 
 // Get volume and area
