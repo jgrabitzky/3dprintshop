@@ -26,7 +26,8 @@ const PRINT_MATERIALS = ['PLA', 'ABS', 'PETG', 'TPU'];
 const LAYER_WIDTH_VALUES_SLA = [0.05, 0.07, 0.1];
 const INFILL_VALUES_SLA = ['Üreges', 'Tömör'];
 const PRINT_TECHS = ['FDM', 'SLA'];
-const MIN_PRICE = 1;
+const MIN_PRICE = 1990;
+const EXCHANGE_RATE = 0.003;
 const BOX_SIZES = [[18, 16, 5], [18, 7, 12], [15, 20, 15], [15, 20, 25], [30, 30, 20]];
 const BILLINGO_API_KEY = '42ea6f08-96ff-11eb-bf9a-06ac9760f844'; // 'a871aa56-9b93-11eb-8491-0254eb6072a0';
 const BILLINGO_PRODNUM_1 = 5221476; // 6821423 custom print
@@ -135,7 +136,8 @@ function smoothPrice(P) {
 function calcCPPrice(volume, area) {
   let outerShellVolume = 0.12 * area; // 100% infill
   let innerVolume = volume - outerShellVolume; // 20% infill
-  let finalPrice = Math.round(outerShellVolume * DENSITY + innerVolume * DENSITY * 0.2) * PRICE_PER_GRAMM * 8;
+  let finalPriceFt = Math.round(outerShellVolume * DENSITY + innerVolume * DENSITY * 0.2) * PRICE_PER_GRAMM * 8;
+  let finalPrice = finalPriceFt * EXCHANGE_RATE;
   console.log('a', finalPrice < MIN_PRICE ? MIN_PRICE : finalPrice)
   return finalPrice < MIN_PRICE ? MIN_PRICE : finalPrice;
 }
