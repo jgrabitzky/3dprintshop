@@ -79,7 +79,7 @@ const OWNER_EMAILS = ['info@grabitzky.com']; //['markg@pearscom.com', 'turcsanma
 // For printing
 const M = 12; // cost/min in forint
 const DENSITY = 1.24; // PLA density is 1.27 g/cm^3
-const PRICE_PER_GRAMM = 0.04;
+const PRICE_PER_GRAMM = 1.34;
 
 function smoothPrice(price) {
   if (price <= 8000) {
