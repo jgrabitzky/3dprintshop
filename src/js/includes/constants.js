@@ -18,7 +18,7 @@ const PRINT_MATERIALS = ['PLA', 'ABS', 'PETG', 'TPU'];
 const LAYER_WIDTH_VALUES_SLA = [0.05, 0.07, 0.1];
 const INFILL_VALUES_SLA = ['Üreges', 'Tömör'];
 const PRINT_TECHS = ['FDM', 'SLA'];
-const MIN_PRICE = 4;
+const MIN_PRICE = 1990;
 const BOX_SIZES = [[18, 16, 5], [18, 7, 12], [15, 20, 15], [15, 20, 25], [30, 30, 20]];
 const BILLINGO_API_KEY = '';
 const BILLINGO_PRODNUM_1 = 13026788; // 6821423 custom print
@@ -79,7 +79,8 @@ const OWNER_EMAILS = ['info@grabitzky.com']; //['markg@pearscom.com', 'turcsanma
 // For printing
 const M = 12; // cost/min in forint
 const DENSITY = 1.24; // PLA density is 1.27 g/cm^3
-const PRICE_PER_GRAMM = 1.34;
+const PRICE_PER_GRAMM = 9.34;
+const EXCHANGE_RATE = 0.003;
 
 function smoothPrice(price) {
   if (price <= 8000) {
@@ -102,8 +103,10 @@ function calcCPPrice(volume, area) {
   console.log("Finaler Preis", (outerShellVolume * DENSITY + innerVolume * DENSITY * 0.5) * PRICE_PER_GRAMM * 7);
   console.log("Density", DENSITY);
   console.log("Preis per Gramm", PRICE_PER_GRAMM);
-  return finalPrice < MIN_PRICE ? MIN_PRICE : finalPrice;
-  console.log(finalPrice);
+  const finalPriceEuro = finalPrice * EXCHANGE_RATE;
+
+  return finalPriceEuro < MIN_PRICE ? MIN_PRICE : finalPriceEuro;
+  console.log(finalPriceEuro);
 }
 
 // Get volume and area
