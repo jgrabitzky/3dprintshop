@@ -97,6 +97,7 @@ function calcCPPrice(volume, area) {
   let innerVolume = volume - outerShellVolume; // 20% infill
   console.log(innerVolume);
   let finalPrice = Math.round(outerShellVolume * DENSITY + innerVolume * DENSITY * 0.2) * PRICE_PER_GRAMM * 7;
+  console.log(Math.round);
   console.log(finalPrice);
   console.log("Density", DENSITY);
   console.log("Preis per Gramm", PRICE_PER_GRAMM);
