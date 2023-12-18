@@ -97,7 +97,7 @@ const De = 0.2; // default infill in percentage
 const L = 0.2; // default layer height in mm
 const M = 12; // cost/min in forint
 const DENSITY = 1.24; // PLA density is 1.27 g/cm^3
-const PRICE_PER_GRAMM = 8.77;
+const PRICE_PER_GRAMM = 3.95;
 
 // Return the correct shipping price depending on the choice of service
 function getShippingPrice(type) {
