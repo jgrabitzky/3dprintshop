@@ -103,7 +103,7 @@ function calcCPPrice(volume, area) {
   console.log("Innenvolumen", innerVolume * DENSITY * 0.5);
   console.log("Density", DENSITY);
   console.log("Preis per Gramm", PRICE_PER_GRAMM);
-  console.log("Gerechneter Preis", (outerShellVolume * DENSITY + innerVolume * DENSITY * 0.5) * PRICE_PER_GRAMM * 7);
+  console.log("Gerechneter Preis", (outerShellVolume * DENSITY + innerVolume * DENSITY * 0.5) * PRICE_PER_GRAMM * 7 * EXCHANGE_RATE);
   console.log("Umgerechneter Preis", finalPrice);
   //const finalPriceEuro = finalPrice * EXCHANGE_RATE;
 
