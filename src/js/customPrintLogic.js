@@ -117,7 +117,7 @@ const buildCustomPrint = (conn, userID, filePaths) => {
       let centerOfMass = stl.centerOfMass.map(x => x.toFixed(2) + 'mm'); // mm
       let fname = path.split('/');
       fname = fname[fname.length - 1].replace('.stl', '');
-      totalPrice += basePrice;
+      totalPrice += basePrice * 0.0003;
       subPrices.push(basePrice);
       subSizes.push(stl.boundingBox.map(x => x.toFixed(2)));
       sizes.push(boxVolume);
