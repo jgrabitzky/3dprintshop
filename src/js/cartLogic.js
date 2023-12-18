@@ -24,6 +24,7 @@ const MAX_QUANTITY = constants.maxQuantity;
 const MIN_QUANTITY = constants.minQuantity;
 const DISCOUNT = constants.discount;
 const FREE_SHIPPING_LIMIT = shipping.freeShippingLimit;
+const EXCHANGE_RATE = 0.0003;
 
 // Build cart page from cookies & validate them on server side
 const buildCartSection = (conn, req) => {
@@ -496,7 +497,7 @@ const buildCartSection = (conn, req) => {
 
         if (discount == DISCOUNT) {
           finalPrice += `
-            <span id="discount">(${Math.round((1 - DISCOUNT) * 100)}% kedvezmény)</span>
+            <span id="discount">(${Math.round((1 - DISCOUNT) * 100)}% Rabatt)</span>
           `;
         } else {
           finalPrice += '<span id="discount"></span>';

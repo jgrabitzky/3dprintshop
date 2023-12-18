@@ -32,6 +32,7 @@ const DISCOUNT = constants.discount;
 const BA_NUM = constants.baNum;
 const BA_NAME = constants.baName;
 
+
 let DEFAULT_SHIPPING_PRICE;
 for (let key of Object.keys(SHIPPING_OBJ)) {
   if (SHIPPING_OBJ[key]['prior'] == 1) {

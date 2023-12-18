@@ -18,7 +18,7 @@ for (let i = 0.8; i <= 4; i += 0.4) {
   WALL_WIDTH_VALUES.push(Number(i.toFixed(2)));
 }
 
-const MIN_PRICE = 10;
+const MIN_PRICE = 1990 * 0.0003;
 const SLA_MULTIPLIER = 1.9;
 const MAX_QUANTITY = 100;
 const MIN_QUANTITY = 1;
