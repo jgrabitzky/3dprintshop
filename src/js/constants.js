@@ -16,7 +16,7 @@ const SHIPPING_PRICE_PACKETA_H = 1390;
 const SHIPPING_PRICE_PACKETA_P = 890;
 const MONEY_HANDLE = 490;
 const LIT_FORMS = ['Domború', 'Homorú', 'Sima'];
-const LIT_PRICES = {'100': 19, '150': 29, '200': 39};
+const LIT_PRICES = {'100': 1990 * 0.0003, '150': 2990 * 0.0003, '200': 3990 * 0.0003};
 const PRINT_COLORS = ['Fekete', 'Fehér', 'Kék', 'Zöld', 'Arany', 'Piros', 'Citromsárga'];
 const HEX_ARR = ['#000000', '#ffffff', '#0089ff', '#7aff00', '#FFD700', '#FF0000', '#FFFF66',
   '#FFFF00'];

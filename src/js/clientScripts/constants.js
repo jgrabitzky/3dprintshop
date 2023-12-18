@@ -1,7 +1,7 @@
 const LIT_FORMS = ['Domború', 'Homorú', 'Sima'];
 const LAYER_WIDTH_VALUES = [0.12, 0.2, 0.28];
 const INFILL_VALUES = [];
-const LIT_PRICES = {'100': 19, '150': 29, '200': 39};
+const LIT_PRICES = {'100': 1990 * 0.0003, '150': 2990 * 0.0003, '200': 3990 * 0.0003};
 for (let i = 10; i <= 90; i += 10) {
   INFILL_VALUES.push(i);
 }

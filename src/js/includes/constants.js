@@ -11,7 +11,7 @@ const EMAIL_PASSWORD = 'Julian@20399$';
 const PAYLIKE_ID = '';
 const SESSION_SECRET = 'oKTgDM!A%fXH%J)Vf=90swRXnrJIZH80(vpeL8YV_zt2UdO!dbCDjQJWfuf:iF8R3O';
 const LIT_FORMS = ['Domború', 'Homorú', 'Sima'];
-const LIT_PRICES = {'100': 1990, '150': 2990, '200': 3990};
+const LIT_PRICES = {'100': 1990 * 0.0003, '150': 2990 * 0.0003, '200': 3990 * 0.0003};
 const LAYER_WIDTH_VALUES = [0.12, 0.2, 0.28];
 const INFILL_VALUES = [];
 const PRINT_MATERIALS = ['PLA', 'ABS', 'PETG', 'TPU'];
@@ -83,7 +83,7 @@ const PRICE_PER_GRAMM = 9.34;
 const EXCHANGE_RATE = 0.003;
 
 function smoothPrice(price) {
-  if (price <= 8000) {
+  if (price <= 8000 * 0.0003) {
     return Math.round(price);
   } else {
     return Math.round(price);
