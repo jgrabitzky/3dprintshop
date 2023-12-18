@@ -107,7 +107,7 @@ function calcCPPrice(volume, area) {
   console.log("Umgerechneter Preis", finalPrice);
   //const finalPriceEuro = finalPrice * EXCHANGE_RATE;
 
-  return finalPriceEuro < MIN_PRICE ? MIN_PRICE : finalPriceEuro;
+  return finalPrice < MIN_PRICE ? MIN_PRICE : finalPrice;
   console.log(finalPriceEuro);
 }
 
