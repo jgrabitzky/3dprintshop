@@ -327,7 +327,7 @@ const buildCustomPrint = (conn, userID, filePaths) => {
           Wir können innerhalb eines Modells nur eine Farbe drucken.
           </div>
           <div class="specChValBox font32 blue">
-            <p data-value="Fehér" id="chcolor">Fehér</p>
+            <p data-value="Weiß" id="chcolor">Weiß</p>
             <p class="otherPrice">Preis: ${Math.round(totalPrice)} €</p>
           </div>
         </div>
@@ -337,7 +337,7 @@ const buildCustomPrint = (conn, userID, filePaths) => {
 
       for (let pair of CMAT['pla']) {
         let color = Object.keys(pair)[0];
-        let highlight = color == 'Fehér' ? 'specChHl' : '';
+        let highlight = color == 'Weiß' ? 'specChHl' : '';
         content += `
           <div class="specChDDItem trans ${highlight}" data-value="${color}">
             <div>
@@ -797,7 +797,7 @@ const buildCustomPrint = (conn, userID, filePaths) => {
             }
 
             let hexToName = {
-              '#ffffff': 'Fehér',
+              '#ffffff': 'Weiß',
               '#ff0000': 'Piros',
               '#0089ff': 'Kék'
             };

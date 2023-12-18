@@ -93,7 +93,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
         `;
         
         for (let c of PRINT_COLORS['pla']) {
-          let selected = c == 'Fehér' ? 'selected' : '';
+          let selected = c == 'Weiß' ? 'selected' : '';
           output += `
             <option value="${c}" ${selected}>${c}</option>
           `;
@@ -186,7 +186,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
         `;
 
         for (let c of PRINT_COLORS['pla']) {
-          let selected = c == 'Fehér' ? 'selected' : '';
+          let selected = c == 'Weiß' ? 'selected' : '';
           output += `
             <option value="${c}" ${selected}>${c}</option>
           `;

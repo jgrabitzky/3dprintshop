@@ -632,7 +632,7 @@ const buyItem = (conn, dDataArr, req, res, userSession) => {
                 }
 
                 // Send a notification email to us about every new order
-                let sj = 'Die Sonne scheint, ihr Paket kommt! - Kennung: ' + uniqueID;
+                let sj = 'Eine neue Bestellung ist eingetroffen! - Kennung: ' + uniqueID;
                 let cnt = '<p style="font-size: 18px;">Eine neue Bestellung ist eingetroffen!</p>';
                 sendOwnerEmails(sj, cnt);
 
