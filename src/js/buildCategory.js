@@ -8,12 +8,12 @@ const buildCategory = (conn, category) => {
     /*
       Tackle 3 cases:
         - category is an ordinary category in db
-        - category is 'Legnépszerűbb' which is marked as is_best in db
+        - category is 'Die beliebtesten' which is marked as is_best in db
         - catgegory is 'Összes' when we list all products from every category
     */
   
     let sQuery;
-    if (category == 'Legnépszerűbb') {
+    if (category == 'Die beliebtesten') {
       sQuery = `SELECT * FROM fix_products WHERE is_best = 1 ORDER BY priority ASC`;
     } else if (category == 'Összes') {
       sQuery = `SELECT * FROM fix_products ORDER BY priority ASC`;

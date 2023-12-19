@@ -67,10 +67,10 @@ const buildMainSection = (conn, cat) => {
                   <img src="/images/larr.png" width="25" height="25">
                 </div>
                 <div class="catBox" id="catBox">
-                  <a href="/?cat=Legnépszerűbb" class="pseudoLink">
-                    <div onclick="sortByCat('Legnépszerűbb', 0)" class="scat"
+                  <a href="/?cat=Die beliebtesten" class="pseudoLink">
+                    <div onclick="sortByCat('Die beliebtesten', 0)" class="scat"
                       style="background-color: #ececec; color: #4285f4; border-color: #4285f4;">
-                      Legnépszerűbb
+                      Die beliebtesten
                     </div>
                   </a>
         `;
