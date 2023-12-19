@@ -799,7 +799,7 @@ const buildCustomPrint = (conn, userID, filePaths) => {
             let hexToName = {
               '#ffffff': 'Weiß',
               '#ff0000': 'Piros',
-              '#0089ff': 'Kék'
+              '#0089ff': 'Blau'
             };
 
             if (isRev) {

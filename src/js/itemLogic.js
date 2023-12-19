@@ -10,7 +10,7 @@ const buildItemSection = (conn, itemId, req) => {
     conn.query("SELECT * FROM fix_products WHERE id = ? LIMIT 1", [itemId],
     function (err, result, fields) {
       if (err) {
-        reject('Egy nem várt hiba történt, kérlek próbáld újra')
+        reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut')
         return;
       }
 
@@ -138,13 +138,13 @@ const buildItemSection = (conn, itemId, req) => {
           <div class="contHolder flexDiv gotham">
             <div class="contTitle" id="descTitle">
               <div>
-                Leírás            
+              Beschreibung            
               </div>
               <div class="hoverItem" id="descTitle_anim" style="display: block;"></div>
             </div>
             <div class="contTitle" id="specsTitle">
               <div>
-                Specifikációk
+              Spezifikationen
               </div>
               <div class="hoverItem animate__animated animate__fadeOut" id="specsTitle_anim">
               </div>
@@ -156,8 +156,8 @@ const buildItemSection = (conn, itemId, req) => {
               ${description}
             </p>
             <p class="ddgray">
-              Az élő fényképek kivételével a termékfotók csak illusztrációk!
-              A termék 3D nyomtatóval készül!
+            Mit Ausnahme von Live-Fotos handelt es sich bei Produktfotos lediglich um Illustrationen!
+            Das Produkt wird mit einem 3D-Drucker hergestellt!
             </p>
           </div>
           <div id="specsHS" class="specsHS trans">
@@ -174,15 +174,15 @@ const buildItemSection = (conn, itemId, req) => {
           <div class="clear"></div> 
 
           <p class="align">
-            <a href="/mitjelent" class="blueLink">Segítség a specifikációkhoz</a>
+            <a href="/mitjelent" class="blueLink">Hilfe bei Spezifikationen</a>
           </p>
 
           <p class="align note ddgray">
-            A specifikációk megváltoztatása árváltozást vonhat maga után!
+          Eine Änderung der Spezifikationen kann zu einer Preisänderung führen!
           </p>
 
           <p class="align note ddgray">
-            Ha nem szeretnél bajlódni a paraméterekkel, hagyd az alapbeállításokon!
+          Wenn Sie sich nicht mit den Parametern herumschlagen möchten, belassen Sie sie auf den Standardeinstellungen!
           </p>
         </div>
         `;
@@ -192,7 +192,7 @@ const buildItemSection = (conn, itemId, req) => {
           LIMIT 6`;
         conn.query(sQuery, [category, itemId], (err, result, fields) => {
           if (err) {
-            reject('Egy nem várt hiba történt, kérlek próbáld újra');
+            reject('Es ist ein unerwarteter Fehler aufgetreten. Bitte versuchen Sie es erneut');
             return;
           }
 
