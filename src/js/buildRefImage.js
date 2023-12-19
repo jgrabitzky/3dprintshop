@@ -33,17 +33,17 @@ const buildRefImage = (conn, id) => {
           <div class="refInfoHolder">
             <p class="prodName refName">${title}</p>
             <p style="color: #696969" class="lh">${description}</p>
-            <p><span class="gotham">Rétegvastagság:</span> ${rvas}mm</p>
-            <p><span class="gotham">Falvastagság:</span> ${fvas}mm</p>
-            <p><span class="gotham">Sűrűség:</span> ${infill}%</p>
-            <p><span class="gotham">Méret:</span> ${sizeReadable}</p>
+            <p><span class="gotham">Schichtdicke:</span> ${rvas}mm</p>
+            <p><span class="gotham">Wandstärke:</span> ${fvas}mm</p>
+            <p><span class="gotham">Füllung:</span> ${infill}%</p>
+            <p><span class="gotham">Größe:</span> ${sizeReadable}</p>
             <div class="downloadHolder gotham align blue trans" style="margin-top: 40px;">
               <a href="/images/referenceImages/${imgUrl}" download="${imgUrl}"class="blue">
-                Letöltés
+              Herunterladen
               </a>
             </div>
             <p class="align lh" style="margin-top: 40px;">
-              Ha szeretnéd kinyomtatni a saját terméked, akkor válaszd a
+            Wenn Sie Ihr eigenes Produkt drucken möchten, wählen Sie a
               <a href="/print" class="blueLink font16">bérnyomtatás</a> funkciót vagy válogass
               <a href="/" class="blueLink font16">előre kinyomtatott</a> termékek között.
             </p>

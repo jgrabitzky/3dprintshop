@@ -20,7 +20,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
             <div class="itemSpecifications animate__animated" id="toggleDiv">
               <div class="specBox gotham">
                 <div id="rvasFDMBox">
-                  <div class="specTitle">Rétegvastagság</div>
+                  <div class="specTitle">Schichtdicke</div>
                   <select class="specSelect" id="rvas" onchange="updateSpecs(this, ${price}, false,
                     false, ${isCP})">
         `;
@@ -36,7 +36,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
                   </select>
                 </div>
                 <div class="SLASpecs" id="rvasSLABox">
-                  <div class="specTitle">Rétegvastagság</div>
+                  <div class="specTitle">Schichtdicke</div>
                     <select class="specSelect" id="rvasSLA"
                       onchange="updateSLASpecs('rvasSLA', 'rvas')">
         `;
@@ -52,7 +52,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
                   </select>
                 </div>
                 <div class="SLASpecs" id="infillSLABox">
-                  <div class="specTitle">Sűrűség</div>
+                  <div class="specTitle">Füllung</div>
                     <select class="specSelect" id="infillSLA"
                       onchange="updateSLASpecs('infillSLA', 'suruseg')">
         `;
@@ -68,7 +68,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
                   </select>
                 </div>
                 <div id="surusegFDMBox">
-                  <div class="specTitle trans">Sűrűség</div>
+                  <div class="specTitle trans">Füllung</div>
                     <select class="specSelect" id="suruseg" onchange="updateSpecs(this, ${price},
                     false, false, ${isCP})">
         `;
@@ -86,7 +86,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
                 
                 <div>
                   <div class="specTitle">
-                    <a href="/colors" class="trans colorLink">Szín</a>
+                    <a href="/colors" class="trans colorLink">Farbe</a>
                     <img src="/images/icons/external.png" id="goToColor">
                   </div>
                   <select class="specSelect" id="color">
@@ -104,7 +104,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
                 </div>
 
                 <div>
-                  <div class="specTitle">Méretezés</div>
+                  <div class="specTitle">Größe</div>
                   <select class="specSelect" id="scale"
                     onchange="updateScale(this, ${price}, '${size}')">
         `;
@@ -121,7 +121,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
                 </div>
 
                 <div id="fvasFDMBox">
-                  <div class="specTitle">Falvastagság</div>
+                  <div class="specTitle">Wandstärke</div>
                   <select class="specSelect" id="fvas" onchange="updateSpecs(this, ${price}, false,
                   false, ${isCP})">
         `;
@@ -141,7 +141,7 @@ function genSpecs(conn, price, size, isLit = false, isCP = false) {
         if (isCP) {
           output += `
             <div id="printMatBox">
-              <div class="specTitle">Nyomtatás Anyaga</div>
+              <div class="specTitle">Druckmaterial</div>
               <select class="specSelect" id="printMat" onchange="updateSpecs(this, ${price}, false,
                 false, ${isCP})">
           `;
