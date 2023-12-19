@@ -98,7 +98,7 @@ const buildItemSection = (conn, itemId, req) => {
             <div class="itemInfo">
               <p class="prodName hideText">${productName}</p>
               <p class="itemPrice">
-                <span id="priceHolder">${price}</span> Ft
+                <span id="priceHolder">${price}</span> €
               </p>
               <p class="gotham">
                 <span id="sizeHolder">${size}</span>
