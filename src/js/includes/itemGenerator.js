@@ -36,7 +36,7 @@ function produceShowcaseOutput(result, isDefault, i, isUneven = false, isBest = 
       </div>
       <span class="gotham">
         <p>${productName}</p>
-        <p>${price} Ft</p>
+        <p>${price} €</p>
       </span>
     </a>
   `;

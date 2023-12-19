@@ -390,7 +390,7 @@ const buildMainSection = (conn, cat) => {
                   </div>
                   <span class="gotham align">
                     <p>${prodName}</p>
-                    <p>${price} Ft</p>
+                    <p>${price} €</p>
                   </span>
                 </a>
               `;

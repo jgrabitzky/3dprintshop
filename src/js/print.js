@@ -719,7 +719,7 @@ function updatePriceDiffs() {
       }
 
       let sign = newPrice - currentPrice >= 0 ? '+' : '-';
-      child.children[2].innerText = `(${sign}${Math.abs(newPrice - currentPrice)} Ft)`;
+      child.children[2].innerText = `(${sign}${Math.abs(newPrice - currentPrice)} €)`;
       if (newPrice - currentPrice > 0) {
         child.children[2].setAttribute('style', 'color: green;');
       } else if (newPrice - currentPrice < 0) {

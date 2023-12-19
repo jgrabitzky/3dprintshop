@@ -622,7 +622,7 @@ function highlightLabel(show, all) {
     data[0].shippingPrice = getShippingPrice(data[0].finalPrice, show);
   }
 
-  _('plAmountDyn').innerText = _('fPrice').innerText + ' Ft';
+  _('plAmountDyn').innerText = _('fPrice').innerText + ' €';
 }
 
 const paymentOptions = ['btransfer', 'uvetCont', 'paylikeCont']

@@ -42,7 +42,7 @@ function getErrorMessage(errorCode) {
   return 'Egy nem várt hiba történt';
 }
 
-_('plAmountDyn').innerText = _('fPrice').innerText + ' Ft';
+_('plAmountDyn').innerText = _('fPrice').innerText + ' €';
 
 const plForm = document.querySelector('form#checkout');
 
