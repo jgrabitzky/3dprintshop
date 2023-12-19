@@ -89,9 +89,9 @@ const buildMainSection = (conn, cat) => {
         }
 
         output += `
-                  <a href="/?cat=Összes" class="pseudoLink">
-                    <div onclick="sortByCat('Összes', ${res.length + 1})" class="scat">
-                      Összes
+                  <a href="/?cat=Alle" class="pseudoLink">
+                    <div onclick="sortByCat('Alle', ${res.length + 1})" class="scat">
+                      Alle
                     </div>
                   </a>
                 </div>
