@@ -70,8 +70,8 @@ const buildAccountSection = (conn, userID) => {
               Ändern
               </button>
               <p class="note align ddgray">
-              Sie können die Lieferdaten so oft wie möglich und zum Zeitpunkt des Kaufs ändern
-              kann umgeschrieben werden!
+              Sie können die Lieferdaten bis zum Zeitpunkt des Kaufs ändern
+              oder umschreiben!
               </p>
               <hr class="hrStyle">
               <div class="flexDiv" style="flex-wrap: wrap; justify-content: space-evenly;">

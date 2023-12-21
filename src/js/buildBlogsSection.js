@@ -28,7 +28,7 @@ function buildBlogItem(currentBlog) {
       <div class="lowerReadMore">
         <hr class="hrStyle">
         <a href="/blog?id=${id}">
-          <button class="fillBtn btnCommon">Olvass tovább</button>
+          <button class="fillBtn btnCommon">Weiterlesen</button>
         </a>
       </div>
     </div>

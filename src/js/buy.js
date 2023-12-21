@@ -127,20 +127,20 @@ function submitOrder() {
     resetSubmitBtn();
     return;
   } else if (!name || !pcode || !city || !address || !mobile) {
-    statusFill('errStatus', 'Kérlek töltsd ki a szállítási adatokat');
+    statusFill('errStatus', 'Bitte geben Sie die Lieferdaten ein');
     resetSubmitBtn();
     return;
   } else if (!Number.isInteger(pcode)) {
-    statusFill('errStatus', 'Kérlek valós irányítószámot adj meg');
+    statusFill('errStatus', 'Bitte geben Sie eine Postleitzahl ein');
     resetSubmitBtn();
     return;
   } else if (creditCard && !transactionID) {
-    statusFill('errStatus', 'Kérlek add hozzá a bankkártyádat a fizetéshez');
+    statusFill('errStatus', 'Bitte fügen Sie der Zahlung Ihre Bankkarte hinzu');
     resetSubmitBtn();
     return;
   } else if (!isAgree || !isAgree2) {
     // Did not accept the terms & policy
-    statusFill('errStatus', 'Fogadd el az ÁSZF-et és az Adatvédelmi Nyilatkozatot');
+    statusFill('errStatus', 'Akzeptieren Sie die Allgemeinen Geschäftsbedingungen und die Datenschutzerklärung');
     resetSubmitBtn();
     return;
   } else if (_('billingName') && (billingName || billingPcode.value || billingCity ||
@@ -150,7 +150,7 @@ function submitOrder() {
     if (_('billingCompname') && (billingCompname || billingCompnum || buyAsComp)) {
       isComp = true;
     } else if (isCompNormal && (!normalCompnum || !normalCompname)) {
-      statusFill('errStatus', 'Kérlek adj meg minden céggel kapcsolatos adatot');
+      statusFill('errStatus', 'Bitte geben Sie alle unternehmensbezogenen Daten ein');
     resetSubmitBtn();
       return;
     } else if (normalCompnum && normalCompname && isCompNormal) {
@@ -161,11 +161,11 @@ function submitOrder() {
     else if (!isComp) billingType = 'diffNo';
     else billingType = 'diffYes';
   } else if (!isChecked(SHIPPING_RADIO_IDS)) {
-    statusFill('errStatus', 'Válassz szállítási módot');
+    statusFill('errStatus', 'Wählen Sie eine Versandart');
     resetSubmitBtn();
     return;
   } else if (isPP && !infoArr && !packetaArr) {
-    statusFill('errStatus', 'Válassz egy csomagpontot');
+    statusFill('errStatus', 'Wählen Sie einen Paketpunkt');
     resetSubmitBtn();
     return;
   }
